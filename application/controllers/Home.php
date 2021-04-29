@@ -12,6 +12,7 @@ class Home extends CI_Controller
 {
 	public function index()
 	{
+		$data['nav'] = '';
 		$data['title'] = "Home | CareerUp";
 		$data['page'] = "Frontend/home";
 		$this->load->view('Frontend/Template/template', $data);

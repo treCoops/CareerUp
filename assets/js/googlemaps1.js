@@ -1,7 +1,7 @@
 var MY_MAPTYPE_ID = 'style_KINESB';
 
 function initialize() {
-  var featureOpts = [
+  let featureOpts = [
     {
         "featureType": "administrative",
         "elementType": "labels.text.fill",
@@ -91,10 +91,10 @@ function initialize() {
         ]
     }
 ];
-  var myGent = new google.maps.LatLng(51.683661,-4.758851);
-  var Kine = new google.maps.LatLng(51.683661,-4.758851);
-  var mapOptions = {
-    zoom: 10,
+  let myGent = new google.maps.LatLng(7.8731,80.7718);
+  let Kine = new google.maps.LatLng(51.683661,-4.758851);
+  let mapOptions = {
+    zoom: 8,
     mapTypeControl: true,
     zoomControl: true,
     zoomControlOptions: {
@@ -113,13 +113,13 @@ function initialize() {
     name: 'style_KINESB'
   };
 
-var image = 'images/resource/mapmarker.png';
+  var image = 'images/resource/mapmarker.png';
   var marker = new google.maps.Marker({
       position: Kine,
       map: map,
-animation: google.maps.Animation.DROP,
+	  animation: google.maps.Animation.DROP,
       title: 'B4318, Gumfreston SA70 8RA, United Kingdom',
-icon: image
+	  icon: image
   });
 
   var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);

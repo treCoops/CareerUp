@@ -77,6 +77,8 @@ class Login extends CI_Controller
 			$response['message'] = 'User already exists!';
 		}
 
+		$response['type'] = $type;
+
 		echo json_encode($response);
 
 	}
@@ -108,6 +110,7 @@ class Login extends CI_Controller
 							'Blocked_Status' => $user[0]->user_blocked,
 							'Account_Type' => $user[0]->user_job,
 							'User_Job' => $user[0]->user_type,
+							'Profile_Image' => $user[0]->img_url,
 						);
 
 						$this->session->set_userdata('User_Session', $Login_User);
@@ -134,6 +137,8 @@ class Login extends CI_Controller
 	{
 		$data['title'] = "Login | CareerUp";
 		$data['page'] = "Frontend/login";
+		$data['jobs'] = $this->JobModel->getAllJobs();
+		$data['sectors'] = $this->SectorModel->getAllSectors();
 		$data['error_message'] = 'You are not logged in.!';
 		$this->session->unset_userdata('User_Session');
 		$this->load->view('Frontend/Template/template', $data);
@@ -141,6 +146,8 @@ class Login extends CI_Controller
 
 	public function noPermission()
 	{
+		$data['jobs'] = $this->JobModel->getAllJobs();
+		$data['sectors'] = $this->SectorModel->getAllSectors();
 		$data['title'] = "Login | CareerUp";
 		$data['page'] = "Frontend/login";
 		$data['error_message'] = 'You have no permission.!';
@@ -149,6 +156,8 @@ class Login extends CI_Controller
 
 	public function blocked()
 	{
+		$data['jobs'] = $this->JobModel->getAllJobs();
+		$data['sectors'] = $this->SectorModel->getAllSectors();
 		$data['title'] = "Login | CareerUp";
 		$data['page'] = "Frontend/login";
 		$data['error_message'] = 'Your account has been blocked, Please inform administrator.!';
@@ -157,6 +166,8 @@ class Login extends CI_Controller
 
 	public function deactive()
 	{
+		$data['jobs'] = $this->JobModel->getAllJobs();
+		$data['sectors'] = $this->SectorModel->getAllSectors();
 		$data['title'] = "Login | CareerUp";
 		$data['page'] = "Frontend/login";
 		$data['error_message'] = 'Your account has been disabled. Please inform administrator.!';
@@ -165,6 +176,8 @@ class Login extends CI_Controller
 
 	public function invalid()
 	{
+		$data['jobs'] = $this->JobModel->getAllJobs();
+		$data['sectors'] = $this->SectorModel->getAllSectors();
 		$data['title'] = "Login | CareerUp";
 		$data['page'] = "Frontend/login";
 		$data['error_message'] = 'Invalid username or password.!';
@@ -173,6 +186,8 @@ class Login extends CI_Controller
 
 	public function logOut()
 	{
+		$data['jobs'] = $this->JobModel->getAllJobs();
+		$data['sectors'] = $this->SectorModel->getAllSectors();
 		$this->session->unset_userdata('User_Session');
 		$data['title'] = "Login | CareerUp";
 		$data['page'] = "Frontend/login";

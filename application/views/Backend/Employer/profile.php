@@ -11,193 +11,268 @@
 
 <div class="col-sm-12 col-lg-8 col-xl-9">
 	<div class="my_profile_form_area employer_profile">
-		<div class="row">
-			<div class="col-lg-12">
-				<h4 class="fz20 mb20">Company Profile</h4>
-			</div>
-			<div class="col-lg-12">
-				<div class="avatar-upload mb30">
-					<div class="avatar-edit">
-						<input class="btn btn-thm" type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
-						<label for="imageUpload"></label>
+		<form id="formProfile" method="post" enctype="multipart/form-data">
+			<div class="row">
+				<div class="col-lg-12">
+					<h4 class="fz20 mb20">Company Profile</h4>
+				</div>
+					<div class="col-lg-12">
+						<div class="avatar-upload mb30">
+							<div class="avatar-edit">
+								<input class="btn btn-thm" type='file' id="imageUpload" name="imageUpload" accept=".png, .jpg, .jpeg" />
+								<label for="imageUpload"></label>
+							</div>
+							<div class="avatar-preview">
+								<div id="imagePreview"></div>
+							</div>
+						</div>
 					</div>
-					<div class="avatar-preview">
-						<div id="imagePreview"></div>
+					<div class="col-lg-12">
+						<div class="my_profile_thumb_edit"></div>
 					</div>
-				</div>
-			</div>
-			<div class="col-lg-12">
-				<div class="my_profile_thumb_edit"></div>
-			</div>
-			<div class="col-md-6 col-lg-6">
-				<div class="my_profile_input form-group">
-					<label for="formGroupExampleInput1">Company Name</label>
-					<input type="text" class="form-control" id="formGroupExampleInput1" placeholder="CreativeLayers">
-				</div>
-			</div>
-			<div class="col-md-6 col-lg-6">
-				<div class="my_profile_input form-group">
-					<label for="exampleFormControlInput1">Email address</label>
-					<input type="email" class="form-control" id="exampleFormControlInput1" placeholder="creativelayers088@gmail.com">
-				</div>
-			</div>
-			<div class="col-md-6 col-lg-6">
-				<div class="my_profile_input form-group">
-					<label for="exampleInputPhone">Phone</label>
-					<input type="email" class="form-control" id="exampleInputPhone" aria-describedby="phoneNumber" placeholder="+90 587 658 96 32">
-				</div>
-			</div>
-			<div class="col-md-6 col-lg-6">
-				<div class="my_profile_input form-group">
-					<label for="exampleFormControlInput2">Website</label>
-					<input type="email" class="form-control" id="exampleFormControlInput2" placeholder="www.careerup.com">
-				</div>
-			</div>
-			<div class="col-md-6 col-lg-6">
-				<div class="my_profile_input form-group">
-					<label for="formGroupExampleInput2">Est. Since</label>
-					<input type="text" class="form-control datepicker" id="formGroupExampleInput2" placeholder="22/05/2010">
-				</div>
-			</div>
-			<div class="col-md-6 col-lg-6">
-				<div class="my_profile_select_box form-group">
-					<label for="exampleFormControlInput3">Team Size</label><br>
-					<select class="selectpicker">
-						<option>50-100</option>
-						<option>100-150</option>
-						<option>150-200</option>
-					</select>
-				</div>
-			</div>
-			<div class="col-md-6 col-lg-6">
-				<div class="my_profile_select_box form-group">
-					<label for="exampleFormControlInput2">Categories</label><br>
-					<select class="selectpicker" multiple data-actions-box="true">
-						<option>Banking</option>
-						<option>Digital&Creative</option>
-						<option>Retail</option>
-						<option>Business</option>
-					</select>
-				</div>
-			</div>
-			<div class="col-md-6 col-lg-6">
-				<div class="my_profile_select_box form-group">
-					<label for="exampleFormControlInput2">Allow In Search & Listing</label><br>
-					<select class="selectpicker">
-						<option>Yes</option>
-						<option>No</option>
-					</select>
-				</div>
-			</div>
-			<div class="col-lg-12">
-				<div class="my_resume_textarea mt20">
-					<div class="form-group">
-						<label for="exampleFormControlTextarea1">About Company</label>
-						<textarea class="form-control" id="exampleFormControlTextarea1" rows="9">Spent several years working on sheep on Wall Street. Had moderate success investing in Yugo's on Wall Street. Managed a small team buying and selling Pogo sticks for farmers. Spent several years licensing licorice in West Palm Beach, FL. Developed several new methods for working it banjos in the aftermarket. Spent a weekend importing banjos in West Palm Beach, FL.In this position, the Software Engineer collaborates with Evention's Development team to continuously enhance our current software solutions as well as create new solutions to eliminate the back-office operations and management challenges present
-									    </textarea>
+					<div class="col-md-6 col-lg-6">
+						<div class="my_profile_input form-group">
+							<label for="txtCompanyName">Company Name</label>
+							<input type="text" class="form-control" id="txtCompanyName" name="txtCompanyName">
+						</div>
 					</div>
-				</div>
-			</div>
-			<div class="col-lg-12">
-				<h4 class="fz18 mb20">Social Network</h4>
-			</div>
-			<div class="col-md-6 col-lg-6">
-				<div class="my_profile_input form-group">
-					<label for="validationServerUsername">Facebook</label>
-					<input type="text" class="form-control" id="formGroupExampleInput1" placeholder="#">
-				</div>
-			</div>
-			<div class="col-md-6 col-lg-6">
-				<div class="my_profile_input form-group">
-					<label for="validationServerUsername2">Twitter</label>
-					<input type="text" class="form-control" id="formGroupExampleInput1" placeholder="#">
-				</div>
-			</div>
-			<div class="col-md-6 col-lg-6">
-				<div class="my_profile_input form-group">
-					<label for="validationServerUsername2">Linkedin</label>
-					<input type="text" class="form-control" id="formGroupExampleInput1" placeholder="#">
-				</div>
-			</div>
-			<div class="col-md-6 col-lg-6">
-				<div class="my_profile_input form-group">
-					<label for="validationServerUsername2">Google Plus</label>
-					<input type="text" class="form-control" id="formGroupExampleInput1" placeholder="#">
-				</div>
-			</div>
-			<div class="col-lg-12">
-				<h4 class="fz18 mb20">Contact Information</h4>
-			</div>
-			<div class="col-md-6 col-lg-6">
-				<div class="my_profile_select_box form-group">
-					<label for="exampleFormControlInput9">Country</label><br>
-					<select class="selectpicker">
-						<option>United Kingdom</option>
-						<option>United State</option>
-						<option>Ukraine</option>
-						<option>Uruguay</option>
-						<option>UK</option>
-						<option>Uzbekistan</option>
-						<option>Uganda</option>
-					</select>
-				</div>
-			</div>
-			<div class="col-md-6 col-lg-6">
-				<div class="my_profile_select_box form-group">
-					<label for="exampleFormControlInput9">City</label><br>
-					<select class="selectpicker">
-						<option>London</option>
-						<option>Manchester</option>
-						<option>Birmingham</option>
-						<option>Liverpool England</option>
-						<option>Bristol</option>
-						<option>City of London</option>
-						<option>Leeds</option>
-					</select>
-				</div>
-			</div>
-			<div class="col-lg-12">
-				<div class="my_resume_textarea mt20">
-					<div class="form-group">
-						<label for="exampleFormControlTextarea1">Full Address</label>
-						<textarea class="form-control" id="exampleFormControlTextarea1" rows="3">London, United Kingdom</textarea>
+					<div class="col-md-6 col-lg-6">
+						<div class="my_profile_input form-group">
+							<label for="txtCompanyEmail">Email address</label>
+							<input type="email" class="form-control" id="txtCompanyEmail" name="txtCompanyEmail">
+						</div>
 					</div>
-				</div>
+					<div class="col-md-6 col-lg-6">
+						<div class="my_profile_input form-group">
+							<label for="txtCompanyPhone">Phone</label>
+							<input type="text" class="form-control" id="txtCompanyPhone" name="txtCompanyPhone" aria-describedby="phoneNumber" placeholder="ex: 0771234567">
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-6">
+						<div class="my_profile_input form-group">
+							<label for="txtCompanyWebSite">Website URL</label>
+							<input type="text" class="form-control" id="txtCompanyWebSite" name="txtCompanyWebSite">
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-6">
+						<div class="my_profile_input form-group">
+							<label for="txtCompanyStartDate">Est. Since</label>
+							<input type="text" class="form-control datepicker" id="txtCompanyStartDate" name="txtCompanyStartDate">
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-6">
+						<div class="my_profile_select_box form-group">
+							<label for="cmbCompanyTeamSize">Team Size</label><br>
+							<select id="cmbCompanyTeamSize" name="cmbCompanyTeamSize" class="selectpicker">
+								<option value="">Select Team Size</option>
+								<option value="0-10">0-10</option>
+								<option value="10-50">10-50</option>
+								<option value="50-100">50-100</option>
+								<option value="100-150">100-150</option>
+								<option value="150-200">150-200</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-6">
+						<div class="my_profile_select_box form-group">
+							<label for="cmbCompanyCategories">Categories</label><br>
+							<select id="cmbCompanyCategories" name="cmbCompanyCategories[]" class="selectpicker" multiple data-actions-box="true">
+								<option value="Mobile App Development">Mobile App Development</option>
+								<option value="Web Site & Web App Development">Web Site & Web App Development</option>
+								<option value="IOT">IOT</option>
+								<option value="Standalone App Development">Standalone App Development</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-6">
+						<div class="my_profile_select_box form-group">
+							<label for="cmbCompanyAllowDisability">Allow Disability People to work</label><br>
+							<select id="cmbCompanyAllowDisability" name="cmbCompanyAllowDisability" class="selectpicker">
+								<option value="1">Yes</option>
+								<option value="0">No</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-lg-12">
+						<div class="my_resume_textarea mt20">
+							<div class="form-group">
+								<label for="txtCompanyAbout">About Company</label>
+								<textarea class="form-control" id="txtCompanyAbout" name="txtCompanyAbout" rows="9">
+								</textarea>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-12">
+						<h4 class="fz18 mb20">Social Network</h4>
+					</div>
+					<div class="col-md-6 col-lg-6">
+						<div class="my_profile_input form-group">
+							<label for="txtCompanyFacebook">Facebook</label>
+							<input type="text" class="form-control" name="txtCompanyFacebook" id="txtCompanyFacebook">
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-6">
+						<div class="my_profile_input form-group">
+							<label for="txtCompanyTwitter">Twitter</label>
+							<input type="text" class="form-control" id="txtCompanyTwitter" name="txtCompanyTwitter">
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-6">
+						<div class="my_profile_input form-group">
+							<label for="txtCompanyLinkedin">Linkedin</label>
+							<input type="text" class="form-control" name="txtCompanyLinkedin" id="txtCompanyLinkedin">
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-6">
+						<div class="my_profile_input form-group">
+							<label for="txtCompanyInstagram">Instagram</label>
+							<input type="text" class="form-control" name="txtCompanyInstagram" id="txtCompanyInstagram">
+						</div>
+					</div>
+					<div class="col-lg-12">
+						<h4 class="fz18 mb20">Contact Information</h4>
+					</div>
+					<div class="col-md-6 col-lg-6">
+						<div class="my_profile_select_box form-group">
+							<label for="cmbCompanyCountry">Country</label><br>
+							<select id="cmbCompanyCountry" name="cmbCompanyCountry" class="selectpicker">
+								<option value="Sri Lanka">Sri Lanka</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-6">
+						<div class="my_profile_select_box form-group">
+							<label for="cmbCompanyCity">City</label><br>
+							<select id="cmbCompanyCity" name="cmbCompanyCity" class="selectpicker">
+								<option value="Colombo">Colombo</option>
+								<option value="Negombo">Negombo</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-lg-12">
+						<div class="my_resume_textarea mt20">
+							<div class="form-group">
+								<label for="txtCompanyAddress">Full Address</label>
+								<textarea class="form-control" id="txtCompanyAddress" name="txtCompanyAddress" rows="3"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-4">
+						<div class="my_profile_input form-group">
+							<label for="txtCompanyLocationLatitude">Latitude</label>
+							<input type="text" class="form-control" id="txtCompanyLocationLatitude" name="txtCompanyLocationLatitude" aria-describedby="latNumber" readonly>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-4">
+						<div class="my_profile_input form-group">
+							<label for="txtCompanyLocationLongitude">Longitude</label>
+							<input type="text" class="form-control" id="txtCompanyLocationLongitude" name="txtCompanyLocationLongitude" aria-describedby="latNumber" readonly>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-4">
+						<div class="my_profile_input form-group">
+							<label for="txtCompanyLocationZoom">Zoom</label>
+							<input type="text" class="form-control" name="txtCompanyLocationZoom" id="txtCompanyLocationZoom" aria-describedby="latNumber" readonly>
+							<input type="hidden" class="form-control" name="txtProfileID" id="txtProfileID">
+						</div>
+					</div>
+					<div class="col-lg-12">
+						<div class="h300" id="gMap"></div>
+					</div>
+					<?php if($profile == null){ ?>
+						<div class="col-lg-4">
+							<div class="my_profile_input">
+								<br>
+								<button class="btn btn-lg btn-thm" type="submit">Create Profile</button>
+								<input type="hidden" class="form-control" name="txtCompanyDataExist" id="txtCompanyDataExist" value="NEW">
+							</div>
+						</div>
+					<?php }else{ ?>
+						<div class="col-lg-4">
+							<div class="my_profile_input">
+								<br>
+								<button class="btn btn-lg btn-thm" type="submit">Save Changes</button>
+								<input type="hidden" class="form-control" name="txtCompanyDataExist" id="txtCompanyDataExist" value="UPDATE">
+								<input type="hidden" class="form-control" name="txtCurrentImage" id="txtCurrentImage">
+							</div>
+						</div>
+					<?php } ?>
 			</div>
-			<div class="col-md-4 col-lg-4">
-				<div class="my_profile_input form-group">
-					<label for="exampleInputLat">Latitude</label>
-					<input type="email" class="form-control" id="exampleInputLat" aria-describedby="latNumber" placeholder="51.5073509">
-				</div>
-			</div>
-			<div class="col-md-4 col-lg-4">
-				<div class="my_profile_input form-group">
-					<label for="exampleInputLat">Longitude</label>
-					<input type="email" class="form-control" id="exampleInputLat" aria-describedby="latNumber" placeholder="-0.12775829999998223">
-				</div>
-			</div>
-			<div class="col-md-4 col-lg-4">
-				<div class="my_profile_input form-group">
-					<label for="exampleInputLat">Zoom</label>
-					<input type="email" class="form-control" id="exampleInputLat" aria-describedby="latNumber" placeholder="16">
-				</div>
-			</div>
-			<div class="col-lg-12">
-				<div class="h300" id="map-canvas"></div>
-			</div>
-			<div class="col-lg-4">
-				<div class="my_profile_input">
-					<a class="btn btn-lg btn-thm" href="#">Save Changes</a>
-				</div>
-			</div>
-		</div>
+		</form>
 	</div>
 </div>
 
-<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyABqK-5ngi3F1hrEsk7-mCcBPsjHM5_Gj0"></script>
-<script type="text/javascript" src="<?php base_url() ?>assets/js/googlemaps1.js"></script>
+
+<script type="text/javascript" src="<?php echo base_url() ?>assets/js/map-picker.js"></script>
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyB8BbO_t_LXJLuBuHLnRMvXBJH8_S7q2IM&callback=initMap" async></script>
+
 <script>
+
+	function updateUI(){
+		if($('#txtCompanyDataExist').val() === 'UPDATE'){
+			$.ajax({
+				url: "<?php echo base_url(''); ?>/BEProfile/getProfile",
+				data: null,
+				method: "post",
+				dataType: "json",
+				error: function(error){
+					console.log(error);
+					$.notify("Internal server error", "error");
+
+				},
+				success: function(r){
+
+					console.log(r);
+
+					$('#txtCompanyName').val(r.company_name);
+					$('#txtCompanyEmail').val(r.company_email);
+					$('#txtCompanyPhone').val(r.company_phone);
+					$('#txtCompanyWebSite').val(r.company_website);
+					$('#txtCompanyStartDate').val(r.company_start_date);
+					$('#txtCompanyAbout').val(r.company_about);
+					$('#txtCompanyFacebook').val(r.company_facebook);
+					$('#txtCompanyLinkedin').val(r.company_linkedin);
+					$('#txtCompanyInstagram').val(r.company_instagram);
+					$('#txtCompanyTwitter').val(r.company_twitter);
+					$('#txtCompanyAddress').val(r.company_address);
+					$('#txtCompanyLocationLatitude').val(r.company_location_lat);
+					$('#txtCompanyLocationLongitude').val(r.company_location_lng);
+					$('#txtCompanyLocationZoom').val(r.company_location_zoom);
+					$('#txtProfileID').val(r.company_profile_id);
+					$('#txtCurrentImage').val(r.company_profile_image_url);
+
+					$('#cmbCompanyTeamSize').val(r.company_team_size);
+					$('#cmbCompanyTeamSize').trigger('change');
+
+					let categories = []
+
+					for(let a=0; a<r.categories.length; a++){
+						categories.push(r.categories[a].category_name)
+					}
+
+					$('#imagePreview').css('background-image', 'url(<?php echo base_url('assets/images/profile/company/') ?>'+ r.company_profile_image_url+')');
+					$('#imagePreview').hide();
+					$('#imagePreview').fadeIn(650);
+
+					$('#cmbCompanyCategories').selectpicker('val', categories);
+
+					$('#cmbCompanyAllowDisability').val(r.company_allow_disability);
+					$('#cmbCompanyAllowDisability').trigger('change');
+
+					$('#cmbCompanyCountry').val(r.company_country);
+					$('#cmbCompanyCountry').trigger('change');
+
+					$('#cmbCompanyCity').val(r.company_city);
+					$('#cmbCompanyCity').trigger('change');
+
+				}
+			});
+		}
+	}
+
 	$(document).ready(function() {
+
+		updateUI();
 
 		function readURL(input) {
 			if (input.files && input.files[0]) {
@@ -213,6 +288,92 @@
 
 		$("#imageUpload").change(function () {
 			readURL(this);
+		});
+
+		$("#formProfile").validate({
+			ignore: [],
+			rules: {
+				imageUpload: {
+					required: true
+				},
+				txtCompanyName: {
+					required: true
+				},
+				txtCompanyEmail: {
+					required: true,
+					email: true
+				},
+				txtCompanyPhone: {
+					required: true,
+					digits: true,
+					minlength: 10,
+					maxlength: 10
+				},
+				txtCompanyStartDate: {
+					required: true
+				},
+				txtCompanyAbout: {
+					required: true
+				},
+				txtCompanyAddress: {
+					required: true
+				}
+			},
+			messages: {
+				imageUpload: {
+					required: "Company profile image required!"
+				},
+				txtCompanyName: {
+					required: "Company name required!"
+				},
+				txtCompanyEmail: {
+					required: "Company email required!",
+					email: "Please enter a valid email!"
+				},
+				txtCompanyPhone: {
+					required: "Company phone no required!",
+					digits: "Phone no must have digits only!",
+					minlength: "Valid phone no can have 10 digits only!",
+					maxlength: "Valid phone no can have 10 digits only!"
+				},
+				txtCompanyStartDate: {
+					required: "Company established date required!"
+				},
+				txtCompanyAbout: {
+					required: "Company description required!"
+				},
+				txtCompanyAddress: {
+					required: "Company address required!"
+				}
+			},
+			submitHandler: function(form) {
+				let formData = new FormData(form);
+
+				$.ajax({
+					url: '<?php echo base_url('BEProfile/manageProfile'); ?>',
+					data: formData,
+					dataType: 'json',
+					method: 'post',
+					processData: false,
+					enctype: 'multipart/form-data',
+					contentType: false,
+					cache: false,
+					error: function(error){
+						$.notify("Internal server error", "error");
+					},
+					success: function(r){
+						if(r.status == 200){
+							$.notify(r.message, "success");
+						}
+
+						if(r.status == 500){
+							$.notify(r.message, "error");
+						}
+
+					}
+				});
+			}
+
 		});
 
 	});

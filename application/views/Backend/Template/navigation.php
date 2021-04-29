@@ -7,6 +7,7 @@
  * Date: 2021-04-27
  * Time: 13:16
  */
+$User_Session = $this->session->userdata('User_Session');
 ?>
 
 <header class="header-nav style_one dashbord_menu dashbord navbar-scrolltofixed main-menu">
@@ -50,122 +51,110 @@
 				<li class="user_setting">
 					<div class="dropdown">
 
-<!--						Candidate Area-->
-
-<!--						<a class="btn dropdown-toggle" href="#" data-toggle="dropdown"><img class="rounded-circle" src="--><?php //base_url() ?><!--assets/images/team/8.jpg" alt="8.jpg"> <span class="pl15 pr15">Martha Griffin</span></a>-->
-<!--						<div class="dropdown-menu">-->
-<!--							<div class="user_set_header">-->
-<!--								<p>Hi, Martha Griffin <br><span class="address">Bothell, WA, USA</span></p>-->
-<!--							</div>-->
-<!---->
-<!--							<div class="user_setting_content">-->
-<!---->
-<!--								--><?php //if($nav == 'dashboard_c'){ ?>
-<!--									<a class="dropdown-item active" href="--><?php //echo base_url('BCDashboard'); ?><!--"><span class="flaticon-dashboard"></span> Dashboard</a>-->
-<!--								--><?php //} else { ?>
-<!--									<a class="dropdown-item" href="--><?php //echo base_url('BCDashboard'); ?><!--"><span class="flaticon-dashboard"></span> Dashboard</a>-->
-<!--								--><?php //} ?>
-<!---->
-<!--								--><?php //if($nav == 'profile_c'){ ?>
-<!--									<a class="dropdown-item active" href="--><?php //echo base_url('BCProfile'); ?><!--"><span class="flaticon-profile"></span> Profile</a>-->
-<!--								--><?php //} else { ?>
-<!--									<a class="dropdown-item" href="--><?php //echo base_url('BCProfile'); ?><!--"><span class="flaticon-profile"></span> Profile</a>-->
-<!--								--><?php //} ?>
-<!---->
-<!--								--><?php //if($nav == 'resume_c'){ ?>
-<!--									<a class="dropdown-item active" href="--><?php //echo base_url('BCResume'); ?><!--"><span class="flaticon-resume"></span> Resume</a>-->
-<!--								--><?php //} else { ?>
-<!--									<a class="dropdown-item" href="--><?php //echo base_url('BCResume'); ?><!--"><span class="flaticon-resume"></span> Resume</a>-->
-<!--								--><?php //} ?>
-<!---->
-<!--								--><?php //if($nav == 'applied_c'){ ?>
-<!--									<a class="dropdown-item active" href="--><?php //echo base_url('BCAppliedJobs'); ?><!--"><span class="flaticon-paper-plane"></span> Applied Jobs</a>-->
-<!--								--><?php //} else { ?>
-<!--									<a class="dropdown-item" href="--><?php //echo base_url('BCAppliedJobs'); ?><!--"><span class="flaticon-paper-plane"></span> Applied Jobs</a>-->
-<!--								--><?php //} ?>
-<!---->
-<!--								--><?php //if($nav == 'cv_manager_c'){ ?>
-<!--									<a class="dropdown-item active" href="--><?php //echo base_url('BCCVManager'); ?><!--"><span class="flaticon-analysis"></span> CV Manager</a>-->
-<!--								--><?php //} else { ?>
-<!--									<a class="dropdown-item" href="--><?php //echo base_url('BCCVManager'); ?><!--"><span class="flaticon-analysis"></span> CV Manager</a>-->
-<!--								--><?php //} ?>
-<!---->
-<!--								--><?php //if($nav == 'job_alert_c'){ ?>
-<!--									<a class="dropdown-item active" href="--><?php //echo base_url('BCJobAlerts'); ?><!--"><span class="flaticon-alarm"></span> Job Alerts</a>-->
-<!--								--><?php //} else { ?>
-<!--									<a class="dropdown-item" href="--><?php //echo base_url('BCJobAlerts'); ?><!--"><span class="flaticon-alarm"></span> Job Alerts</a>-->
-<!--								--><?php //} ?>
-<!---->
-<!--								--><?php //if($nav == 'change_password_c'){ ?>
-<!--									<a class="dropdown-item active" href="--><?php //echo base_url('BCChangePassword'); ?><!--"><span class="flaticon-locked"></span> Change Password</a>-->
-<!--								--><?php //} else { ?>
-<!--									<a class="dropdown-item" href="--><?php //echo base_url('BCChangePassword'); ?><!--"><span class="flaticon-locked"></span> Change Password</a>-->
-<!--								--><?php //} ?>
-<!---->
-<!--								<a class="dropdown-item" href="loging_register.html"><span class="flaticon-logout"></span> Logout</a>-->
-<!--								<a class="dropdown-item" href="#"><span class="flaticon-rubbish-bin"></span> Delete Profile</a>-->
-<!--							</div>-->
-<!--						</div>-->
-
-
-
-<!--						Employer Area-->
-
-						<a class="btn dropdown-toggle" href="#" data-toggle="dropdown"><img class="rounded-circle" src="<?php base_url() ?>assets/images/team/e1.png" alt="e1.png"> <span class="pl15 pr15">CreativeLayers</span></a>
+						<a class="btn dropdown-toggle" href="#" data-toggle="dropdown"><img class="rounded-circle" src="<?php base_url() ?>assets/images/Users/<?php echo $User_Session['Profile_Image'] ?>" alt="8.jpg"> <span class="pl15 pr15"><?php echo $User_Session['Username'] ?></span></a>
 						<div class="dropdown-menu">
-
 							<div class="user_set_header">
-								<p>Hi, CreativeLayers <br><span class="address">Bothell, WA, USA</span></p>
+								<p>Hi, <?php echo $User_Session['Username'] ?> <br><span class="address"><?php echo $User_Session['Email'] ?></span></p>
 							</div>
 
-							<div class="user_setting_content">
+							<?php if($User_Session['User_Job'] == "Candidate"){ ?>
+								<div class="user_setting_content">
+									<?php if($nav == 'dashboard_c'){ ?>
+										<a class="dropdown-item active" href="<?php echo base_url('BCDashboard'); ?>"><span class="flaticon-dashboard"></span> Dashboard</a>
+									<?php } else { ?>
+										<a class="dropdown-item" href="<?php echo base_url('BCDashboard'); ?>"><span class="flaticon-dashboard"></span> Dashboard</a>
+									<?php } ?>
 
-								<?php if($nav == 'dashboard'){ ?>
-									<a class="dropdown-item active" href="<?php echo base_url('BEDashboard'); ?>"><span class="flaticon-dashboard"></span> Dashboard</a>
-								<?php } else { ?>
-									<a class="dropdown-item" href="<?php echo base_url('BEDashboard'); ?>"><span class="flaticon-dashboard"></span> Dashboard</a>
-								<?php } ?>
+									<?php if($nav == 'profile_c'){ ?>
+										<a class="dropdown-item active" href="<?php echo base_url('BCProfile'); ?>"><span class="flaticon-profile"></span> Profile</a>
+									<?php } else { ?>
+										<a class="dropdown-item" href="<?php echo base_url('BCProfile'); ?>"><span class="flaticon-profile"></span> Profile</a>
+									<?php } ?>
 
-								<?php if($nav == 'profile'){ ?>
-									<a class="dropdown-item active" href="<?php echo base_url('BEProfile'); ?>"><span class="flaticon-profile"></span> Company Profile</a>
-								<?php } else { ?>
-									<a class="dropdown-item" href="<?php echo base_url('BEProfile'); ?>"><span class="flaticon-profile"></span> Company Profile</a>
-								<?php } ?>
+									<?php if($nav == 'resume_c'){ ?>
+										<a class="dropdown-item active" href="<?php echo base_url('BCResume'); ?>"><span class="flaticon-resume"></span> Resume</a>
+									<?php } else { ?>
+										<a class="dropdown-item" href="<?php echo base_url('BCResume'); ?>"><span class="flaticon-resume"></span> Resume</a>
+									<?php } ?>
 
-								<?php if($nav == 'post'){ ?>
-									<a class="dropdown-item active" href="<?php echo base_url('BEPost'); ?>"><span class="flaticon-resume"></span> Post a New Job</a>
-								<?php } else { ?>
-									<a class="dropdown-item" href="<?php echo base_url('BEPost'); ?>"><span class="flaticon-resume"></span> Post a New Job</a>
-								<?php } ?>
+									<?php if($nav == 'applied_c'){ ?>
+										<a class="dropdown-item active" href="<?php echo base_url('BCAppliedJobs'); ?>"><span class="flaticon-paper-plane"></span> Applied Jobs</a>
+									<?php } else { ?>
+										<a class="dropdown-item" href="<?php echo base_url('BCAppliedJobs'); ?>"><span class="flaticon-paper-plane"></span> Applied Jobs</a>
+									<?php } ?>
 
-								<?php if($nav == 'manage'){ ?>
-									<a class="dropdown-item active" href="<?php echo base_url('BEManageJobs'); ?>"><span class="flaticon-paper-plane"></span> Manage Jobs</a>
-								<?php } else { ?>
-									<a class="dropdown-item" href="<?php echo base_url('BEManageJobs'); ?>"><span class="flaticon-paper-plane"></span> Manage Jobs</a>
-								<?php } ?>
+									<?php if($nav == 'cv_manager_c'){ ?>
+										<a class="dropdown-item active" href="<?php echo base_url('BCCVManager'); ?>"><span class="flaticon-analysis"></span> CV Manager</a>
+									<?php } else { ?>
+										<a class="dropdown-item" href="<?php echo base_url('BCCVManager'); ?>"><span class="flaticon-analysis"></span> CV Manager</a>
+									<?php } ?>
 
-								<?php if($nav == 'resumes'){ ?>
-									<a class="dropdown-item active" href="<?php echo base_url('BEResumes'); ?>"><span class="flaticon-analysis"></span> Shortlisted Resumes</a>
-								<?php } else { ?>
-									<a class="dropdown-item" href="<?php echo base_url('BEResumes'); ?>"><span class="flaticon-analysis"></span> Shortlisted Resumes</a>
-								<?php } ?>
+									<?php if($nav == 'job_alert_c'){ ?>
+										<a class="dropdown-item active" href="<?php echo base_url('BCJobAlerts'); ?>"><span class="flaticon-alarm"></span> Job Alerts</a>
+									<?php } else { ?>
+										<a class="dropdown-item" href="<?php echo base_url('BCJobAlerts'); ?>"><span class="flaticon-alarm"></span> Job Alerts</a>
+									<?php } ?>
 
-								<?php if($nav == 'partnerships'){ ?>
-									<a class="dropdown-item active" href="<?php echo base_url('BEPartnerships'); ?>"><span class="flaticon-user"></span> Partnerships</a>
-								<?php } else { ?>
-									<a class="dropdown-item" href="<?php echo base_url('BEPartnerships'); ?>"><span class="flaticon-user"></span> Partnerships</a>
-								<?php } ?>
+									<?php if($nav == 'change_password_c'){ ?>
+										<a class="dropdown-item active" href="<?php echo base_url('BCChangePassword'); ?>"><span class="flaticon-locked"></span> Change Password</a>
+									<?php } else { ?>
+										<a class="dropdown-item" href="<?php echo base_url('BCChangePassword'); ?>"><span class="flaticon-locked"></span> Change Password</a>
+									<?php } ?>
 
-								<?php if($nav == 'change_e'){ ?>
-									<a class="dropdown-item active" href="<?php echo base_url('BEChangePassword'); ?>"><span class="flaticon-locked"></span> Change Password</a>
-								<?php } else { ?>
-									<a class="dropdown-item" href="<?php echo base_url('BEChangePassword'); ?>"><span class="flaticon-locked"></span> Change Password</a>
-								<?php } ?>
+									<a class="dropdown-item" href="<?php echo base_url('Login/logout'); ?>"><span class="flaticon-logout"></span> Logout</a>
+									<a class="dropdown-item" href="#"><span class="flaticon-rubbish-bin"></span> Delete Profile</a>
+								</div>
+							<?php }else { ?>
 
-								<a class="dropdown-item" href="loging_register.html"><span class="flaticon-logout"></span> Logout</a>
-								<a class="dropdown-item" href="#"><span class="flaticon-rubbish-bin"></span> Delete Profile</a>
-							</div>
-						</div>
+								<div class="user_setting_content">
+
+									<?php if($nav == 'dashboard'){ ?>
+										<a class="dropdown-item active" href="<?php echo base_url('BEDashboard'); ?>"><span class="flaticon-dashboard"></span> Dashboard</a>
+									<?php } else { ?>
+										<a class="dropdown-item" href="<?php echo base_url('BEDashboard'); ?>"><span class="flaticon-dashboard"></span> Dashboard</a>
+									<?php } ?>
+
+									<?php if($nav == 'profile'){ ?>
+										<a class="dropdown-item active" href="<?php echo base_url('BEProfile'); ?>"><span class="flaticon-profile"></span> Company Profile</a>
+									<?php } else { ?>
+										<a class="dropdown-item" href="<?php echo base_url('BEProfile'); ?>"><span class="flaticon-profile"></span> Company Profile</a>
+									<?php } ?>
+
+									<?php if($nav == 'post'){ ?>
+										<a class="dropdown-item active" href="<?php echo base_url('BEPost'); ?>"><span class="flaticon-resume"></span> Post a New Job</a>
+									<?php } else { ?>
+										<a class="dropdown-item" href="<?php echo base_url('BEPost'); ?>"><span class="flaticon-resume"></span> Post a New Job</a>
+									<?php } ?>
+
+									<?php if($nav == 'manage'){ ?>
+										<a class="dropdown-item active" href="<?php echo base_url('BEManageJobs'); ?>"><span class="flaticon-paper-plane"></span> Manage Jobs</a>
+									<?php } else { ?>
+										<a class="dropdown-item" href="<?php echo base_url('BEManageJobs'); ?>"><span class="flaticon-paper-plane"></span> Manage Jobs</a>
+									<?php } ?>
+
+									<?php if($nav == 'resumes'){ ?>
+										<a class="dropdown-item active" href="<?php echo base_url('BEResumes'); ?>"><span class="flaticon-analysis"></span> Shortlisted Resumes</a>
+									<?php } else { ?>
+										<a class="dropdown-item" href="<?php echo base_url('BEResumes'); ?>"><span class="flaticon-analysis"></span> Shortlisted Resumes</a>
+									<?php } ?>
+
+									<?php if($nav == 'partnerships'){ ?>
+										<a class="dropdown-item active" href="<?php echo base_url('BEPartnerships'); ?>"><span class="flaticon-user"></span> Partnerships</a>
+									<?php } else { ?>
+										<a class="dropdown-item" href="<?php echo base_url('BEPartnerships'); ?>"><span class="flaticon-user"></span> Partnerships</a>
+									<?php } ?>
+
+									<?php if($nav == 'change_e'){ ?>
+										<a class="dropdown-item active" href="<?php echo base_url('BEChangePassword'); ?>"><span class="flaticon-locked"></span> Change Password</a>
+									<?php } else { ?>
+										<a class="dropdown-item" href="<?php echo base_url('BEChangePassword'); ?>"><span class="flaticon-locked"></span> Change Password</a>
+									<?php } ?>
+
+									<a class="dropdown-item" href="<?php echo base_url('Login/logout'); ?>"><span class="flaticon-logout"></span> Logout</a>
+									<a class="dropdown-item" href="#"><span class="flaticon-rubbish-bin"></span> Delete Profile</a>
+								</div>
+
+							<?php } ?>
 
 					</div>
 				</li>

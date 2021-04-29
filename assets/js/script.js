@@ -195,7 +195,7 @@
     
     /* ----- Date & time Picker ----- */
     if($('.datepicker').length){
-        $('.datepicker').datetimepicker();
+        $('.datepicker').datepicker();
     }
 
     /* ----- PG Slider ----- */
