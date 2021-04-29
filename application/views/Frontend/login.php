@@ -162,33 +162,33 @@
 
 <script>
 	$(document).ready(function() {
-		// $("#formLogin").validate({
-		// 	ignore: [],
-		// 	rules: {
-		// 		txtEmailForLogin: {
-		// 			required: true,
-		// 			email: true
-		// 		},
-		// 		txtPasswordForLogin: {
-		// 			required: true,
-		// 			minlength: 6
-		// 		}
-		// 	},
-		// 	messages: {
-		// 		txtEmailForLogin: {
-		// 			required: 'Email required!',
-		// 			email: 'Please enter a valid email!'
-		// 		},
-		// 		txtPasswordForLogin: {
-		// 			required: 'Password required!',
-		// 			minlength: "Password must have more than 6 characters!"
-		// 		}
-		// 	},
-		// 	submitHandler: function(form) {
-		// 		form.submit();
-		// 	}
-		//
-		// });
+		$("#formLogin").validate({
+			ignore: [],
+			rules: {
+				txtEmailForLogin: {
+					required: true,
+					email: true
+				},
+				txtPasswordForLogin: {
+					required: true,
+					minlength: 6
+				}
+			},
+			messages: {
+				txtEmailForLogin: {
+					required: 'Email required!',
+					email: 'Please enter a valid email!'
+				},
+				txtPasswordForLogin: {
+					required: 'Password required!',
+					minlength: "Password must have more than 6 characters!"
+				}
+			},
+			submitHandler: function(form) {
+				form.submit();
+			}
+
+		});
 
 		$("#formCandidate").validate({
 			ignore: [],

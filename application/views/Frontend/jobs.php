@@ -249,7 +249,7 @@
 							<div class="details">
 								<h5 class="job_chedule text-thm">Full Time</h5>
 								<div class="thumb fn-smd">
-									<img class="img-fluid" src="<?php base_url() ?>assets/images/partners/1.jpg" alt="1.jpg">
+									<img class="img-fluid" src="<?php echo base_url() ?>assets/images/partners/1.jpg" alt="1.jpg">
 								</div>
 								<h4>JEB Product Sales Specialist, Russia & CIS</h4>
 								<p>Posted 23 August by <a class="text-thm" href="#">Wiggle CRC</a></p>
@@ -266,7 +266,7 @@
 							<div class="details">
 								<h5 class="job_chedule text-thm">Part Time</h5>
 								<div class="thumb fn-smd">
-									<img class="img-fluid" src="<?php base_url() ?>assets/images/partners/2.jpg" alt="2.jpg">
+									<img class="img-fluid" src="<?php echo base_url() ?>assets/images/partners/2.jpg" alt="2.jpg">
 								</div>
 								<h4>General Ledger Accountant</h4>
 								<p>Posted 23 August by <a class="text-thm" href="#">Robert Half Finance & Accounting</a></p>
@@ -283,7 +283,7 @@
 							<div class="details">
 								<h5 class="job_chedule text-thm">Full Time</h5>
 								<div class="thumb fn-smd">
-									<img class="img-fluid" src="<?php base_url() ?>assets/images/partners/3.jpg" alt="3.jpg">
+									<img class="img-fluid" src="<?php echo base_url() ?>assets/images/partners/3.jpg" alt="3.jpg">
 								</div>
 								<h4>Junior Digital Graphic Designer</h4>
 								<p>Posted 23 August by <a class="text-thm" href="#">Parkside Recruitment - Uxbridge Finance</a></p>
@@ -300,7 +300,7 @@
 							<div class="details">
 								<h5 class="job_chedule text-thm">Full Time</h5>
 								<div class="thumb fn-smd">
-									<img class="img-fluid" src="<?php base_url() ?>assets/images/partners/4.jpg" alt="4.jpg">
+									<img class="img-fluid" src="<?php echo base_url() ?>assets/images/partners/4.jpg" alt="4.jpg">
 								</div>
 								<h4>UX/UI Designer</h4>
 								<p>Yesterday <a class="text-thm" href="#">NonStop Recruitment Ltd</a></p>
@@ -317,7 +317,7 @@
 							<div class="details">
 								<h5 class="job_chedule text-thm">Part Time</h5>
 								<div class="thumb fn-smd">
-									<img class="img-fluid" src="<?php base_url() ?>assets/images/partners/10.jpg" alt="10.jpg">
+									<img class="img-fluid" src="<?php echo base_url() ?>assets/images/partners/10.jpg" alt="10.jpg">
 								</div>
 								<h4>Junior Digital Graphic Designer</h4>
 								<p>Posted 23 August by <a class="text-thm" href="#">Posted 23 August by</a></p>

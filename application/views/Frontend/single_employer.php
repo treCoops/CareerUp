@@ -29,7 +29,7 @@
 			<div class="col-lg-9 col-xl-9">
 				<div class="candidate_personal_info style3">
 					<div class="thumb">
-						<img class="img-fluid" src="<?php base_url() ?>assets/images/partners/cl1.jpg" alt="cl1.jpg">
+						<img class="img-fluid" src="<?php echo base_url() ?>assets/images/partners/cl1.jpg" alt="cl1.jpg">
 						<div class="cpi_av_rating"><span>4.5</span></div>
 					</div>
 					<div class="details">
@@ -140,7 +140,7 @@
 							<div class="details">
 								<h5 class="job_chedule text-thm2">Full Time</h5>
 								<div class="thumb fn-smd">
-									<img class="img-fluid" src="<?php base_url() ?>assets/images/partners/1.jpg" alt="1.jpg">
+									<img class="img-fluid" src="<?php echo base_url() ?>assets/images/partners/1.jpg" alt="1.jpg">
 								</div>
 								<h4>JEB Product Sales Specialist, Russia & CIS</h4>
 								<p>Posted 23 August by <a class="text-thm2" href="#">Wiggle CRC</a></p>
@@ -157,7 +157,7 @@
 							<div class="details">
 								<h5 class="job_chedule text-thm2">Part Time</h5>
 								<div class="thumb fn-smd">
-									<img class="img-fluid" src="<?php base_url() ?>assets/images/partners/2.jpg" alt="2.jpg">
+									<img class="img-fluid" src="<?php echo base_url() ?>assets/images/partners/2.jpg" alt="2.jpg">
 								</div>
 								<h4>General Ledger Accountant</h4>
 								<p>Posted 23 August by <a class="text-thm2" href="#">Robert Half Finance & Accounting</a></p>
@@ -174,7 +174,7 @@
 							<div class="details">
 								<h5 class="job_chedule text-thm2">Full Time</h5>
 								<div class="thumb fn-smd">
-									<img class="img-fluid" src="<?php base_url() ?>assets/images/partners/3.jpg" alt="3.jpg">
+									<img class="img-fluid" src="<?php echo base_url() ?>assets/images/partners/3.jpg" alt="3.jpg">
 								</div>
 								<h4>Junior Digital Graphic Designer</h4>
 								<p>Posted 23 August by <a class="text-thm2" href="#">Parkside Recruitment - Uxbridge Finance</a></p>
@@ -190,7 +190,7 @@
 						<div class="candidate_review_posted style2">
 							<h4 class="title mb30">Company Review</h4>
 							<div class="details">
-								<img class="img-fluid rounded-circle float-left" src="<?php base_url() ?>assets/images/team/1.jpg" alt="1.jpg">
+								<img class="img-fluid rounded-circle float-left" src="<?php echo base_url() ?>assets/images/team/1.jpg" alt="1.jpg">
 								<h4>Best Company
 									<ul class="review float-right">
 										<li class="list-inline-item"><a class="av_review" href="#">4.5</a></li>
@@ -208,7 +208,7 @@
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel augue eget quam fermentum sodales. Aliquam vel congue sapien, quis mollis quam.</p>
 							</div>
 							<div class="details pt0">
-								<img class="img-fluid rounded-circle float-left" src="<?php base_url() ?>assets/images/team/2.jpg" alt="2.jpg">
+								<img class="img-fluid rounded-circle float-left" src="<?php echo base_url() ?>assets/images/team/2.jpg" alt="2.jpg">
 								<h4>Aldus PageMaker including versions
 									<ul class="review float-right">
 										<li class="list-inline-item"><a class="av_review" href="#">4.5</a></li>
@@ -297,5 +297,5 @@
 	</div>
 </section>
 <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyABqK-5ngi3F1hrEsk7-mCcBPsjHM5_Gj0"></script>
-<script type="text/javascript" src="<?php base_url() ?>assets/js/googlemaps1.js"></script>
+<script type="text/javascript" src="<?php echo base_url() ?>assets/js/googlemaps1.js"></script>
 

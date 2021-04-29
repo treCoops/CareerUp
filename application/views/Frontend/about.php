@@ -38,7 +38,7 @@
 			</div>
 			<div class="col-lg-6">
 				<div class="about_thumb mt50">
-					<img class="img-fluid" src="<?php base_url() ?>assets/images/about/1.png" alt="1.png">
+					<img class="img-fluid" src="<?php echo base_url() ?>assets/images/about/1.png" alt="1.png">
 				</div>
 			</div>
 		</div>

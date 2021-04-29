@@ -28,7 +28,7 @@
 			<div class="col-lg-8 col-xl-8">
 				<div class="candidate_personal_info">
 					<div class="thumb">
-						<img class="img-fluid rounded-circle" src="<?php base_url() ?>assets/images/team/cs2.jpg" alt="cs2.jpg">
+						<img class="img-fluid rounded-circle" src="<?php echo base_url() ?>assets/images/team/cs2.jpg" alt="cs2.jpg">
 						<div class="cpi_av_rating"><span>4.5</span></div>
 					</div>
 					<div class="details">
@@ -36,7 +36,7 @@
 						<p>Senior UI / UX Designer</p>
 						<ul class="address_list">
 							<li class="list-inline-item"><a href="#">Wiggle CRC</a></li>
-							<li class="list-inline-item"><a href="#"><img src="<?php base_url() ?>assets/images/resource/usa.png" alt="usa.png"></a></li>
+							<li class="list-inline-item"><a href="#"><img src="<?php echo base_url() ?>assets/images/resource/usa.png" alt="usa.png"></a></li>
 							<li class="list-inline-item"><a href="#">United States</a></li>
 						</ul>
 						<ul class="review_list">
@@ -170,21 +170,21 @@
 							<div class="col-sm-6 col-lg-4">
 								<div class="portfolio_item">
 									<a class="lightbox-image" data-fancybox-group="Portfolio Title" href="<?php base_url() ?>assets/images/gallery/1.jpg">
-										<img class="img-fluid" src="<?php base_url() ?>assets/images/gallery/1.jpg" alt="1.jpg"/>
+										<img class="img-fluid" src="<?php echo base_url() ?>assets/images/gallery/1.jpg" alt="1.jpg"/>
 									</a>
 								</div>
 							</div>
 							<div class="col-sm-6 col-lg-4">
 								<div class="portfolio_item">
 									<a class="lightbox-image" data-fancybox-group="Portfolio Title" href="<?php base_url() ?>assets/images/gallery/2.jpg">
-										<img class="img-fluid" src="<?php base_url() ?>assets/images/gallery/2.jpg" alt="2.jpg"/>
+										<img class="img-fluid" src="<?php echo base_url() ?>assets/images/gallery/2.jpg" alt="2.jpg"/>
 									</a>
 								</div>
 							</div>
 							<div class="col-sm-6 col-lg-4">
 								<div class="portfolio_item">
 									<a class="lightbox-image" data-fancybox-group="Portfolio Title" href="<?php base_url() ?>assets/images/gallery/3.jpg">
-										<img class="img-fluid" src="<?php base_url() ?>assets/images/gallery/3.jpg" alt="3.jpg"/>
+										<img class="img-fluid" src="<?php echo base_url() ?>assets/images/gallery/3.jpg" alt="3.jpg"/>
 									</a>
 								</div>
 							</div>

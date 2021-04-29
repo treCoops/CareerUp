@@ -8,6 +8,8 @@
  * Time: 11:36
  */
 
+defined('BASEPATH') OR exit('No direct script access allowed');
+
 class Login extends CI_Controller
 {
 	function __construct() {
@@ -47,6 +49,7 @@ class Login extends CI_Controller
 			$data['user_type'] = $this->input->post('txtType');
 			$data['user_active'] = 1;
 			$data['user_blocked'] = 0;
+			$data['img_url'] = 'man.png';
 		}
 
 		if($type == "Employer"){
@@ -58,6 +61,7 @@ class Login extends CI_Controller
 			$data['user_type'] = $this->input->post('txtType');
 			$data['user_active'] = 1;
 			$data['user_blocked'] = 0;
+			$data['img_url'] = 'man.png';
 		}
 
 		if($this->UserModel->isUserExist($data)){
@@ -86,15 +90,16 @@ class Login extends CI_Controller
 
 		if ($dbpassword1) {
 
-			$dbpassword = $dbpassword1[0]->password;
+			$dbpassword = $dbpassword1[0]->user_password;
 
 			if($this->isValidPassword($password, $dbpassword)) {
 
 				$user = $this->UserModel->validateUser($email, $dbpassword);
 
-				if($this->isBlocked($user[0]->block_status)) {
+				if($this->isBlocked($user[0]->user_blocked)) {
 
-					if($this->isDeactive($user[0]->active_status)) {
+					if($this->isDeactive($user[0]->user_active)) {
+
 						$Login_User = array(
 							'ID' => $user[0]->user_id,
 							'Username' => $user[0]->user_name,
@@ -107,6 +112,7 @@ class Login extends CI_Controller
 
 						$this->session->set_userdata('User_Session', $Login_User);
 						redirect(base_url('Home'));
+
 					}else{
 						redirect(base_url('Login/deactive'));
 
@@ -117,12 +123,10 @@ class Login extends CI_Controller
 				}
 
 			} else {
-//				redirect(base_url('Login/invalid'));
-				redirect()->to('/invalid');
+				redirect(base_url('Login/invalid'));
 			}
 		} else {
-//			redirect(base_url('Login/invalid'));
-			redirect()->to('/invalid');
+			redirect(base_url('Login/invalid'));
 		}
 	}
 
@@ -178,7 +182,6 @@ class Login extends CI_Controller
 
 	function isValidPassword($password, $dbpassword)
 	{
-
 		$hash = hash('sha256', $password);
 
 		return $hash == $dbpassword;
@@ -199,7 +202,6 @@ class Login extends CI_Controller
 
 	function isDeactive($active_status)
 	{
-
 		if($active_status == 1)
 			return true;
 		if($active_status == 0)

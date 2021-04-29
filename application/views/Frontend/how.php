@@ -39,7 +39,7 @@
 			</div>
 			<div class="col-md-6 col-lg-4 offset-lg-1">
 				<div class="how_it_works_img">
-					<img class="img-fluid" src="<?php base_url() ?>assets/images/about/2.png" alt="2.png">
+					<img class="img-fluid" src="<?php echo base_url() ?>assets/images/about/2.png" alt="2.png">
 				</div>
 			</div>
 		</div>
@@ -52,7 +52,7 @@
 		<div class="row">
 			<div class="col-md-6 col-lg-4 offset-lg-1">
 				<div class="how_it_works_img2">
-					<img class="img-fluid" src="<?php base_url() ?>assets/images/about/3.png" alt="3.png">
+					<img class="img-fluid" src="<?php echo base_url() ?>assets/images/about/3.png" alt="3.png">
 				</div>
 			</div>
 			<div class="col-md-6 col-lg-5 offset-lg-1">
@@ -83,7 +83,7 @@
 			</div>
 			<div class="col-md-6 col-lg-4 offset-lg-1">
 				<div class="how_it_works_img">
-					<img class="img-fluid" src="<?php base_url() ?>assets/images/about/4.png" alt="4.png">
+					<img class="img-fluid" src="<?php echo base_url() ?>assets/images/about/4.png" alt="4.png">
 				</div>
 			</div>
 		</div>

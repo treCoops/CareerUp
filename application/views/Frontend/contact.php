@@ -86,7 +86,7 @@
 </section>
 
 <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyABqK-5ngi3F1hrEsk7-mCcBPsjHM5_Gj0"></script>
-<script type="text/javascript" src="<?php base_url() ?>assets/js/googlemaps2.js"></script>
+<script type="text/javascript" src="<?php echo base_url() ?>assets/js/googlemaps2.js"></script>
 <script>
 
 	$(document).ready(function() {
