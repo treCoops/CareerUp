@@ -174,29 +174,30 @@
 							<label for="txtCompanyLocationZoom">Zoom</label>
 							<input type="text" class="form-control" name="txtCompanyLocationZoom" id="txtCompanyLocationZoom" aria-describedby="latNumber" readonly>
 							<input type="hidden" class="form-control" name="txtProfileID" id="txtProfileID">
+							<input type="hidden" class="form-control" name="txtCompanyDataExist" id="txtCompanyDataExist">
 						</div>
 					</div>
 					<div class="col-lg-12">
 						<div class="h300" id="gMap"></div>
 					</div>
-					<?php if($profile == null){ ?>
-						<div class="col-lg-4">
-							<div class="my_profile_input">
-								<br>
-								<button class="btn btn-lg btn-thm" type="submit">Create Profile</button>
-								<input type="hidden" class="form-control" name="txtCompanyDataExist" id="txtCompanyDataExist" value="NEW">
-							</div>
+
+
+
+
+
+						<div id="divSubmitButton" class="col-lg-4">
+<!--							<div class="my_profile_input"><br><button class="btn btn-lg btn-thm" type="submit">Create Profile</button></div>-->
 						</div>
-					<?php }else{ ?>
-						<div class="col-lg-4">
-							<div class="my_profile_input">
-								<br>
-								<button class="btn btn-lg btn-thm" type="submit">Save Changes</button>
-								<input type="hidden" class="form-control" name="txtCompanyDataExist" id="txtCompanyDataExist" value="UPDATE">
-								<input type="hidden" class="form-control" name="txtCurrentImage" id="txtCurrentImage">
-							</div>
-						</div>
-					<?php } ?>
+
+<!--						<div class="col-lg-4">-->
+<!--							<div class="my_profile_input">-->
+<!--								<br>-->
+<!--								<button class="btn btn-lg btn-thm" type="submit">Save Changes</button>-->
+<!--								<input type="hidden" class="form-control" name="txtCompanyDataExist" id="txtCompanyDataExist" value="">-->
+<!--								<input type="hidden" class="form-control" name="txtCurrentImage" id="txtCurrentImage">-->
+<!--							</div>-->
+<!--						</div>-->
+
 			</div>
 		</form>
 	</div>
@@ -208,66 +209,84 @@
 
 <script>
 
+	function updateButton(name){
+		$('#divSubmitButton').empty();
+		$content = '<div class="my_profile_input"><br><button class="btn btn-lg btn-thm" type="submit">'+name+'</button></div>'
+		$('#divSubmitButton').append($content);
+	}
+
 	function updateUI(){
-		if($('#txtCompanyDataExist').val() === 'UPDATE'){
-			$.ajax({
-				url: "<?php echo base_url(''); ?>/BEProfile/getProfile",
-				data: null,
-				method: "post",
-				dataType: "json",
-				error: function(error){
-					console.log(error);
-					$.notify("Internal server error", "error");
+		$.ajax({
+			url: "<?php echo base_url(''); ?>/BEProfile/getProfile",
+			data: null,
+			method: "post",
+			dataType: "json",
+			error: function(error){
+				console.log(error);
+				$.notify("Internal server error", "error");
 
-				},
-				success: function(r){
+			},
+			success: function(r){
 
-					console.log(r);
+				if(r.status == 500){
+					$('#txtCompanyDataExist').val('NEW');
+					updateButton('Create Profile')
+				}
+				if(r.status == 200){
+					$('#txtCompanyDataExist').val('UPDATE');
+					updateButton('Save Changes')
 
-					$('#txtCompanyName').val(r.company_name);
-					$('#txtCompanyEmail').val(r.company_email);
-					$('#txtCompanyPhone').val(r.company_phone);
-					$('#txtCompanyWebSite').val(r.company_website);
-					$('#txtCompanyStartDate').val(r.company_start_date);
-					$('#txtCompanyAbout').val(r.company_about);
-					$('#txtCompanyFacebook').val(r.company_facebook);
-					$('#txtCompanyLinkedin').val(r.company_linkedin);
-					$('#txtCompanyInstagram').val(r.company_instagram);
-					$('#txtCompanyTwitter').val(r.company_twitter);
-					$('#txtCompanyAddress').val(r.company_address);
-					$('#txtCompanyLocationLatitude').val(r.company_location_lat);
-					$('#txtCompanyLocationLongitude').val(r.company_location_lng);
-					$('#txtCompanyLocationZoom').val(r.company_location_zoom);
-					$('#txtProfileID').val(r.company_profile_id);
-					$('#txtCurrentImage').val(r.company_profile_image_url);
+					console.log(r.data);
 
-					$('#cmbCompanyTeamSize').val(r.company_team_size);
+					deleteMarkers()
+					let marker = {lat: parseFloat(r.data.company_location_lat), lng: parseFloat(r.data.company_location_lng)};
+					addMarker(marker);
+					addMarker()
+
+					$('#txtCompanyName').val(r.data.company_name);
+					$('#txtCompanyEmail').val(r.data.company_email);
+					$('#txtCompanyPhone').val('0'+r.data.company_phone);
+					$('#txtCompanyWebSite').val(r.data.company_website);
+					$('#txtCompanyStartDate').val(r.data.company_start_date);
+					$('#txtCompanyAbout').val(r.data.company_about);
+					$('#txtCompanyFacebook').val(r.data.company_facebook);
+					$('#txtCompanyLinkedin').val(r.data.company_linkedin);
+					$('#txtCompanyInstagram').val(r.data.company_instagram);
+					$('#txtCompanyTwitter').val(r.data.company_twitter);
+					$('#txtCompanyAddress').val(r.data.company_address);
+					$('#txtCompanyLocationLatitude').val(r.data.company_location_lat);
+					$('#txtCompanyLocationLongitude').val(r.data.company_location_lng);
+					$('#txtCompanyLocationZoom').val(r.data.company_location_zoom);
+					$('#txtProfileID').val(r.data.company_profile_id);
+					$('#txtCurrentImage').val(r.data.company_profile_image_url);
+
+					$('#cmbCompanyTeamSize').val(r.data.company_team_size);
 					$('#cmbCompanyTeamSize').trigger('change');
 
 					let categories = []
 
-					for(let a=0; a<r.categories.length; a++){
-						categories.push(r.categories[a].category_name)
+					for(let a=0; a<r.data.categories.length; a++){
+						categories.push(r.data.categories[a].category_name)
 					}
 
-					$('#imagePreview').css('background-image', 'url(<?php echo base_url('assets/images/profile/company/') ?>'+ r.company_profile_image_url+')');
+					$('#imagePreview').css('background-image', 'url(<?php echo base_url('assets/images/profile/company/') ?>'+ r.data.company_profile_image_url+')');
 					$('#imagePreview').hide();
 					$('#imagePreview').fadeIn(650);
 
 					$('#cmbCompanyCategories').selectpicker('val', categories);
 
-					$('#cmbCompanyAllowDisability').val(r.company_allow_disability);
+					$('#cmbCompanyAllowDisability').val(r.data.company_allow_disability);
 					$('#cmbCompanyAllowDisability').trigger('change');
 
-					$('#cmbCompanyCountry').val(r.company_country);
+					$('#cmbCompanyCountry').val(r.data.company_country);
 					$('#cmbCompanyCountry').trigger('change');
 
-					$('#cmbCompanyCity').val(r.company_city);
+					$('#cmbCompanyCity').val(r.data.company_city);
 					$('#cmbCompanyCity').trigger('change');
 
 				}
-			});
-		}
+			}
+		});
 	}
 
 	$(document).ready(function() {
@@ -293,7 +312,7 @@
 		$("#formProfile").validate({
 			ignore: [],
 			rules: {
-				imageUpload: {
+				cmbCompanyCategories: {
 					required: true
 				},
 				txtCompanyName: {
@@ -320,8 +339,8 @@
 				}
 			},
 			messages: {
-				imageUpload: {
-					required: "Company profile image required!"
+				cmbCompanyCategories: {
+					required: "Select at least one category!"
 				},
 				txtCompanyName: {
 					required: "Company name required!"
@@ -359,11 +378,17 @@
 					contentType: false,
 					cache: false,
 					error: function(error){
+						console.log(error);
 						$.notify("Internal server error", "error");
 					},
 					success: function(r){
 						if(r.status == 200){
 							$.notify(r.message, "success");
+						}
+
+						if(r.status == 201){
+							$.notify(r.message, "success");
+							updateUI();
 						}
 
 						if(r.status == 500){

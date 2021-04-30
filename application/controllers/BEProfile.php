@@ -46,11 +46,21 @@ class BEProfile extends CI_Controller
 	}
 
 	public function getProfile(){
-		$User_Session = $this->session->userdata('User_Session');
+		$response = array();
 
+		$User_Session = $this->session->userdata('User_Session');
 		$result = $this->ProfileModel->getProfile($User_Session['ID']);
 
-		echo json_encode($result);
+		if($result != null){
+			$response['status'] = 200;
+			$response['message'] = 'Success.!';
+			$response['data'] = $result;
+		}else{
+			$response['status'] = 500;
+			$response['message'] = 'No data available.!';
+		}
+
+		echo json_encode($response);
 
 	}
 
@@ -76,13 +86,35 @@ class BEProfile extends CI_Controller
 
 		if (!$this->upload->do_upload('imageUpload')) {
 			$error = $this->upload->display_errors();
-			$response['error'] = $error;
 			$data['company_profile_image_url'] = null;
 
+			$result = $this->ProfileModel->getProfile($User_Session['ID']);
+			if($result){
+				$currentImage = $result['company_profile_image_url'];
+
+				if($currentImage != null){
+					$data['company_profile_image_url'] = $currentImage;
+				}else{
+					$response['status'] = 500;
+					$response['message'] = 'Please upload a profile image.!';
+				}
+			}
 		}else{
 			$img = $this->upload->data();
+
+			$result = $this->ProfileModel->getProfile($User_Session['ID']);
+
+			if($result){
+				$currentImage = $result['company_profile_image_url'];
+
+				if($currentImage != null){
+					unlink('assets/images/profile/company/'.$currentImage);
+				}
+			}
+
 			$data['company_profile_image_url'] = $img["file_name"];
 		}
+
 		$data['user_id'] = $User_Session['ID'];
 		$data['company_name'] = $this->input->post('txtCompanyName');
 		$data['company_email'] = $this->input->post('txtCompanyEmail');
@@ -110,7 +142,6 @@ class BEProfile extends CI_Controller
 		if($this->input->post('txtCompanyDataExist') == "NEW"){
 			$key = $this->ProfileModel->createProfile($data);
 			if($key){
-
 				$category['user_id'] = $User_Session['ID'];
 				$category['profile_id'] = $key;
 
@@ -128,8 +159,26 @@ class BEProfile extends CI_Controller
 		}else{
 			$result = $this->ProfileModel->updateProfile($User_Session['ID'], $data);
 			if($result){
-				$response['status'] = 200;
+
+				$delete = $this->ProfileModel->deleteCategories($User_Session['ID']);
+
+				if($delete != 0){
+					$category['user_id'] = $User_Session['ID'];
+					$category['profile_id'] = $this->input->post('txtProfileID');
+
+					for($i=0; $i<sizeof($categories); $i++){
+						$category['category_name'] = $categories[$i];
+						$this->ProfileModel->addCategory($category);
+					}
+
+				}else{
+					$response['status'] = 500;
+					$response['message'] = 'Something went wrong, Please try again later.!';
+				}
+
+				$response['status'] = 201;
 				$response['message'] = 'Profile has updated successfully.!';
+
 			}else{
 				$response['status'] = 500;
 				$response['message'] = 'Something went wrong, Please try again later.!';

@@ -15,47 +15,48 @@ function initMap() {
 	addMarker(marker);
 
 	map.addListener("click", (mapsMouseEvent) => {
-	let latitude = mapsMouseEvent.latLng.lat();
-	let longitude = mapsMouseEvent.latLng.lng();
+		let latitude = mapsMouseEvent.latLng.lat();
+		let longitude = mapsMouseEvent.latLng.lng();
 
-	$('#txtCompanyLocationLatitude').val(latitude);
-	$('#txtCompanyLocationLongitude').val(longitude);
-	$('#txtCompanyLocationZoom').val(map.getZoom());
+		$('#txtCompanyLocationLatitude').val(latitude);
+		$('#txtCompanyLocationLongitude').val(longitude);
+		$('#txtCompanyLocationZoom').val(map.getZoom());
 
-	deleteMarkers();
+		deleteMarkers();
 
-	let marker = {lat: latitude, lng: longitude};
-	addMarker(marker);
+		let marker = {lat: latitude, lng: longitude};
+		addMarker(marker);
 
 	});
 
-		map.addListener("zoom_changed", () => {
+	map.addListener("zoom_changed", () => {
 		$('#txtCompanyLocationZoom').val(map.getZoom());
 	});
+}
 
-		function addMarker(location) {
-		let marker = new google.maps.Marker({
+function addMarker(location) {
+	let marker = new google.maps.Marker({
 		position: location,
 		map: map
 	});
-		markers.push(marker);
-	}
+	markers.push(marker);
+}
 
-		function setMapOnAll(map) {
-		for (let i = 0; i < markers.length; i++) {
+function setMapOnAll(map) {
+	for (let i = 0; i < markers.length; i++) {
 		markers[i].setMap(map);
 	}
-	}
-		function clearMarkers() {
-		setMapOnAll(null);
-	}
-		function showMarkers() {
-		setMapOnAll(map);
-	}
-		function deleteMarkers() {
-		clearMarkers();
-		markers = [];
-	}
+}
 
+function clearMarkers() {
+	setMapOnAll(null);
+}
 
+function showMarkers() {
+	setMapOnAll(map);
+}
+
+function deleteMarkers() {
+	clearMarkers();
+	markers = [];
 }

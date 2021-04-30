@@ -85,13 +85,22 @@ class ProfileModel extends CI_Model
 	}
 
 	function addCategory($data){
-		$this->db->insert('tbl_company_categories', $data);
+		return $this->db->insert('tbl_company_categories', $data);
+	}
+
+	function deleteCategories($id){
+		$this->db->where('user_id', $id);
+		$this->db->delete('tbl_company_categories');
+
+		return $this->db->affected_rows();
 	}
 
 	function updateProfile($id, $data){
 
 		$this->db->where('user_id', $id);
-		$result = $this->db->update('tbl_company_profile', $data);
+		return $this->db->update('tbl_company_profile', $data);
+
+
 	}
 
 }
