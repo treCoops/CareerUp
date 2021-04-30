@@ -73,6 +73,20 @@ class ProfileModel extends CI_Model
 		}
 	}
 
+	function getProfileID($id){
+		$this->db->select('company_profile_id');
+		$this->db->from('tbl_company_profile');
+		$this->db->where('user_id', $id);
+
+		$result = $this->db->get()->result();
+
+		if($result != null){
+			return $result;
+		}else{
+			return null;
+		}
+	}
+
 	function createProfile($data){
 		$this->db->insert('tbl_company_profile', $data);
 		$insert_id = $this->db->insert_id();

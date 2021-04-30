@@ -82,8 +82,6 @@ class BEProfile extends CI_Controller
 		$data = array();
 		$response = array();
 
-
-
 		if (!$this->upload->do_upload('imageUpload')) {
 			$error = $this->upload->display_errors();
 			$data['company_profile_image_url'] = null;

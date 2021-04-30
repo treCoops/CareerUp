@@ -180,24 +180,8 @@
 					<div class="col-lg-12">
 						<div class="h300" id="gMap"></div>
 					</div>
-
-
-
-
-
-						<div id="divSubmitButton" class="col-lg-4">
-<!--							<div class="my_profile_input"><br><button class="btn btn-lg btn-thm" type="submit">Create Profile</button></div>-->
-						</div>
-
-<!--						<div class="col-lg-4">-->
-<!--							<div class="my_profile_input">-->
-<!--								<br>-->
-<!--								<button class="btn btn-lg btn-thm" type="submit">Save Changes</button>-->
-<!--								<input type="hidden" class="form-control" name="txtCompanyDataExist" id="txtCompanyDataExist" value="">-->
-<!--								<input type="hidden" class="form-control" name="txtCurrentImage" id="txtCurrentImage">-->
-<!--							</div>-->
-<!--						</div>-->
-
+					<div id="divSubmitButton" class="col-lg-4">
+					</div>
 			</div>
 		</form>
 	</div>
@@ -235,8 +219,6 @@
 				if(r.status == 200){
 					$('#txtCompanyDataExist').val('UPDATE');
 					updateButton('Save Changes')
-
-					console.log(r.data);
 
 					deleteMarkers()
 					let marker = {lat: parseFloat(r.data.company_location_lat), lng: parseFloat(r.data.company_location_lng)};
