@@ -18,9 +18,9 @@ function initMap() {
 		let latitude = mapsMouseEvent.latLng.lat();
 		let longitude = mapsMouseEvent.latLng.lng();
 
-		$('#txtCompanyLocationLatitude').val(latitude);
-		$('#txtCompanyLocationLongitude').val(longitude);
-		$('#txtCompanyLocationZoom').val(map.getZoom());
+		$('#txtLocationLatitude').val(latitude);
+		$('#txtLocationLongitude').val(longitude);
+		$('#txtLocationZoom').val(map.getZoom());
 
 		deleteMarkers();
 
@@ -30,7 +30,7 @@ function initMap() {
 	});
 
 	map.addListener("zoom_changed", () => {
-		$('#txtCompanyLocationZoom').val(map.getZoom());
+		$('#txtLocationZoom').val(map.getZoom());
 	});
 }
 

@@ -27,6 +27,8 @@
 
 <script type="text/javascript" src="<?php base_url() ?>assets/js/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="<?php base_url() ?>assets/js/jquery-migrate-3.0.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/plugins/table/datatable/datatables.css">
+<link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/flatpickr/flatpickr.min.css">
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

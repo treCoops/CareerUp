@@ -19,6 +19,8 @@
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
 <!-- Responsive stylesheet -->
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/responsive.css">
+
+<link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/flatpickr/flatpickr.min.css">
 <!-- Title -->
 <title><?php echo $title; ?></title>
 <!-- Favicon -->

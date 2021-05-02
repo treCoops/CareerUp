@@ -38,5 +38,38 @@ class JobPostModel extends CI_Model
 		}
 	}
 
+	function getAllPostsForTable($param){
+		$filter = $param['search'];
+
+		$this->db->select('*');
+		$this->db->from('tbl_job_post');
+		$this->db->where("(`tbl_job_post.partner_id` LIKE '%$filter%'");
+		$this->db->or_where("`tbl_job_post.partner_name` LIKE '%$filter%'");
+		$this->db->or_where("`tbl_job_post.partner_description` LIKE '%$filter%')");
+		$this->db->limit($param['length'],$param['start']);
+		$query = $this->db->get();
+		$result = $query->result();
+
+		$returnData['data'] =  $result;
+		$returnData['recordsTotal'] = $this->getRowCountGetAllPostsForTable();
+		$returnData['draw'] = $param['draw'];
+
+		if($filter == null)
+			$returnData['recordsFiltered'] = $this->getRowCountGetAllPostsForTable();
+		else
+			$returnData['recordsFiltered'] = $query->num_rows();
+
+		return $returnData;
+	}
+
+	function getRowCountGetAllPostsForTable(){
+
+		$this->db->select('*');
+		$this->db->from('tbl_partner');
+		$query = $this->db->get();
+
+		return $query->num_rows();
+	}
+
 
 }

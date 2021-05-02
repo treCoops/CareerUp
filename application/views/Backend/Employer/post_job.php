@@ -36,7 +36,7 @@
 				<div class="col-md-6 col-lg-6">
 					<div class="my_profile_input form-group">
 						<label for="txtJobDeadlineDate">Application Deadline Date</label>
-						<input type="text" class="form-control datepicker" id="txtJobDeadlineDate" name="txtJobDeadlineDate">
+						<input type="text" class="form-control" id="txtJobDeadlineDate" name="txtJobDeadlineDate">
 					</div>
 				</div>
 				<div class="col-md-6 col-lg-6">
@@ -56,10 +56,11 @@
 						<label for="cmbJobExperienceLevel">Experience Years</label><br>
 						<select class="selectpicker" id="cmbJobExperienceLevel" name="cmbJobExperienceLevel">
 							<option value="Below 1 Year">Below 1 Year</option>
-							<option value="1 Year to 2 Year">1 Year to 2 Year</option>
-							<option value="2 Year to 3 Year">2 Year to 3 Year</option>
-							<option value="3 Year to 4 Year">3 Year to 4 Year</option>
-							<option value="4 Year to 5 Year">4 Year to 5 Year</option>
+							<option value="1 to 2 Years">1 to 2 Years</option>
+							<option value="2 to 3 Years">2 to 3 Years</option>
+							<option value="3 to 4 Years">3 to 4 Years</option>
+							<option value="4 to 5 Years">4 to 5 Years</option>
+							<option value="More Than 5 Years">More Than 5 Years</option>
 						</select>
 					</div>
 				</div>
@@ -100,6 +101,11 @@
 
 <script>
 	$(document).ready(function() {
+
+		flatpickr('#txtJobDeadlineDate', {
+			minDate: new Date()
+		});
+
 		$("#formJobPost").validate({
 			ignore: [],
 			rules: {

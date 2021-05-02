@@ -57,7 +57,7 @@
 					<div class="col-md-6 col-lg-6">
 						<div class="my_profile_input form-group">
 							<label for="txtCompanyStartDate">Est. Since</label>
-							<input type="text" class="form-control datepicker" id="txtCompanyStartDate" name="txtCompanyStartDate">
+							<input type="text" class="form-control" id="txtCompanyStartDate" name="txtCompanyStartDate">
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-6">
@@ -159,20 +159,20 @@
 					</div>
 					<div class="col-md-4 col-lg-4">
 						<div class="my_profile_input form-group">
-							<label for="txtCompanyLocationLatitude">Latitude</label>
-							<input type="text" class="form-control" id="txtCompanyLocationLatitude" name="txtCompanyLocationLatitude" aria-describedby="latNumber" readonly>
+							<label for="txtLocationLatitude">Latitude</label>
+							<input type="text" class="form-control" id="txtLocationLatitude" name="txtLocationLatitude" aria-describedby="latNumber" readonly>
 						</div>
 					</div>
 					<div class="col-md-4 col-lg-4">
 						<div class="my_profile_input form-group">
-							<label for="txtCompanyLocationLongitude">Longitude</label>
-							<input type="text" class="form-control" id="txtCompanyLocationLongitude" name="txtCompanyLocationLongitude" aria-describedby="latNumber" readonly>
+							<label for="txtLocationLongitude">Longitude</label>
+							<input type="text" class="form-control" id="txtLocationLongitude" name="txtLocationLongitude" aria-describedby="latNumber" readonly>
 						</div>
 					</div>
 					<div class="col-md-4 col-lg-4">
 						<div class="my_profile_input form-group">
-							<label for="txtCompanyLocationZoom">Zoom</label>
-							<input type="text" class="form-control" name="txtCompanyLocationZoom" id="txtCompanyLocationZoom" aria-describedby="latNumber" readonly>
+							<label for="txtLocationZoom">Zoom</label>
+							<input type="text" class="form-control" name="txtLocationZoom" id="txtLocationZoom" aria-describedby="latNumber" readonly>
 							<input type="hidden" class="form-control" name="txtProfileID" id="txtProfileID">
 							<input type="hidden" class="form-control" name="txtCompanyDataExist" id="txtCompanyDataExist">
 						</div>
@@ -212,11 +212,11 @@
 			},
 			success: function(r){
 
-				if(r.status == 500){
+				if(r.status === 500){
 					$('#txtCompanyDataExist').val('NEW');
 					updateButton('Create Profile')
 				}
-				if(r.status == 200){
+				if(r.status === 200){
 					$('#txtCompanyDataExist').val('UPDATE');
 					updateButton('Save Changes')
 
@@ -289,6 +289,10 @@
 
 		$("#imageUpload").change(function () {
 			readURL(this);
+		});
+
+		flatpickr('#txtCompanyStartDate', {
+			maxDate: new Date()
 		});
 
 		$("#formProfile").validate({
@@ -366,6 +370,7 @@
 					success: function(r){
 						if(r.status == 200){
 							$.notify(r.message, "success");
+							updateUI();
 						}
 
 						if(r.status == 201){

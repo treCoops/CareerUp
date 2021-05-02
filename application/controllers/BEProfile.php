@@ -125,9 +125,9 @@ class BEProfile extends CI_Controller
 		$data['company_country'] = $this->input->post('cmbCompanyCountry');
 		$data['company_city'] = $this->input->post('cmbCompanyCity');
 		$data['company_address'] = $this->input->post('txtCompanyAddress');
-		$data['company_location_lat'] = $this->input->post('txtCompanyLocationLatitude');
-		$data['company_location_lng'] = $this->input->post('txtCompanyLocationLongitude');
-		$data['company_location_zoom'] = $this->input->post('txtCompanyLocationZoom');
+		$data['company_location_lat'] = $this->input->post('txtLocationLatitude');
+		$data['company_location_lng'] = $this->input->post('txtLocationLongitude');
+		$data['company_location_zoom'] = $this->input->post('txtLocationZoom');
 		$data['company_facebook'] = $this->input->post('txtCompanyFacebook');
 		$data['company_linkedin'] = $this->input->post('txtCompanyLinkedin');
 		$data['company_instagram'] = $this->input->post('txtCompanyInstagram');

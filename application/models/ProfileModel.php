@@ -59,6 +59,57 @@ class ProfileModel extends CI_Model
 		}
 	}
 
+	function getCandidateProfile($id){
+		$this->db->select('*');
+		$this->db->from('tbl_candidate_profile');
+		$this->db->where('tbl_candidate_profile.user_id', $id);
+
+		$result = $this->db->get()->result();
+
+		if($result != null){
+			$categories = $this->getCandidateCategories($result[0]->user_id);
+			$languages = $this->getCandidateLanguages($result[0]->user_id);
+
+			if($categories != null){
+				$new = array();
+
+				$new['candidate_profile_id'] = $result[0]->candidate_profile_id;
+				$new['user_id'] = $result[0]->user_id;
+				$new['candidate_full_name'] = $result[0]->candidate_full_name;
+				$new['candidate_job_title'] = $result[0]->candidate_job_title;
+				$new['candidate_phone_no'] = $result[0]->candidate_phone_no;
+				$new['candidate_email'] = $result[0]->candidate_email;
+				$new['candidate_website'] = $result[0]->candidate_website;
+				$new['candidate_experience'] = $result[0]->candidate_experience;
+				$new['candidate_date_of_birth'] = $result[0]->candidate_date_of_birth;
+				$new['candidate_age'] = $result[0]->candidate_age;
+				$new['candidate_education_level'] = $result[0]->candidate_education_level;
+				$new['candidate_disability'] = $result[0]->candidate_disability;
+				$new['candidate_description'] = $result[0]->candidate_description;
+				$new['candidate_facebook'] = $result[0]->candidate_facebook;
+				$new['candidate_twitter'] = $result[0]->candidate_twitter;
+				$new['candidate_linkedIn'] = $result[0]->candidate_linkedIn;
+				$new['candidate_instagram'] = $result[0]->candidate_instagram;
+				$new['candidate_country'] = $result[0]->candidate_country;
+				$new['candidate_city'] = $result[0]->candidate_city;
+				$new['categories'] = $categories;
+				$new['languages'] = $languages;
+				$new['candidate_location_latitude'] = $result[0]->candidate_location_latitude;
+				$new['candidate_location_longitude'] = $result[0]->candidate_location_longitude;
+				$new['candidate_location_zoom'] = $result[0]->candidate_location_zoom;
+				$new['created_time'] = $result[0]->created_time;
+				$new['candidate_address'] = $result[0]->candidate_address;
+
+				return $new;
+
+			}else{
+				return $result;
+			}
+		}else{
+			return null;
+		}
+	}
+
 	function getCategories($id){
 		$this->db->select('*');
 		$this->db->from('tbl_company_categories');
@@ -72,6 +123,35 @@ class ProfileModel extends CI_Model
 			return null;
 		}
 	}
+
+	function getCandidateCategories($id){
+		$this->db->select('*');
+		$this->db->from('tbl_candidate_categories');
+		$this->db->where('tbl_candidate_categories.user_id', $id);
+
+		$result = $this->db->get()->result();
+
+		if($result != null){
+			return $result;
+		}else{
+			return null;
+		}
+	}
+
+	function getCandidateLanguages($id){
+		$this->db->select('*');
+		$this->db->from('tbl_candidate_languages');
+		$this->db->where('tbl_candidate_languages.user_id', $id);
+
+		$result = $this->db->get()->result();
+
+		if($result != null){
+			return $result;
+		}else{
+			return null;
+		}
+	}
+
 
 	function getProfileID($id){
 		$this->db->select('company_profile_id');
@@ -98,8 +178,27 @@ class ProfileModel extends CI_Model
 		}
 	}
 
+	function createCandidateProfile($data){
+		$this->db->insert('tbl_candidate_profile', $data);
+		$insert_id = $this->db->insert_id();
+
+		if($insert_id != null){
+			return $insert_id;
+		}else{
+			return false;
+		}
+	}
+
 	function addCategory($data){
 		return $this->db->insert('tbl_company_categories', $data);
+	}
+
+	function addCandidateCategory($data){
+		return $this->db->insert('tbl_candidate_categories', $data);
+	}
+
+	function addCandidateLanguage($data){
+		return $this->db->insert('tbl_candidate_languages', $data);
 	}
 
 	function deleteCategories($id){
@@ -109,12 +208,28 @@ class ProfileModel extends CI_Model
 		return $this->db->affected_rows();
 	}
 
-	function updateProfile($id, $data){
+	function deleteCandidateCategories($id){
+		$this->db->where('user_id', $id);
+		$this->db->delete('tbl_candidate_categories');
 
+		return $this->db->affected_rows();
+	}
+
+	function deleteCandidateLanguages($id){
+		$this->db->where('user_id', $id);
+		$this->db->delete('tbl_candidate_languages');
+
+		return $this->db->affected_rows();
+	}
+
+	function updateProfile($id, $data){
 		$this->db->where('user_id', $id);
 		return $this->db->update('tbl_company_profile', $data);
+	}
 
-
+	function updateCandidateProfile($id, $data){
+		$this->db->where('user_id', $id);
+		return $this->db->update('tbl_candidate_profile', $data);
 	}
 
 }
