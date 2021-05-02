@@ -3836,44 +3836,44 @@ header.header-nav.menu_style_home_six .sign_up_btn .btn{
     position:relative;
     text-align:left
 }
-.my_resume_eduarea .content:nth-child(3),.my_resume_eduarea .content:nth-child(4){
-    padding-top:0;
-    position:relative
-}
-.my_resume_eduarea .content:nth-child(3) .circle,.my_resume_eduarea .content:nth-child(4) .circle{
-    top:0
-}
-.my_resume_eduarea .content:nth-child(3):before,.my_resume_eduarea .content:nth-child(4):before{
-    top:9px
-}
-.my_resume_eduarea .content:nth-child(3):after{
-    top:25px
-}
-.my_resume_eduarea .content:nth-child(4):after{
-    display:none
-}
-.my_resume_eduarea .content.style2:nth-child(3):after{
-    display:none
-}
-.my_resume_eduarea .content:before{
-    background-color:#eaeaea;
-    content:"";
-    height:1px;
-    left:15px;
-    position:absolute;
-    top:28px;
-    width:48px
-}
-.my_resume_eduarea .content:after{
-    background-color:#ddd;
-    content:"";
-    height:100px;
-    left:18px;
-    position:absolute;
-    top:40px;
-    width:1px;
-    z-index:-1
-}
+/*.my_resume_eduarea .content:nth-child(3),.my_resume_eduarea .content:nth-child(4){*/
+/*    padding-top:0;*/
+/*    position:relative*/
+/*}*/
+/*.my_resume_eduarea .content:nth-child(3) .circle,.my_resume_eduarea .content:nth-child(4) .circle{*/
+/*    top:0*/
+/*}*/
+/*.my_resume_eduarea .content:nth-child(3):before,.my_resume_eduarea .content:nth-child(4):before{*/
+/*    top:9px*/
+/*}*/
+/*.my_resume_eduarea .content:nth-child(3):after{*/
+/*    top:25px*/
+/*}*/
+/*.my_resume_eduarea .content:nth-child(4):after{*/
+/*    display:none*/
+/*}*/
+/*.my_resume_eduarea .content.style2:nth-child(3):after{*/
+/*    display:none*/
+/*}*/
+/*.my_resume_eduarea .content:before{*/
+/*    background-color:#eaeaea;*/
+/*    content:"";*/
+/*    height:1px;*/
+/*    left:15px;*/
+/*    position:absolute;*/
+/*    top:28px;*/
+/*    width:48px*/
+/*}*/
+/*.my_resume_eduarea .content:after{*/
+/*    background-color:#ddd;*/
+/*    content:"";*/
+/*    height:100px;*/
+/*    left:18px;*/
+/*    position:absolute;*/
+/*    top:40px;*/
+/*    width:1px;*/
+/*    z-index:-1*/
+/*}*/
 .my_resume_eduarea .content .circle{
     background-color:#82b440;
     border-radius:50%;
