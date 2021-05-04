@@ -19,15 +19,6 @@ $User_Session = $this->session->userdata('User_Session');
 			<input type="hidden" name="txtUserID" id="txtUserID" value="<?php echo $User_Session['ID'] ?>">
 		</div>
 		<div class="col-lg-12">
-			<div class="my_resume_textarea mt20">
-				<div class="form-group">
-					<label for="exampleFormControlTextarea1">Cover Letter</label>
-					<textarea class="form-control" id="exampleFormControlTextarea1" rows="9"></textarea>
-				</div>
-			</div>
-		</div>
-
-		<div class="col-lg-12">
 			<div class="my_resume_eduarea">
 				<h4 class="title">Education <small class="float-right"><a href="#" data-toggle="modal" data-target="#modalEducation">Add New <span class="flaticon-right-arrow"></span></a></small></h4>
 				<div id="educationDiv"></div>
@@ -40,16 +31,19 @@ $User_Session = $this->session->userdata('User_Session');
 				<div id="workDiv"></div>
 			</div>
 		</div>
+
 		<div class="col-lg-12">
-			<div class="my_resume_skill">
-				<h4 class="title">Skills</h4>
-				<input type="text" id="tagSkills" name="tagSkills[]" data-role="tagsinput" value="" placeholder="Add Skills">
+			<div class="my_resume_eduarea">
+				<h4 class="title">Skills <small class="float-right"><a href="#" data-toggle="modal" data-target="#modalSkill">Add New <span class="flaticon-right-arrow"></span></a></small></h4>
+				<div id="skillDiv"></div>
 			</div>
 		</div>
+
 		<div class="col-lg-12">
 			<div class="my_resume_eduarea">
 				<h4 class="title">Awards <small class="float-right"><a href="#"  data-toggle="modal" data-target="#modalAwards">Add New <span class="flaticon-right-arrow"></span></a></small></h4>
 				<div id="awardDiv"></div>
+
 			</div>
 		</div>
 
@@ -368,6 +362,107 @@ $User_Session = $this->session->userdata('User_Session');
 			</div>
 		</div>
 
+		<!--Skill Modal-->
+		<div class="sign_up_modal modal fade" id="modalSkill" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					</div>
+					<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+						<div class="login_form">
+							<form id="forAddSkill" method="post">
+								<div class="heading">
+									<h3 class="text-center">Add Skill Details</h3>
+								</div>
+								<div class="form-group">
+									<label for="cmbWorkPosition">Select Skill</label><br>
+									<select class="selectpicker form-control" id="cmbSkillName" name="cmbSkillName">
+										<option value="C">C</option>
+										<option value="C++">C++</option>
+										<option value="Java">Java</option>
+										<option value="C#">C#</option>
+										<option value="HTML">HTML</option>
+										<option value="JavaScript">JavaScript</option>
+										<option value="Php">Php</option>
+										<option value="Node JS">Node JS</option>
+										<option value="Flutter">Flutter</option>
+										<option value="Android">Android</option>
+										<option value="Swift">Swift</option>
+										<option value="Objective C">Objective C</option>
+										<option value="Vue JS">Vue JS</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<div class="custom-progress bottom-right progress-down" style="width: 100%">
+										<label for="rngSkillLevel" class="form-label">Select Skill Level</label>
+										<input type="range" id="rngSkillLevel" name="rngSkillLevel" min="0" max="100" step="10" class="custom-range progress-range-counter" value="10">
+										<div class="range-count"><span class="range-count-number" data-rangecountnumber="0">10</span> <span class="range-count-unit">%</span></div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="txtSkillDescription">Description</label><br>
+									<input type="text" class="form-control" id="txtSkillDescription" name="txtSkillDescription">
+								</div>
+								<button type="submit" class="btn btn-log btn-block btn-thm">Submit</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Skill Modal for Update-->
+		<div class="sign_up_modal modal fade" id="modalUpdateSkills" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					</div>
+					<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+						<div class="login_form">
+							<form id="forUpdateSkill" method="post">
+								<div class="heading">
+									<h3 class="text-center">Edit Skill Details</h3>
+								</div>
+								<div class="form-group">
+									<label for="cmbSkillUName">Select Skill</label><br>
+									<select class="selectpicker form-control" id="cmbSkillUName" name="cmbSkillUName">
+										<option value="C">C</option>
+										<option value="C++">C++</option>
+										<option value="Java">Java</option>
+										<option value="C#">C#</option>
+										<option value="HTML">HTML</option>
+										<option value="JavaScript">JavaScript</option>
+										<option value="Php">Php</option>
+										<option value="Node JS">Node JS</option>
+										<option value="Flutter">Flutter</option>
+										<option value="Android">Android</option>
+										<option value="Swift">Swift</option>
+										<option value="Objective C">Objective C</option>
+										<option value="Vue JS">Vue JS</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<div class="custom-progress bottom-right progress-down" style="width: 100%">
+										<label for="rngSkillULevel" class="form-label">Select Skill Level</label>
+										<input type="range" id="rngSkillULevel" name="rngSkillULevel" min="0" max="100" step="10" class="custom-range progress-range-counter" value="10">
+										<div class="range-count"><span id="spanSkillLevel" class="range-count-number" data-rangecountnumber="0">10</span> <span class="range-count-unit">%</span></div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="txtSkillUDescription">Description</label><br>
+									<input type="text" class="form-control" id="txtSkillUDescription" name="txtSkillUDescription">
+									<input type="hidden" class="form-control" id="txtSkillID" name="txtSkillID">
+								</div>
+								<button type="submit" class="btn btn-log btn-block btn-thm">Submit</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 </div>
 
@@ -540,6 +635,61 @@ $User_Session = $this->session->userdata('User_Session');
 				}
 			});
 		}
+
+		if(status === 'SKILL'){
+			$.confirm({
+				icon: 'fa fa-trash',
+				title: 'Delete skill record',
+				content: 'Do you want to delete this skill details?',
+				type: 'red',
+				typeAnimated: true,
+				buttons: {
+					confirm: {
+						text: 'Delete',
+						btnClass: 'btn-red',
+						action: function(){
+							$.ajax({
+								url: "<?php echo base_url(''); ?>/BCResume/deleteSkill",
+								data: {ID : id},
+								method: "post",
+								dataType: "json",
+								error: function(error){
+									console.log(error);
+									$.notify("Internal server error", "error");
+
+								},
+								success: function(r){
+									if(r.result){
+										$.alert({
+											icon: 'fa fa-check',
+											title: 'Success',
+											content: 'Details have been deleted',
+											type: 'green',
+											btnClass: 'btn-green'
+										});
+
+										updateSkillDiv()
+									}else{
+										$.alert({
+											icon: 'fa fa-times',
+											title: 'Error',
+											content: 'Operation failed',
+											type: 'red',
+											btnClass: 'btn-red'
+										});
+									}
+								}
+							});
+
+
+						}
+					},
+					close: function () {
+
+					}
+				}
+			});
+		}
 	}
 
 	function update(id, status){
@@ -638,6 +788,36 @@ $User_Session = $this->session->userdata('User_Session');
 					$('#txtAwardUID').val(r.data[0].award_id);
 
 					$('#modalUpdateAwards').modal('show');
+
+				}
+			});
+		}
+
+		if(status === 'SKILL'){
+			$.ajax({
+				url: "<?php echo base_url(''); ?>/BCResume/selectedSkillDetails",
+				data: {
+					ID: id
+				},
+				method: "post",
+				dataType: "json",
+				error: function (error) {
+					console.log(error);
+					$.notify("Internal server error", "error");
+
+				},
+				success: function (r) {
+
+					$('#cmbSkillUName').val(r.data[0].skill_name);
+					$('#cmbSkillUName').trigger('change');
+
+					$('#rngSkillULevel').val(r.data[0].skill_level);
+					$('#spanSkillLevel').text(r.data[0].skill_level);
+
+					$('#txtSkillUDescription').val(r.data[0].skill_description);
+					$('#txtSkillID').val(r.data[0].skill_id);
+
+					$('#modalUpdateSkills').modal('show');
 
 				}
 			});
@@ -763,13 +943,48 @@ $User_Session = $this->session->userdata('User_Session');
 		});
 	}
 
-	$(document).ready(function() {
+	function updateSkillDiv(){
+		$.ajax({
+			url: "<?php echo base_url(''); ?>/BCResume/getAllSkillDetails",
+			data: {
+				ID: $('#txtUserID').val()
+			},
+			method: "post",
+			dataType: "json",
+			error: function(error){
+				console.log(error);
+				$.notify("Internal server error", "error");
 
-		$('#tagSkills').tagsinput({
+			},
+			success: function(r){
 
-		}).on('itemRemoved', function (event) {
-			alert(33)
+				console.log(r);
+
+				$('#skillDiv').empty();
+				let status = 'SKILL'
+				let content = ''
+				for(let a=0; a<r.data.length; a++){
+					content = '<div class="content">'+
+							'<div class="circle"></div>'+
+							'<p class="edu_center">'+r.data[a].skill_name+'</p>'+
+							'<h4 class="edu_stats">'+
+							'<div class="progress br-30" style="width: 70%">'+
+							'<div class="progress-bar" role="progressbar" style="width: '+r.data[a].skill_level+'%; background-color: #82b440;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">'+r.data[a].skill_level+'%</div>'+
+							'</div>'+
+							'<ul class="edu_stats_list float-right">'+
+							'<li class="list-inline-item"><a href="#" onclick="update(\''+r.data[a].skill_id+'\', \''+status+'\')" data-toggle="tooltip" data-placement="top" title="Edit"><span class="flaticon-edit"></span></a></li>'+
+							'<li class="list-inline-item"><a href="#" onclick="del(\''+r.data[a].skill_id+'\', \''+status+'\')" data-toggle="tooltip" data-placement="top" title="Delete"><span class="flaticon-rubbish-bin"></span></a></li>'+
+							'</ul>'+
+							'</h4>'+
+							'<p>'+r.data[a].skill_description+'</p>'+
+							'</div>'
+					$('#skillDiv').append(content);
+				}
+			}
 		});
+	}
+
+	$(document).ready(function() {
 
 		$("#divEndDate").hide();
 
@@ -792,6 +1007,7 @@ $User_Session = $this->session->userdata('User_Session');
 		updateEducationDiv()
 		updateWorkDiv()
 		updateAwardDiv()
+		updateSkillDiv()
 
 		flatpickr('#txtEducationStartDate', {
 			maxDate: new Date(),
@@ -989,6 +1205,8 @@ $User_Session = $this->session->userdata('User_Session');
 
 		});
 
+
+
 		$("#forAddWork").validate({
 			ignore: [],
 			rules: {
@@ -1113,6 +1331,8 @@ $User_Session = $this->session->userdata('User_Session');
 
 		});
 
+
+
 		$("#forAddAward").validate({
 			ignore: [],
 			rules: {
@@ -1226,6 +1446,100 @@ $User_Session = $this->session->userdata('User_Session');
 			}
 
 		});
+
+
+
+		$("#forAddSkill").validate({
+			ignore: [],
+			rules: {
+				txtSkillDescription: {
+					required: true
+				}
+			},
+			messages: {
+				txtSkillDescription: {
+					required: "Skill description required!"
+				}
+			},
+			submitHandler: function(form) {
+				let formData = new FormData(form);
+
+				$.ajax({
+					url: '<?php echo base_url('BCResume/addSkill'); ?>',
+					data: formData,
+					dataType: 'json',
+					method: 'post',
+					processData: false,
+					enctype: 'multipart/form-data',
+					contentType: false,
+					cache: false,
+					error: function(error){
+						console.log(error);
+						$.notify("Internal server error", "error");
+					},
+					success: function(r){
+						if(r.status == 200){
+							$.notify(r.message, "success");
+							$('#modalSkill').modal('toggle');
+							updateSkillDiv()
+						}
+
+						if(r.status == 500){
+							$.notify(r.message, "error");
+						}
+
+					}
+				});
+			}
+
+		});
+
+		$("#forUpdateSkill").validate({
+			ignore: [],
+			rules: {
+				txtSkillUDescription: {
+					required: true
+				}
+			},
+			messages: {
+				txtSkillUDescription: {
+					required: "Skill description required!"
+				}
+			},
+			submitHandler: function(form) {
+				let formData = new FormData(form);
+
+				$.ajax({
+					url: '<?php echo base_url('BCResume/updateSkill'); ?>',
+					data: formData,
+					dataType: 'json',
+					method: 'post',
+					processData: false,
+					enctype: 'multipart/form-data',
+					contentType: false,
+					cache: false,
+					error: function(error){
+						console.log(error);
+						$.notify("Internal server error", "error");
+					},
+					success: function(r){
+						if(r.status == 200){
+							$.notify(r.message, "success");
+							$('#modalUpdateSkills').modal('toggle');
+							updateSkillDiv()
+						}
+
+						if(r.status == 500){
+							$.notify(r.message, "error");
+						}
+
+					}
+				});
+			}
+
+		});
+
+
 	});
 
 

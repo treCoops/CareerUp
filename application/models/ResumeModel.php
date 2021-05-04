@@ -63,6 +63,23 @@ class ResumeModel extends CI_Model
 		}
 	}
 
+	function isSkillExists($data){
+		$this->db->select('*');
+		$this->db->from('tbl_skill');
+		$this->db->where('user_id', $data['user_id']);
+		$this->db->where('profile_id', $data['profile_id']);
+		$this->db->where('skill_name', $data['skill_name']);
+		$this->db->where('skill_level', $data['skill_level']);
+
+		$result = $this->db->get()->result();
+
+		if ($result == null) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	function addEducation($data){
 		$result = $this->db->insert('tbl_education', $data);
 
@@ -75,6 +92,16 @@ class ResumeModel extends CI_Model
 
 	function addAward($data){
 		$result = $this->db->insert('tbl_award', $data);
+
+		if($result){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	function addSkill($data){
+		$result = $this->db->insert('tbl_skill', $data);
 
 		if($result){
 			return true;
@@ -129,6 +156,18 @@ class ResumeModel extends CI_Model
 		}
 	}
 
+	function updateSkill($data, $id){
+
+		$this->db->where('skill_id', $id);
+		$result = $this->db->update('tbl_skill', $data);
+
+		if($result){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 	function deleteEducation($id){
 		$this->db->where('education_id', $id);
 		$this->db->delete('tbl_education');
@@ -146,6 +185,13 @@ class ResumeModel extends CI_Model
 	function deleteWork($id){
 		$this->db->where('work_id', $id);
 		$this->db->delete('tbl_work');
+
+		return $this->db->affected_rows();
+	}
+
+	function deleteSkill($id){
+		$this->db->where('skill_id', $id);
+		$this->db->delete('tbl_skill');
 
 		return $this->db->affected_rows();
 	}
@@ -192,6 +238,20 @@ class ResumeModel extends CI_Model
 		}
 	}
 
+	function selectedSkillDetails($id){
+		$this->db->select('*');
+		$this->db->from('tbl_skill');
+		$this->db->where('Skill_id', $id);
+
+		$result = $this->db->get()->result();
+
+		if($result != null){
+			return $result;
+		}else{
+			return null;
+		}
+	}
+
 	function getAllEducationDetails($id){
 		$this->db->select('*');
 		$this->db->from('tbl_education');
@@ -209,6 +269,20 @@ class ResumeModel extends CI_Model
 	function getAllAwardDetails($id){
 		$this->db->select('*');
 		$this->db->from('tbl_award');
+		$this->db->where('user_id', $id);
+
+		$result = $this->db->get()->result();
+
+		if($result != null){
+			return $result;
+		}else{
+			return null;
+		}
+	}
+
+	function getAllSkillDetails($id){
+		$this->db->select('*');
+		$this->db->from('tbl_skill');
 		$this->db->where('user_id', $id);
 
 		$result = $this->db->get()->result();

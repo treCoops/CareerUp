@@ -4650,7 +4650,8 @@ header.header-nav.menu_style_home_six .sign_up_btn .btn{
     position:relative
 }
 .candidate_resume_skill .progress-levels .progress-box .inner{
-    background-color:#eee
+    background-color:#e3f8c3;
+	width:80%
 }
 .candidate_resume_skill .progress-levels .progress-box .bar{
     position:relative;

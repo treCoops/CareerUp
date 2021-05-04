@@ -108,6 +108,38 @@ class BCResume extends CI_Controller
 		echo json_encode($response);
 	}
 
+	public function addSkill(){
+		$User_Session = $this->session->userdata('User_Session');
+
+		$response = array();
+		$data = array();
+
+		$data['user_id'] = $User_Session['ID'];
+
+		$profile = $this->ProfileModel->getCandidateProfile($User_Session['ID']);
+
+
+		$data['profile_id'] = $profile['candidate_profile_id'];
+
+		$data['skill_name'] = $this->input->post('cmbSkillName');
+		$data['skill_level'] = $this->input->post('rngSkillLevel');
+		$data['skill_description'] = $this->input->post('txtSkillDescription');
+
+		if($this->ResumeModel->isSkillExists($data)){
+			if($this->ResumeModel->addSkill($data)){
+				$response['status'] = 200;
+				$response['message'] = 'Skill record has been added successfully!';
+			}else{
+				$response['status'] = 500;
+				$response['message'] = 'Skill record has not been added!';
+			}
+		}else{
+			$response['status'] = 500;
+			$response['message'] = 'This skill record already exist!';
+		}
+
+		echo json_encode($response);
+	}
 
 	public function updateAward(){
 
@@ -134,6 +166,40 @@ class BCResume extends CI_Controller
 			}else{
 				$response['status'] = 500;
 				$response['message'] = 'Award record has not been updated!';
+			}
+		}else{
+			$response['status'] = 500;
+			$response['message'] = 'No change found!';
+		}
+
+		echo json_encode($response);
+	}
+
+	public function updateSkill(){
+
+		$User_Session = $this->session->userdata('User_Session');
+
+		$response = array();
+		$data = array();
+
+		$data['user_id'] = $User_Session['ID'];
+
+		$profile = $this->ProfileModel->getCandidateProfile($User_Session['ID']);
+
+
+		$data['profile_id'] = $profile['candidate_profile_id'];
+
+		$data['skill_name'] = $this->input->post('cmbSkillUName');
+		$data['skill_level'] = $this->input->post('rngSkillULevel');
+		$data['skill_description'] = $this->input->post('txtSkillUDescription');
+
+		if($this->ResumeModel->isSkillExists($data)){
+			if($this->ResumeModel->updateSkill($data, $this->input->post('txtSkillID'))){
+				$response['status'] = 200;
+				$response['message'] = 'Skill record has been updated successfully!';
+			}else{
+				$response['status'] = 500;
+				$response['message'] = 'Skill record has not been updated!';
 			}
 		}else{
 			$response['status'] = 500;
@@ -239,6 +305,23 @@ class BCResume extends CI_Controller
 		echo json_encode($response);
 	}
 
+	public function getAllSkillDetails(){
+
+		$response = array();
+
+		$result = $this->ResumeModel->getAllSkillDetails($this->input->post('ID'));
+		if($result != null){
+			$response['status'] = 200;
+			$response['message'] = 'Data exists';
+			$response['data'] = $result;
+		}else{
+			$response['status'] = 500;
+			$response['message'] = 'No sata exists';
+		}
+
+		echo json_encode($response);
+	}
+
 	public function selectedEducationDetails(){
 		$response = array();
 		$result = $this->ResumeModel->getSelectedEducationDetail($this->input->post('ID'));
@@ -273,6 +356,22 @@ class BCResume extends CI_Controller
 	public function selectedAwardDetails(){
 		$response = array();
 		$result = $this->ResumeModel->getSelectedAwardDetail($this->input->post('ID'));
+		if($result != null){
+			$response['status'] = 200;
+			$response['message'] = 'Data exists';
+			$response['data'] = $result;
+		}else{
+			$response['status'] = 500;
+			$response['message'] = 'No data exists';
+		}
+
+		echo json_encode($response);
+
+	}
+
+	public function selectedSkillDetails(){
+		$response = array();
+		$result = $this->ResumeModel->selectedSkillDetails($this->input->post('ID'));
 		if($result != null){
 			$response['status'] = 200;
 			$response['message'] = 'Data exists';
@@ -384,6 +483,13 @@ class BCResume extends CI_Controller
 	public function deleteWork(){
 		$response = array();
 		$response['result'] = $this->ResumeModel->deleteWork($this->input->post('ID'));
+
+		echo json_encode($response);
+	}
+
+	public function deleteSkill(){
+		$response = array();
+		$response['result'] = $this->ResumeModel->deleteSkill($this->input->post('ID'));
 
 		echo json_encode($response);
 	}
