@@ -3578,7 +3578,7 @@ header.header-nav.menu_style_home_six .sign_up_btn .btn{
     vertical-align:middle
 }
 .job_review_table .table tr{
-    height:90px
+    /*height:90px*/
 }
 .job_review_table .table .thead-light th{
     background-color:#fafafa;
@@ -3667,7 +3667,7 @@ header.header-nav.menu_style_home_six .sign_up_btn .btn{
     font-size:50px
 }
 .cv_manager .job_review_table .table tr{
-    height:150px
+    /*height:150px*/
 }
 .cv_manager .job_review_table .table tr ul{
     margin-bottom:0
@@ -3707,7 +3707,7 @@ header.header-nav.menu_style_home_six .sign_up_btn .btn{
     outline:0;
     position:relative;
     text-align:center;
-    width:174px;
+    width:250px;
     -webkit-transition:all .3s ease 0s;
     -moz-transition:all .3s ease 0s;
     -o-transition:all .3s ease 0s;

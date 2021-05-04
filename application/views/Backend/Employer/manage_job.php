@@ -125,7 +125,7 @@
 		dTable = $('#tblJobs').DataTable({
 			"processing": true,
 			"initComplete": function (settings, json) {
-				$("#tblPartners").show();
+				$("#tblJobs").show();
 			},
 			"serverSide": true,
 			"select": true,
