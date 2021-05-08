@@ -8,7 +8,7 @@
  * Time: 11:40
  */
 
-$User_Session = $this->session->userdata('User_Session');
+	$User_Session = $this->session->userdata('User_Session');
 ?>
 
 
@@ -109,7 +109,6 @@ $User_Session = $this->session->userdata('User_Session');
 										<?php } ?>
 
 										<a class="dropdown-item" href="<?php echo base_url('Login/logout'); ?>"><span class="flaticon-logout"></span> Logout</a>
-										<a class="dropdown-item" href="#"><span class="flaticon-rubbish-bin"></span> Delete Profile</a>
 									</div>
 								<?php }else { ?>
 
@@ -158,7 +157,7 @@ $User_Session = $this->session->userdata('User_Session');
 										<?php } ?>
 
 										<a class="dropdown-item" href="<?php echo base_url('Login/logout'); ?>"><span class="flaticon-logout"></span> Logout</a>
-										<a class="dropdown-item" href="#"><span class="flaticon-rubbish-bin"></span> Delete Profile</a>
+
 									</div>
 
 								<?php } ?>

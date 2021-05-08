@@ -21,6 +21,21 @@ class UserModel extends CI_Model
 		}
 	}
 
+	function changePassword($id, $password){
+		$this->db->set('user_password', $password);
+		$this->db->where('user_id', $id);
+		return $this->db->update('tbl_users');
+
+	}
+
+	function getCurrentPassword($userid){
+		$this->db->select('user_password');
+		$this->db->from('tbl_users');
+		$this->db->where('user_id', $userid);
+
+		return $this->db->get()->result();
+	}
+
 	function isUserExist($data){
 		$this->db->select('*');
 		$this->db->from('tbl_users');
@@ -40,7 +55,6 @@ class UserModel extends CI_Model
 
 	function validateUser($email, $password)
 	{
-
 		$this->db->select('*');
 		$this->db->from('tbl_users');
 		$this->db->where('user_email', $email);
@@ -49,13 +63,9 @@ class UserModel extends CI_Model
 		$result = $this->db->get()->result();
 
 		if ($result == null) {
-
 			return false;
-
 		} else {
-
 			return $result;
-
 		}
 	}
 
