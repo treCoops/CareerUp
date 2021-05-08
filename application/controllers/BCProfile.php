@@ -16,6 +16,7 @@ class BCProfile extends CI_Controller
 		parent::__construct();
 
 		$this->load->library('session');
+		$this->load->helper('url', 'form');
 
 		$User_Session = $this->session->userdata('User_Session');
 
@@ -57,8 +58,50 @@ class BCProfile extends CI_Controller
 
 		$User_Session = $this->session->userdata('User_Session');
 
+		$rand_name = $this->genRandomString()."_".session_id()."_".time();
+
+		$config['upload_path'] = './assets/images/profile/';
+		$config['allowed_types'] = 'gif|jpg|png|jpeg';
+		$config['max_size'] = 3000;
+		$config['max_width'] = 2500;
+		$config['max_height'] = 2500;
+		$config['file_name'] = $rand_name;
+
+		$this->load->library('upload', $config);
+
 		$data = array();
 		$response = array();
+
+		if (!$this->upload->do_upload('imageUpload')) {
+			$error = $this->upload->display_errors();
+			$data['candidate_profile_image_url'] = null;
+
+			$result = $this->ProfileModel->getProfile($User_Session['ID']);
+			if($result){
+				$currentImage = $result['candidate_profile_image_url'];
+
+				if($currentImage != null){
+					$data['candidate_profile_image_url'] = $currentImage;
+				}else{
+					$response['status'] = 500;
+					$response['message'] = 'Please upload a profile image.!';
+				}
+			}
+		}else{
+			$img = $this->upload->data();
+
+			$result = $this->ProfileModel->getProfile($User_Session['ID']);
+
+			if($result){
+				$currentImage = $result['candidate_profile_image_url'];
+
+				if($currentImage != null){
+					unlink('assets/images/profile/'.$currentImage);
+				}
+			}
+
+			$data['candidate_profile_image_url'] = $img["file_name"];
+		}
 
 		$data['user_id'] = $User_Session['ID'];
 		$data['candidate_full_name'] = $this->input->post('txtCandidateFullName');
@@ -156,5 +199,20 @@ class BCProfile extends CI_Controller
 		}
 
 		echo json_encode($response);
+	}
+
+	function genRandomString(){
+		$length = 5;
+		$characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWZYZ";
+
+		$real_string_length = strlen($characters) ;
+		$string="id";
+
+		for ($p = 0; $p < $length; $p++)
+		{
+			$string .= $characters[mt_rand(0, $real_string_length-1)];
+		}
+
+		return strtolower($string);
 	}
 }

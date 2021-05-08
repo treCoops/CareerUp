@@ -12,6 +12,7 @@ class Jobs extends CI_Controller
 {
 	public function index()
 	{
+		$data['nav'] = '';
 		$data['title'] = "Jobs | CareerUp";
 		$data['page'] = "Frontend/jobs";
 		$this->load->view('Frontend/Template/template', $data);

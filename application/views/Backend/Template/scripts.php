@@ -28,6 +28,7 @@
 <script type="text/javascript" src="<?php base_url() ?>assets/js/slider.js"></script>
 <script type="text/javascript" src="<?php base_url() ?>assets/js/timepicker.js"></script>
 <script type="text/javascript" src="<?php base_url() ?>assets/js/wow.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url() ?>assets/js/profileImageCreater.js"></script>
 
 <!-- Custom script for all pages -->
 <script type="text/javascript" src="<?php base_url() ?>assets/js/script.js"></script>
@@ -40,5 +41,7 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/flatpickr/flatpickr.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/confirm-js-alert/jquery-confirm.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/bootstrap-range-Slider/bootstrap-rangeSlider.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/moment/moment.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/moment/moment-with-locales.min.js"></script>
 
 

@@ -9,11 +9,22 @@
  */
 ?>
 <div class="col-sm-12 col-lg-8 col-xl-9">
-	<div class="my_profile_form_area">
+	<div class="my_profile_form_area employer_profile">
 		<form id="formProfile" method="post">
 			<div class="row">
 				<div class="col-lg-12">
 					<h4 class="fz20 mb20">My Profile</h4>
+				</div>
+				<div class="col-lg-12">
+					<div class="avatar-upload mb30">
+						<div class="avatar-edit">
+							<input class="btn btn-thm" type='file' id="imageUpload" name="imageUpload" accept=".png, .jpg, .jpeg" />
+							<label for="imageUpload"></label>
+						</div>
+						<div class="avatar-preview">
+							<div id="imagePreview"></div>
+						</div>
+					</div>
 				</div>
 				<div class="col-lg-12">
 					<div class="my_profile_thumb_edit"></div>
@@ -266,6 +277,10 @@
 					$('#txtLocationZoom').val(r.data.candidate_location_zoom);
 					$('#txtProfileID').val(r.data.candidate_profile_id);
 
+					$('#imagePreview').css('background-image', 'url(<?php echo base_url('assets/images/profile/') ?>'+ r.data.candidate_profile_image_url+')');
+					$('#imagePreview').hide();
+					$('#imagePreview').fadeIn(650);
+
 
 					$('#cmbCandidateExperienceLevel').val(r.data.candidate_experience);
 					$('#cmbCandidateExperienceLevel').trigger('change');
@@ -302,6 +317,22 @@
 
 	$(document).ready(function() {
 		updateUI();
+
+		function readURL(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+				reader.onload = function (e) {
+					$('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
+					$('#imagePreview').hide();
+					$('#imagePreview').fadeIn(650);
+				}
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
+
+		$("#imageUpload").change(function () {
+			readURL(this);
+		});
 
 		flatpickr('#txtCandidateDOB', {
 			maxDate: new Date()

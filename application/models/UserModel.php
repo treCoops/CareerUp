@@ -21,6 +21,14 @@ class UserModel extends CI_Model
 		}
 	}
 
+	function getCompanySector($id){
+		$this->db->select('sector_name');
+		$this->db->from('tbl_sectors');
+		$this->db->where('sector_id', $id);
+
+		return $this->db->get()->result();
+	}
+
 	function changePassword($id, $password){
 		$this->db->set('user_password', $password);
 		$this->db->where('user_id', $id);

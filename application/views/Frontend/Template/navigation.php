@@ -58,7 +58,8 @@
 					</li>
 					<li class="user_setting">
 						<div class="dropdown">
-							<a class="btn dropdown-toggle" href="#" data-toggle="dropdown"><img class="rounded-circle" src="<?php base_url() ?>assets/images/Users/<?php echo $User_Session['Profile_Image'] ?>" alt="8.jpg"> <span class="pl15 pr15"><?php echo $User_Session['Username'] ?></span></a>
+<!--							<a class="btn dropdown-toggle" href="#" data-toggle="dropdown"><img class="rounded-circle" id="avatar"  src="--><?php //base_url() ?><!--assets/images/Users/--><?php //echo $User_Session['Profile_Image'] ?><!--" alt="8.jpg"> <span class="pl15 pr15">--><?php //echo $User_Session['Username'] ?><!--</span></a>-->
+							<a class="btn dropdown-toggle" href="#" data-toggle="dropdown"><img class="rounded-circle" id="avatar" alt="8.jpg"> <span class="pl15 pr15"><?php echo $User_Session['Username'] ?></span></a>
 							<div class="dropdown-menu">
 								<div class="user_set_header">
 									<p>Hi, <?php echo $User_Session['Username'] ?> <br><span class="address"><?php echo $User_Session['Email'] ?></span></p>

@@ -51,7 +51,8 @@ $User_Session = $this->session->userdata('User_Session');
 				<li class="user_setting">
 					<div class="dropdown">
 
-						<a class="btn dropdown-toggle" href="#" data-toggle="dropdown"><img class="rounded-circle" src="<?php base_url() ?>assets/images/Users/<?php echo $User_Session['Profile_Image'] ?>" alt="8.jpg"> <span class="pl15 pr15"><?php echo $User_Session['Username'] ?></span></a>
+<!--						<a class="btn dropdown-toggle" href="#" data-toggle="dropdown"><img class="rounded-circle" src="--><?php //base_url() ?><!--assets/images/Users/--><?php //echo $User_Session['Profile_Image'] ?><!--" alt="8.jpg"> <span class="pl15 pr15">--><?php //echo $User_Session['Username'] ?><!--</span></a>-->
+						<a class="btn dropdown-toggle" href="#" data-toggle="dropdown"><img class="rounded-circle" id="avatar" alt="8.jpg"> <span class="pl15 pr15"><?php echo $User_Session['Username'] ?></span></a>
 						<div class="dropdown-menu">
 							<div class="user_set_header">
 								<p>Hi, <?php echo $User_Session['Username'] ?> <br><span class="address"><?php echo $User_Session['Email'] ?></span></p>
@@ -102,7 +103,7 @@ $User_Session = $this->session->userdata('User_Session');
 									<?php } ?>
 
 									<a class="dropdown-item" href="<?php echo base_url('Login/logout'); ?>"><span class="flaticon-logout"></span> Logout</a>
-									<a class="dropdown-item" href="#"><span class="flaticon-rubbish-bin"></span> Delete Profile</a>
+
 								</div>
 							<?php }else { ?>
 
@@ -151,7 +152,7 @@ $User_Session = $this->session->userdata('User_Session');
 									<?php } ?>
 
 									<a class="dropdown-item" href="<?php echo base_url('Login/logout'); ?>"><span class="flaticon-logout"></span> Logout</a>
-									<a class="dropdown-item" href="#"><span class="flaticon-rubbish-bin"></span> Delete Profile</a>
+
 								</div>
 
 							<?php } ?>
@@ -193,3 +194,5 @@ $User_Session = $this->session->userdata('User_Session');
 		</ul>
 	</nav>
 </div>
+
+

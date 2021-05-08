@@ -10,8 +10,10 @@
 
 class Contact extends CI_Controller
 {
+
 	public function index()
 	{
+		$data['nav'] = '';
 		$data['title'] = "Contact | CareerUp";
 		$data['page'] = "Frontend/contact";
 		$this->load->view('Frontend/Template/template', $data);

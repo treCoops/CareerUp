@@ -10,6 +10,17 @@
 
 class BEResumes extends CI_Controller
 {
+	function __construct() {
+		parent::__construct();
+
+		$this->load->library('session');
+
+		$User_Session = $this->session->userdata('User_Session');
+		if ($User_Session == null) {
+			redirect(base_url('Login/notLoggedIn'));
+		}
+	}
+
 	public function index()
 	{
 		$data['title'] = "Shortlisted Resumes | CareerUp";

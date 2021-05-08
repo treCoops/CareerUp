@@ -25,6 +25,7 @@
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/progressbar.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/slider.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/timepicker.js"></script>
+<script type="text/javascript" src="<?php echo base_url() ?>assets/js/profileImageCreater.js"></script>
 <!-- Custom script for all pages -->
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/script.js"></script>
 
@@ -33,3 +34,5 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/jquery-validation/jquery.validate.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/notify-js/notify.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/flatpickr/flatpickr.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/moment/moment.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/moment/moment-with-locales.min.js"></script>

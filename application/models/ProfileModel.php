@@ -59,6 +59,14 @@ class ProfileModel extends CI_Model
 		}
 	}
 
+	function getCandidateName($id){
+		$this->db->select('*');
+		$this->db->from('tbl_candidate_profile');
+		$this->db->where('tbl_candidate_profile.user_id', $id);
+
+		return $this->db->get()->result();
+	}
+
 	function getCandidateProfile($id){
 		$this->db->select('*');
 		$this->db->from('tbl_candidate_profile');
@@ -99,6 +107,7 @@ class ProfileModel extends CI_Model
 				$new['candidate_location_zoom'] = $result[0]->candidate_location_zoom;
 				$new['created_time'] = $result[0]->created_time;
 				$new['candidate_address'] = $result[0]->candidate_address;
+				$new['candidate_profile_image_url'] = $result[0]->candidate_profile_image_url;
 
 				return $new;
 

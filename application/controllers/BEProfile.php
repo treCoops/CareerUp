@@ -70,7 +70,7 @@ class BEProfile extends CI_Controller
 
 		$rand_name = $this->genRandomString()."_".session_id()."_".time();
 
-		$config['upload_path'] = './assets/images/profile/company/';
+		$config['upload_path'] = './assets/images/profile/';
 		$config['allowed_types'] = 'gif|jpg|png|jpeg';
 		$config['max_size'] = 3000;
 		$config['max_width'] = 2500;
@@ -106,7 +106,7 @@ class BEProfile extends CI_Controller
 				$currentImage = $result['company_profile_image_url'];
 
 				if($currentImage != null){
-					unlink('assets/images/profile/company/'.$currentImage);
+					unlink('assets/images/profile/'.$currentImage);
 				}
 			}
 

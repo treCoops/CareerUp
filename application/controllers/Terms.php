@@ -12,6 +12,7 @@ class Terms extends CI_Controller
 {
 	public function index()
 	{
+		$data['nav'] = '';
 		$data['title'] = "Jobs | Terms & Conditions";
 		$data['page'] = "Frontend/terms";
 		$this->load->view('Frontend/Template/template', $data);

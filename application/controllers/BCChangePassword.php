@@ -15,6 +15,11 @@ class BCChangePassword extends CI_Controller
 
 		$this->load->library('session');
 
+		$User_Session = $this->session->userdata('User_Session');
+		if ($User_Session == null) {
+			redirect(base_url('Login/notLoggedIn'));
+		}
+
 		$this->load->model('UserModel');
 	}
 

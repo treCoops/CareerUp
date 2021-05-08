@@ -13,9 +13,9 @@
 	<div class="my_profile_form_area employer_profile">
 		<form id="formProfile" method="post" enctype="multipart/form-data">
 			<div class="row">
-				<div class="col-lg-12">
-					<h4 class="fz20 mb20">Company Profile</h4>
-				</div>
+					<div class="col-lg-12">
+						<h4 class="fz20 mb20">Company Profile</h4>
+					</div>
 					<div class="col-lg-12">
 						<div class="avatar-upload mb30">
 							<div class="avatar-edit">
@@ -108,25 +108,25 @@
 					<div class="col-md-6 col-lg-6">
 						<div class="my_profile_input form-group">
 							<label for="txtCompanyFacebook">Facebook</label>
-							<input type="text" class="form-control" name="txtCompanyFacebook" id="txtCompanyFacebook">
+							<input type="text" class="form-control" name="txtCompanyFacebook" id="txtCompanyFacebook" placeholder="https://www.website.com">
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-6">
 						<div class="my_profile_input form-group">
 							<label for="txtCompanyTwitter">Twitter</label>
-							<input type="text" class="form-control" id="txtCompanyTwitter" name="txtCompanyTwitter">
+							<input type="text" class="form-control" id="txtCompanyTwitter" name="txtCompanyTwitter" placeholder="https://www.website.com">
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-6">
 						<div class="my_profile_input form-group">
 							<label for="txtCompanyLinkedin">Linkedin</label>
-							<input type="text" class="form-control" name="txtCompanyLinkedin" id="txtCompanyLinkedin">
+							<input type="text" class="form-control" name="txtCompanyLinkedin" id="txtCompanyLinkedin" placeholder="https://www.website.com">
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-6">
 						<div class="my_profile_input form-group">
 							<label for="txtCompanyInstagram">Instagram</label>
-							<input type="text" class="form-control" name="txtCompanyInstagram" id="txtCompanyInstagram">
+							<input type="text" class="form-control" name="txtCompanyInstagram" id="txtCompanyInstagram" placeholder="https://www.website.com">
 						</div>
 					</div>
 					<div class="col-lg-12">
@@ -236,9 +236,9 @@
 					$('#txtCompanyInstagram').val(r.data.company_instagram);
 					$('#txtCompanyTwitter').val(r.data.company_twitter);
 					$('#txtCompanyAddress').val(r.data.company_address);
-					$('#txtCompanyLocationLatitude').val(r.data.company_location_lat);
-					$('#txtCompanyLocationLongitude').val(r.data.company_location_lng);
-					$('#txtCompanyLocationZoom').val(r.data.company_location_zoom);
+					$('#txtLocationLatitude').val(r.data.company_location_lat);
+					$('#txtLocationLongitude').val(r.data.company_location_lng);
+					$('#txtLocationZoom').val(r.data.company_location_zoom);
 					$('#txtProfileID').val(r.data.company_profile_id);
 					$('#txtCurrentImage').val(r.data.company_profile_image_url);
 
@@ -251,7 +251,7 @@
 						categories.push(r.data.categories[a].category_name)
 					}
 
-					$('#imagePreview').css('background-image', 'url(<?php echo base_url('assets/images/profile/company/') ?>'+ r.data.company_profile_image_url+')');
+					$('#imagePreview').css('background-image', 'url(<?php echo base_url('assets/images/profile/') ?>'+ r.data.company_profile_image_url+')');
 					$('#imagePreview').hide();
 					$('#imagePreview').fadeIn(650);
 

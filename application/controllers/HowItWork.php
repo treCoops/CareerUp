@@ -12,6 +12,7 @@ class HowItWork extends CI_Controller
 {
 	public function index()
 	{
+		$data['nav'] = '';
 		$data['title'] = "How It Works! | CareerUp";
 		$data['page'] = "Frontend/how";
 		$this->load->view('Frontend/Template/template', $data);
