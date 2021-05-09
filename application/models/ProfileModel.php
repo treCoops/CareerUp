@@ -48,6 +48,7 @@ class ProfileModel extends CI_Model
 				$new['company_linkedin'] = $result[0]->company_linkedin;
 				$new['company_instagram'] = $result[0]->company_instagram;
 				$new['company_twitter'] = $result[0]->company_twitter;
+				$new['company_rating'] = $result[0]->company_rating;
 
 				return $new;
 
@@ -159,6 +160,13 @@ class ProfileModel extends CI_Model
 		}else{
 			return null;
 		}
+	}
+
+	function updateRatingValue($ratingValue, $userID, $profileID){
+		$this->db->set('company_rating', $ratingValue);
+		$this->db->where('user_id', $userID);
+		$this->db->where('company_profile_id', $profileID);
+		return $this->db->update('tbl_company_profile');
 	}
 
 

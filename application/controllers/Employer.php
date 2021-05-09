@@ -93,6 +93,10 @@ class Employer extends CI_Controller
 		$result = $this->ReviewModel->addReview($data);
 
 		if($result){
+
+			$reviewUpdate = $this->ReviewModel->getCompanyReview($this->input->post('txtUserId'), $this->input->post('txtProfileId'));
+			$this->ProfileModel->updateRatingValue($reviewUpdate['review_rating'], $this->input->post('txtUserId'), $this->input->post('txtProfileId'));
+
 			$response['status'] = 200;
 			$response['message'] = 'Review added successfully!';
 		}else{
@@ -108,8 +112,6 @@ class Employer extends CI_Controller
 
 		$response['user_id'] = $this->input->post('user_id');
 		$profileId = $this->ProfileModel->getProfileID($this->input->post('user_id'));
-
-		$response['profile_id'] =
 
 		$result = $this->ReviewModel->getAllReviews($this->input->post('user_id'), $profileId[0]->company_profile_id);
 

@@ -31,7 +31,7 @@
 				<div class="candidate_personal_info style3">
 					<div class="thumb">
 						<img class="img-fluid" id="imgProfile" src="" alt="cl1.jpg">
-<!--						<div class="cpi_av_rating"><span>4.5</span></div>-->
+						<div class="cpi_av_rating"><span id="txtTotalRating"></span></div>
 					</div>
 					<div class="details">
 						<h3 id="txtCompanyName"></h3>
@@ -41,13 +41,6 @@
 							<li class="list-inline-item"><a href="#"><span id="txtPhoneNumber" class="flaticon-phone-call text-thm"></span></a></li>
 							<li class="list-inline-item"><a href="#"><span id="txtEmail" class="flaticon-mail text-thm"></span></a></li>
 						</ul>
-<!--						<ul class="review_list">-->
-<!--							<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>-->
-<!--							<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>-->
-<!--							<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>-->
-<!--							<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>-->
-<!--							<li class="list-inline-item"><a href="#"><i class="fa fa-star-o"></i></a></li>-->
-<!--						</ul>-->
 					</div>
 				</div>
 			</div>
@@ -248,6 +241,7 @@
 					}
 
 					$('#txtCategories').text(categories);
+					$('#txtTotalRating').text(r.data.company_rating);
 
 					$('#txtAbout').text(r.data.company_about);
 					$('#txtReviewTopic').text("What is it like to work at "+r.data.company_name);
@@ -288,7 +282,7 @@
 				}
 				if(r.status === 200){
 					$('#userReviewDiv').show();
-					console.log(r.data);
+					$('#reviewDivSlot').empty();
 
 					let content = ''
 
