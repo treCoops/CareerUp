@@ -27,9 +27,8 @@ class Employer extends CI_Controller
 
 	public function index()
 	{
-		$User_Session = $this->session->userdata('User_Session');
-
-		$work_type = $this->UserModel->getCompanySector($User_Session['Account_Type']);
+		$sectorID = $this->UserModel->getUserByUserID($_GET['id']);
+		$work_type = $this->UserModel->getCompanySector($sectorID[0]->user_job);
 
 		$data['nav'] = '';
 		$data['title'] = "View Employer | CareerUp";

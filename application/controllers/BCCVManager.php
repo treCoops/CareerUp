@@ -37,6 +37,25 @@ class BCCVManager extends CI_Controller
 		$this->load->view('Backend/Template/template', $data);
 	}
 
+	public function getDocuments(){
+
+		$response = array();
+
+		$result = $this->CandidateDocumentModel->getDocuments($this->input->post('ID'));
+
+		if($result != null){
+			$response['status'] = 200;
+			$response['message'] = 'Data exists';
+			$response['data'] = $result;
+		}else{
+			$response['status'] = 500;
+			$response['message'] = 'No sata exists';
+		}
+
+		echo json_encode($response);
+
+	}
+
 	public function getCLDetails(){
 		header("Content-type:application/json");
 

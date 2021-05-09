@@ -109,6 +109,7 @@ class ProfileModel extends CI_Model
 				$new['created_time'] = $result[0]->created_time;
 				$new['candidate_address'] = $result[0]->candidate_address;
 				$new['candidate_profile_image_url'] = $result[0]->candidate_profile_image_url;
+				$new['candidate_rating'] = $result[0]->candidate_rating;
 
 				return $new;
 
@@ -119,6 +120,8 @@ class ProfileModel extends CI_Model
 			return null;
 		}
 	}
+
+
 
 	function getCategories($id){
 		$this->db->select('*');
@@ -169,10 +172,31 @@ class ProfileModel extends CI_Model
 		return $this->db->update('tbl_company_profile');
 	}
 
+	function updateRatingValueCandidate($ratingValue, $userID, $profileID){
+			$this->db->set('candidate_rating', $ratingValue);
+			$this->db->where('user_id', $userID);
+			$this->db->where('candidate_profile_id', $profileID);
+			return $this->db->update('tbl_candidate_profile');
+	}
+
 
 	function getProfileID($id){
 		$this->db->select('company_profile_id');
 		$this->db->from('tbl_company_profile');
+		$this->db->where('user_id', $id);
+
+		$result = $this->db->get()->result();
+
+		if($result != null){
+			return $result;
+		}else{
+			return null;
+		}
+	}
+
+	function getCandidateProfileID($id){
+		$this->db->select('candidate_profile_id');
+		$this->db->from('tbl_candidate_profile');
 		$this->db->where('user_id', $id);
 
 		$result = $this->db->get()->result();

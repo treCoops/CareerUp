@@ -21,10 +21,28 @@ class UserModel extends CI_Model
 		}
 	}
 
+	function getUserByUserID($id){
+		$this->db->select('user_job');
+		$this->db->from('tbl_users');
+		$this->db->where('user_id', $id);
+
+		$result = $this->db->get()->result();
+
+		return $result;
+	}
+
 	function getCompanySector($id){
 		$this->db->select('sector_name');
 		$this->db->from('tbl_sectors');
 		$this->db->where('sector_id', $id);
+
+		return $this->db->get()->result();
+	}
+
+	function getCandidateCategory($id){
+		$this->db->select('job_name');
+		$this->db->from('tbl_jobs');
+		$this->db->where('job_id', $id);
 
 		return $this->db->get()->result();
 	}

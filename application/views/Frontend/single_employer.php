@@ -14,7 +14,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-				<h4 class="breadcrumb_title float-left">View Employer(Name Placeholder)</h4>
+				<h4 class="breadcrumb_title float-left" id="txtMain"></h4>
 				<ol class="breadcrumb float-right">
 					<li class="breadcrumb-item"><a href="<?php echo base_url('Home') ?>">Home</a></li>
 					<li class="breadcrumb-item active" aria-current="page">View Employers</li>
@@ -277,7 +277,6 @@
 			success: function(r){
 
 				if(r.status === 500){
-					console.log(error);
 					$('#userReviewDiv').hide();
 				}
 				if(r.status === 200){

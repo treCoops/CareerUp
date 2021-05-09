@@ -13,7 +13,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-				<h4 class="breadcrumb_title float-left">View Candidate(Name Placeholder)</h4>
+				<h4 class="breadcrumb_title float-left" id="txtMain"></h4>
 				<ol class="breadcrumb float-right">
 					<li class="breadcrumb-item"><a href="<?php echo base_url('Home') ?>">Home</a></li>
 					<li class="breadcrumb-item active" aria-current="page">View Candidate</li>
@@ -28,79 +28,25 @@
 			<div class="col-lg-8 col-xl-8">
 				<div class="candidate_personal_info">
 					<div class="thumb">
-						<img class="img-fluid rounded-circle" src="<?php echo base_url() ?>assets/images/team/cs2.jpg" alt="cs2.jpg">
-						<div class="cpi_av_rating"><span>4.5</span></div>
+						<img class="img-fluid rounded-circle" id="candidateImage" alt="cs2.jpg">
+						<div class="cpi_av_rating"><span id="txtCandidateRating"></span></div>
 					</div>
 					<div class="details">
-						<h3>Martha Griffin <small class="verified"><i class="fa fa-check-circle"></i></small></h3>
-						<p>Senior UI / UX Designer</p>
+						<h3 id="txtCandidateName"></h3>
+						<p><?php echo $type;  ?></p>
 						<ul class="address_list">
-							<li class="list-inline-item"><a href="#">Wiggle CRC</a></li>
-							<li class="list-inline-item"><a href="#"><img src="<?php echo base_url() ?>assets/images/resource/usa.png" alt="usa.png"></a></li>
-							<li class="list-inline-item"><a href="#">United States</a></li>
-						</ul>
-						<ul class="review_list">
-							<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-							<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-							<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-							<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-							<li class="list-inline-item"><a href="#"><i class="fa fa-star-o"></i></a></li>
+							<li class="list-inline-item"><a id="txtJobRole" href="#">United States</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-4 col-xl-4">
 				<div class="candidate_personal_overview">
-					<ul class="timer_list">
-						<li class="list-inline-item"><div class="timer">90</div></li>
-						<li class="list-inline-item"><span>%</span></li>
-					</ul>
-					<p>Job Success</p>
-					<ul class="skills">
-						<li class="progressbar3" data-width="85" data-target="90"></li>
-					</ul>
-					<div class="row mb10">
-						<div class="col col-sm-4 col-lg-4">
-							<div class="grid">
-								<div class="price">$84/hr</div>
-								<p>Hourly Rate</p>
-							</div>
-						</div>
-						<div class="col col-sm-4 col-lg-4 text-center">
-							<div class="grid">
-								<div class="total_job">502 Jobs</div>
-								<p>Done job</p>
-							</div>
-						</div>
-						<div class="col col-sm-4 col-lg-4 text-right">
-							<div class="grid">
-								<div class="hire">234</div>
-								<p>Rehired</p>
-							</div>
-						</div>
-					</div>
-					<button class="btn btn-block btn-thm"><span class="flaticon-ticket"></span> Make An Offer</button>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<!-- Sticky Header -->
-<section class="sticky_heading bgc-f3 h80 p0">
-	<div class="container">
-		<div class="row">
-			<div class="col-xl-12">
-				<div class="sticky-nav-tabs">
-					<div class="sticky-nav-tabs-container">
-						<li class="list-inline-item"><a class="sticky-nav-tab" href="#tab-1">About</a></li>
-						<li class="list-inline-item"><a class="sticky-nav-tab" href="#tab-2">Education</a></li>
-						<li class="list-inline-item"><a class="sticky-nav-tab" href="#tab-3">Work & Experience</a></li>
-						<li class="list-inline-item"><a class="sticky-nav-tab" href="#tab-4">Portfolio</a></li>
-						<li class="list-inline-item"><a class="sticky-nav-tab" href="#tab-5">Skills</a></li>
-						<li class="list-inline-item"><a class="sticky-nav-tab" href="#tab-6">Awards</a></li>
-						<li class="list-inline-item"><a class="sticky-nav-tab" href="#tab-7">Feedback</a></li>
-					</div>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<a href="#reviewDiv" class="btn btn-block btn-thm"></span> Add a Review</a>
 				</div>
 			</div>
 		</div>
@@ -116,176 +62,58 @@
 					<div id="tab-1" class="col-lg-12">
 						<div class="candidate_about_info">
 							<h4 class="fz20 mb30">About Me</h4>
-							<p class="mb30">I’m top rated, highly client-oriented and self-organized UX/UI designer with 3+ years of comprehensive experience working across UX/UI, Web and Graphic Design. Have huge working experience in international teams in collaboration with art director and front-end devs. Have successful experience in startups as well as award-winning redesigns of existing projects.</p>
-							<p class="mb40">I take personal responsibility and pay attention to any detail of my work and can greatly help you with:</p>
-							<p>-- creating UX/UI for highloaded interface systems: CRM, SaaS, B2B, ERP systems, enterprise solutions and analytical systems with administration panels, dashboards, infographics and compex data</p>
-							<p>-- information architecting and creating UX/UI from scratch or low-fidelity wireframes to final visual UI design for web, mobile (iOS, Android) and desktop</p>
-							<p>-- product design for large international projects: monitoring and management web applications in health product design for large international projects: monitoring and management web applications in health analytics</p>
-							<p class="mt30">The better I do - the better I feel. My aim is to help you to convert the idea into successful product with the most effective, clean and aesthetic design. I'm passionately interested in challenging tasks and researching for intricate results.</p>
+							<p id="txtAboutCandidate" class="mb30"></p>
 						</div>
 					</div>
 					<div id="tab-2" class="col-lg-12">
-						<div class="my_resume_eduarea style2">
+						<div id="educationMasterDiv" class="my_resume_eduarea style2">
 							<h4 class="title">Education</h4>
-							<div class="content">
-								<div class="circle bgc-thm"></div>
-								<p class="edu_center">Walters University <small>2002 - 2004</small></p>
-								<h4 class="edu_stats">Masters In Fine Arts</h4>
-								<p class="mb0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-							</div>
-							<div class="content">
-								<div class="circle bgc-thm"></div>
-								<p class="edu_center">Bachlors in Fine Arts <small>2012 - 2015</small></p>
-								<h4 class="edu_stats">Tombers Collage</h4>
-								<p class="mb0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-							</div>
-							<div class="content">
-								<div class="circle bgc-thm"></div>
-								<p class="edu_center">Imperieal Institute of Art Direction <small>2014 - 2015</small></p>
-								<h4 class="edu_stats">Diploma In Fine Arts</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+							<div id="educationDiv">
+
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-12">
-						<div id="tab-3" class="my_resume_eduarea style2">
+						<div id="workMasterDiv" class="my_resume_eduarea style2">
 							<h4 class="title">Work & Experience</h4>
-							<div class="content">
-								<div class="circle bgc-thm"></div>
-								<p class="edu_center">Inwave Studio <small>2008 - 2012</small></p>
-								<h4 class="edu_stats">Masters In Fine Arts</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-							</div>
-							<div class="content style2">
-								<div class="circle bgc-thm"></div>
-								<p class="edu_center">Wiggle CRC <small>2012 - 2015</small></p>
-								<h4 class="edu_stats">CEO Founder</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+							<div id="workDiv">
+
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-12">
-						<div id="tab-4" class="row my_resume_portfolio style2">
-							<h4 class="title">Portfolio</h4>
-							<div class="col-sm-6 col-lg-4">
-								<div class="portfolio_item">
-									<a class="lightbox-image" data-fancybox-group="Portfolio Title" href="<?php base_url() ?>assets/images/gallery/1.jpg">
-										<img class="img-fluid" src="<?php echo base_url() ?>assets/images/gallery/1.jpg" alt="1.jpg"/>
-									</a>
-								</div>
-							</div>
-							<div class="col-sm-6 col-lg-4">
-								<div class="portfolio_item">
-									<a class="lightbox-image" data-fancybox-group="Portfolio Title" href="<?php base_url() ?>assets/images/gallery/2.jpg">
-										<img class="img-fluid" src="<?php echo base_url() ?>assets/images/gallery/2.jpg" alt="2.jpg"/>
-									</a>
-								</div>
-							</div>
-							<div class="col-sm-6 col-lg-4">
-								<div class="portfolio_item">
-									<a class="lightbox-image" data-fancybox-group="Portfolio Title" href="<?php base_url() ?>assets/images/gallery/3.jpg">
-										<img class="img-fluid" src="<?php echo base_url() ?>assets/images/gallery/3.jpg" alt="3.jpg"/>
-									</a>
-								</div>
-							</div>
-						</div>
 					</div>
-					<div id="tab-5" class="col-lg-12">
-						<div class="candidate_resume_skill">
+					<div id="skillMasterDiv" class="col-lg-12">
+						<div class="my_resume_eduarea">
 							<h4 class="title">Skills</h4>
-							<!--Progress Levels-->
-							<div class="progress-levels">
-								<div class="progress-box wow" data-wow-delay="100ms" data-wow-duration="1500ms">
-									<h5 class="box-title">Sketch App</h5>
-									<div class="inner">
-										<div class="bar">
-											<div class="bar-innner"><div class="bar-fill ulockd-bgthm" data-percent="80"><div class="percent"></div></div></div>
-										</div>
-									</div>
-								</div>
-								<div class="progress-box wow" data-wow-delay="200ms" data-wow-duration="1500ms">
-									<h5 class="box-title">Web Design</h5>
-									<div class="inner">
-										<div class="bar">
-											<div class="bar-innner"><div class="bar-fill ulockd-bgthm" data-percent="90"><div class="percent"></div></div></div>
-										</div>
-									</div>
-								</div>
-								<div class="progress-box wow" data-wow-delay="200ms" data-wow-duration="1500ms">
-									<h5 class="box-title">Mobile UI Design</h5>
-									<div class="inner">
-										<div class="bar">
-											<div class="bar-innner"><div class="bar-fill ulockd-bgthm" data-percent="60"><div class="percent"></div></div></div>
-										</div>
-									</div>
-								</div>
-							</div>
+							<div id="skillDiv"></div>
 						</div>
 					</div>
 					<div class="col-lg-12">
-						<div id="tab-6" class="my_resume_eduarea style2">
+						<div id="awardMasterDiv" class="my_resume_eduarea style2">
 							<h4 class="title">Awards</h4>
-							<div class="content">
-								<div class="circle"></div>
-								<p class="edu_center">Jan 2018</p>
-								<h4 class="edu_stats">Perfect Attendance Programs</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+							<div id="awardDiv">
+
 							</div>
-							<div class="content style2">
-								<div class="circle"></div>
-								<p class="edu_center">Dec 2019</p>
-								<h4 class="edu_stats">Top Performer Recognition</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-							</div>
+
 						</div>
 					</div>
 					<div class="col-lg-12">
-						<div class="candidate_review_posted">
+						<div id="userReviewDiv" class="candidate_review_posted">
 							<h4 class="title mb30">Work history and feedback</h4>
-							<div class="details bgc-fa">
-								<h4>Designer for SaaS analytics app
-									<ul class="review float-right">
-										<li class="list-inline-item"><a class="av_review" href="#">4.5</a></li>
-										<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-										<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-										<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-										<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-										<li class="list-inline-item"><a href="#"><i class="fa fa-star-o"></i></a></li>
-									</ul>
-								</h4>
-								<ul class="meta">
-									<li class="list-inline-item"><a href="#"><span class="flaticon-event"></span> 2 days ago</a></li>
-									<li class="list-inline-item"><a href="#">$1,620.00</a></li>
-									<li class="list-inline-item"><a href="#">$27.00 / hr</a></li>
-									<li class="list-inline-item"><a href="#">60 hours</a></li>
-								</ul>
-								<p>Loved working with Julia. Extremely fast with quality work, took care of everything I asked for! Thank you so much. I will be contacting Julia again in the future for more work, highly.</p>
-								<h4 class="mt50">EcoDriving Interface Refinement
-									<ul class="review float-right">
-										<li class="list-inline-item"><a class="av_review" href="#">4.5</a></li>
-										<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-										<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-										<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-										<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-										<li class="list-inline-item"><a href="#"><i class="fa fa-star-o"></i></a></li>
-									</ul>
-								</h4>
-								<ul class="meta">
-									<li class="list-inline-item"><a href="#"><span class="flaticon-event"></span> 23 August 2018</a></li>
-									<li class="list-inline-item"><a href="#">$1,620.00</a></li>
-									<li class="list-inline-item"><a href="#">$27.00 / hr</a></li>
-									<li class="list-inline-item"><a href="#">60 hours</a></li>
-								</ul>
-								<p>Julia is a truly gifted designer. She is capable and demonstrated how she can take a few basic sketches of an interface in powerpoint, and turn them into spectacular CSS and beyond.</p>
+							<div id="reviewDivSlot">
+
+
 							</div>
+
 						</div>
 					</div>
-					<div class="col-lg-12">
-						<h4 id="tab-7" class="title fz20">Leave Your Review</h4>
+					<div id="reviewDiv" class="col-lg-12">
+						<h4 class="title fz20">Leave Your Review</h4>
 						<div class="candidate_leave_review text-center">
 							<div class="detials">
 								<form id="review-form" class="ulockd-mrgn630" action="#" method="post">
-									<h4>What is it like to work at Martha</h4>
+									<h4 id="txtFormHeading"></h4>
 									<div class="star-rating">
 										<input type="radio" name="ratings[1]" id="Overall_5" value="5" class="radio">
 										<label for="Overall_5"></label>
@@ -299,13 +127,16 @@
 										<label for="Overall_1"></label>
 									</div>
 									<div class="form-group text-left">
-										<label class="title" for="name2">Review Title</label>
-										<input class="form-control" type="text" name="name2" id="name2" value="">
+										<label class="title" for="txtReviewTitle">Review Title</label>
+										<input class="form-control" type="text" name="txtReviewTitle" id="txtReviewTitle">
 									</div>
 									<div class="form-group text-left">
-										<label class="control-label title" for="review">Review Content</label>
-										<textarea class="form-control" rows="5" name="review" id="review"></textarea>
-										<a href="#" class="btn btn-lg btn-thm">Submit Review <span class="flaticon-right-arrow"></span></a>
+										<input type="hidden" name="txtUserId" id="txtUserId" value="<?php echo $user_id; ?>">
+										<input type="hidden" name="txtProfileId" id="txtProfileId">
+										<label class="control-label title" for="txtReviewContent">Review Content</label>
+										<textarea class="form-control" rows="5" name="txtReviewContent" id="txtReviewContent"></textarea>
+										<br/>
+										<button type="submit" class="btn btn-lg btn-thm">Submit Review <span class="flaticon-right-arrow"></span></button>
 									</div>
 								</form>
 							</div>
@@ -318,67 +149,463 @@
 					<div class="icon text-thm"><span class="flaticon-controls"></span></div>
 					<div class="details">
 						<h4>Experience</h4>
-						<p>6-9 Years</p>
+						<p id="txtCandidateEx"></p>
 					</div>
 					<div class="icon text-thm"><span class="flaticon-old-age-man"></span></div>
 					<div class="details">
 						<h4>Age</h4>
-						<p>27 Years</p>
+						<p id="txtCandidateAge"></p>
 					</div>
 					<div class="icon text-thm"><span class="flaticon-paper"></span></div>
 					<div class="details">
 						<h4>Languages</h4>
-						<p>English, Turkish, Hindi</p>
+						<p id="txtCandidateLanguages"></p>
 					</div>
 					<div class="icon text-thm"><span class="flaticon-mortarboard"></span></div>
 					<div class="details">
-						<h4>Education</h4>
-						<p>Certificate</p>
+						<h4>Education Level</h4>
+						<p id="txtCandidateEducation"></p>
 					</div>
 				</div>
 				<div class="candidate_social_widget bgc-fa">
 					<ul>
 						<li>Social Profiles</li>
-						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fa fa-google"></i></a></li>
-						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+						<li><a id="txtFaceBook"><i class="fa fa-facebook"></i></a></li>
+						<li><a id="txtInstagram"><i class="fa fa-instagram"></i></a></li>
+						<li><a id="txtLinkedIn"><i class="fa fa-linkedin"></i></a></li>
+						<li><a id="txtTwitter"><i class="fa fa-twitter"></i></a></li>
 					</ul>
 				</div>
-				<h4 class="fz20 mb30">Attachments</h4>
-				<div class="candidate_document_widget">
-					<div class="details">
+				<div id="attachmentDiv">
+					<h4 class="fz20 mb30">Attachments</h4>
+					<div onclick="openDoc('CL')" id="divCoverLetter" class="candidate_document_widget">
+						<div class="details">
+							<div class="icon"><span class="flaticon-doc"></span></div>
+							<h4 class="title">Cover Letter</h4>
+							<input type="hidden" id="txtCoverLetter">
+							<p>View</p>
+						</div>
+					</div>
+					<div onclick="openDoc('CV')" id="divCV" class="candidate_document_widget">
 						<div class="icon"><span class="flaticon-doc"></span></div>
-						<h4 class="title">Cover Letter</h4>
-						<p>PDF</p>
+						<div class="details">
+							<h4 class="title">Curriculum Vitae</h4>
+							<input type="hidden" id="txtCV">
+							<p>View</p>
+						</div>
 					</div>
-				</div>
-				<div class="candidate_document_widget">
-					<div class="icon"><span class="flaticon-doc"></span></div>
-					<div class="details">
-						<h4 class="title">Contrac</h4>
-						<p>DOCX</p>
-					</div>
-				</div>
-				<h4 class="fz20 mb30">Contact Martha Griffin</h4>
-				<div class="candidate_contact_form bgc-fa">
-					<form>
-						<div class="form-group">
-							<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Your Name">
-						</div>
-						<div class="form-group">
-							<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Your Email">
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Subject">
-						</div>
-						<div class="form-group">
-							<textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Message"></textarea>
-						</div>
-						<button type="submit" class="btn btn-block btn-thm">Send Now <span class="flaticon-right-arrow"></span></button>
-					</form>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
+
+
+
+<script>
+
+	function openDoc(type){
+		if(type === 'CV'){
+			window.open("<?php echo base_url('assets/documents/candidate/') ?>"+$('#txtCV').val());
+		}
+
+		if(type === 'CL'){
+			window.open("<?php echo base_url('assets/documents/candidate/') ?>"+$('#txtCoverLetter').val());
+		}
+	}
+
+	function updateEducationDiv(id){
+		$.ajax({
+			url: "<?php echo base_url(''); ?>/BCResume/getAllEducationDetails",
+			data: {
+				ID: id
+			},
+			method: "post",
+			dataType: "json",
+			error: function(error){
+				console.log(error);
+				$.notify("Internal server error", "error");
+
+			},
+			success: function(r){
+
+				if(r.status == 200){
+					$('#educationMasterDiv').show();
+					$('#educationDiv').empty();
+					let content = ''
+					for(let a=0; a<r.data.length; a++){
+
+						content = '<div class="content">' +
+								'<div class="circle bgc-thm"></div>' +
+								'<p class="edu_center">'+r.data[a].education_qualification_name+' in '+r.data[a].education_field_of_study+'<small>'+r.data[a].education_start_date+' - '+r.data[a].education_end_date+'</small></p>' +
+								'<h4 class="edu_stats">'+r.data[a].education_college_name+'</h4>' +
+								'<h6 class="">'+ r.data[a].education_grade +'</h6>'+
+								'<p class="mb0">'+r.data[a].education_description+'.</p>' +
+								'</div>'
+
+						$('#educationDiv').append(content);
+					}
+				}
+
+				if(r.status == 500){
+					$('#educationMasterDiv').hide();
+				}
+
+
+			}
+		});
+	}
+
+	function updateWorkDiv(id){
+		$.ajax({
+			url: "<?php echo base_url(''); ?>/BCResume/getAllWorkDetails",
+			data: {
+				ID: id
+			},
+			method: "post",
+			dataType: "json",
+			error: function(error){
+				console.log(error);
+				$.notify("Internal server error", "error");
+
+			},
+			success: function(r){
+
+				if(r.status == 200) {
+					$('#workMasterDiv').show();
+					$('#workDiv').empty();
+					let content = ''
+					for (let a = 0; a < r.data.length; a++) {
+
+						if (r.data[a].work_currently === '1') {
+							content = '<div class="content"><div class="circle bgc-thm"></div>' +
+									'<p class="edu_center">' + r.data[a].work_company_name + ' <small>' + r.data[a].work_start_date + ' - Present</small></p>' +
+									'<h4 class="edu_stats">' + r.data[a].work_position +
+									'</h4> ' +
+									'<h6 class="">' + r.data[a].work_location + '</h6>' +
+									'<p>' + r.data[a].work_description + '.</p></div>'
+						}
+						if (r.data[a].work_currently === '0') {
+							content = '<div class="content"><div class="circle bgc-thm"></div>' +
+									'<p class="edu_center">' + r.data[a].work_company_name + ' <small>' + r.data[a].work_start_date + ' - ' + r.data[a].work_end_date + ' (' + r.data[a].experience_time + ')</small></p>' +
+									'<h4 class="edu_stats">' + r.data[a].work_position +
+									'</h4> ' +
+									'<h6 class="">' + r.data[a].work_location + '</h6>' +
+									'<p>' + r.data[a].work_description + '.</p></div>'
+						}
+
+						$('#workDiv').append(content);
+					}
+
+				}
+
+				if(r.status == 500){
+					$('#workMasterDiv').hide();
+				}
+			}
+		});
+	}
+
+	function updateSkillDiv(id){
+		$.ajax({
+			url: "<?php echo base_url(''); ?>/BCResume/getAllSkillDetails",
+			data: {
+				ID: id
+			},
+			method: "post",
+			dataType: "json",
+			error: function(error){
+				console.log(error);
+				$.notify("Internal server error", "error");
+
+			},
+			success: function(r){
+
+
+				if(r.status == 200) {
+					$('#skillMasterDiv').show();
+					$('#skillDiv').empty();
+					let content = ''
+					for (let a = 0; a < r.data.length; a++) {
+						content = '<div class="content">' +
+								'<div class="circle"></div>' +
+								'<p class="edu_center" style="text-align: start">' + r.data[a].skill_name + '</p>' +
+								'<h4 class="edu_stats">' +
+								'<div class="progress br-30" style="width: 70%">' +
+								'<div class="progress-bar" role="progressbar" style="width: ' + r.data[a].skill_level + '%; background-color: #82b440;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">' + r.data[a].skill_level + '%</div>' +
+								'</div>' +
+								'</h4>' +
+								'<p style="text-align: start">' + r.data[a].skill_description + '</p>' +
+								'</div>'
+						$('#skillDiv').append(content);
+					}
+
+				}
+				if(r.status == 500){
+					$('#skillMasterDiv').hide();
+				}
+			}
+		});
+	}
+
+	function updateAwardDiv(id){
+		$.ajax({
+			url: "<?php echo base_url(''); ?>/BCResume/getAllAwardDetails",
+			data: {
+				ID: id
+			},
+			method: "post",
+			dataType: "json",
+			error: function(error){
+				console.log(error);
+				$.notify("Internal server error", "error");
+
+			},
+			success: function(r){
+
+				if(r.status == 200) {
+					$('#awardMasterDiv').show();
+					$('#awardDiv').empty();
+					let content = ''
+					for (let a = 0; a < r.data.length; a++) {
+						content = '<div class="content">' +
+								'<div class="circle bgc-thm"></div>' +
+								'<p class="edu_center">' + r.data[a].award_date + '</p>' +
+								'<h4 class="edu_stats">' + r.data[a].award_name +
+								'</h4>' +
+								'<p>' + r.data[a].award_description + '</p>' +
+								'</div>'
+
+						$('#awardDiv').append(content);
+					}
+
+				}
+
+				if(r.status == 500){
+					$('#awardMasterDiv').hide();
+				}
+			}
+		});
+	}
+
+	function getDocuments(id){
+		$.ajax({
+			url: "<?php echo base_url(''); ?>/BCCVManager/getDocuments",
+			data: {
+				ID: id
+			},
+			method: "post",
+			dataType: "json",
+			error: function(error){
+				console.log(error);
+				$.notify("Internal server error", "error");
+
+			},
+			success: function(r){
+				if(r.status == 200) {
+					$('#attachmentDiv').show();
+					for(let a=0; a<r.data.length; a++){
+						if(r.data[a].document_type === "CV"){
+							$('#divCoverLetter').show();
+							$('#txtCV').val(r.data[a].document_name);
+						}
+
+						if(r.data[a].document_type === "CL"){
+							$('#divCV').show();
+							$('#txtCoverLetter').val(r.data[a].document_name);
+						}
+					}
+				}
+
+				if(r.status == 500){
+					$('#attachmentDiv').hide();
+				}
+			}
+		});
+	}
+
+	function updateUI(id){
+		$.ajax({
+			url: "<?php echo base_url(''); ?>/Candidate/getProfile",
+			data: {
+				id: $('#txtUserId').val()
+			},
+			method: "post",
+			dataType: "json",
+			error: function(error){
+				console.log(error);
+				$.notify("Internal server error", "error");
+
+			},
+			success: function(r){
+
+				if(r.status === 500){
+					console.log(error);
+					$.notify("Internal server error", "error");
+				}
+				if(r.status === 200){
+					$('#txtCandidateName').text(" "+r.data.candidate_full_name);
+					$('#txtJobRole').text(r.data.candidate_city+", "+r.data.candidate_country);
+					$('#txtCandidateRating').text(r.data.candidate_rating);
+
+					$('#candidateImage').attr('src', '<?php echo base_url('assets/images/profile/') ?>'+ r.data.candidate_profile_image_url);
+
+					$('#txtAboutCandidate').text(r.data.candidate_description);
+					$('#txtCandidateEx').text(r.data.candidate_experience);
+					$('#txtCandidateAge').text(r.data.candidate_age+" years");
+
+					let language = ''
+
+					for(a=0; a<r.data.languages.length; a++){
+						if(r.data.categories.length === 1){
+							language = r.data.languages[a].language_title
+						}else{
+							if(a === 0){
+								language = r.data.languages[a].language_title
+							}else{
+								language = language + ", " + r.data.languages[a].language_title
+							}
+						}
+					}
+
+					$('#txtCandidateLanguages').text(language);
+					$('#txtProfileId').val(r.data.candidate_profile_id);
+					$('#txtCandidateEducation').text(r.data.candidate_education_level);
+					$('#txtFormHeading').text('What dou you think about '+r.data.candidate_full_name);
+
+					$("#txtFaceBook").prop("href", r.data.company_facebook)
+					$("#txtInstagram").prop("href", r.data.company_instagram)
+					$("#txtLinkedIn").prop("href", r.data.company_linkedin)
+					$("#txtTwitter").prop("href", r.data.company_twitter)
+
+				}
+			}
+		});
+
+
+		$.ajax({
+			url: "<?php echo base_url(''); ?>/Candidate/getReviews",
+			data: {
+				user_id: $('#txtUserId').val(),
+			},
+			method: "post",
+			dataType: "json",
+			error: function(error){
+				console.log(error);
+				$.notify("Internal server error", "error");
+
+			},
+			success: function(r){
+
+				if(r.status === 500){
+					$('#userReviewDiv').hide();
+				}
+				if(r.status === 200){
+					$('#userReviewDiv').show();
+					$('#reviewDivSlot').empty();
+
+					console.log(r.data);
+
+					let content = ''
+
+					for(let a=0; a<r.data.length; a++){
+
+						let star = '';
+						for(let b=1; b<=5; b++) {
+							if(b <= r.data[a].review_rating){
+								star = star + '<li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>'
+							}else{
+								star = star + '<li class="list-inline-item"><a href="#"><i class="fa fa-star-o"></i></a></li>'
+							}
+
+						}
+
+						content = '<div class="details">'+
+								'<img style="width: 100px; height: 100px" class="img-fluid rounded-circle float-left" src="assets/images/profile/'+r.data[a].image_url+'" alt="1.jpg">'+
+								'<h4>'+r.data[a].review_title+
+								'<ul class="review float-right">'+
+								'<li class="list-inline-item"><a class="av_review" href="#">'+r.data[a].review_rating+'</a></li>'+star+
+								'</ul>'+
+								'</h4>'+
+								'<ul class="meta">'+
+								'<li class="list-inline-item"><a class="text-thm2" href="#"> &ensp;'+r.data[a].reviewer_name+'</a></li>'+
+								'<li class="list-inline-item"><a href="#"><span class="flaticon-event"></span> '+moment(r.data[a].created_date).fromNow()+'</a></li>'+
+								'</ul>'+
+								'<p>'+r.data[a].review_content+'</p>'+
+								'</div>'
+
+
+						$('#reviewDivSlot').append(content);
+					}
+
+				}
+			}
+		});
+	}
+
+	$(document).ready(function() {
+		$('#attachmentDiv').hide();
+		$('#divCoverLetter').hide();
+		$('#divCoverLetter').hide();
+		updateUI();
+		updateEducationDiv($('#txtUserId').val())
+		updateWorkDiv($('#txtUserId').val())
+		updateAwardDiv($('#txtUserId').val())
+		updateSkillDiv($('#txtUserId').val())
+		getDocuments($('#txtUserId').val());
+
+		$("#review-form").validate({
+			ignore: [],
+			rules: {
+				Overall_1: {
+					required: true
+				},
+				txtReviewTitle: {
+					required: true,
+				},
+				txtReviewContent: {
+					required: true,
+				}
+			},
+			messages: {
+				Overall_1: {
+					required: "Rating required"
+				},
+				txtReviewTitle: {
+					required: 'Review topic required!',
+				},
+				txtReviewContent: {
+					required: 'Review content required!',
+				}
+			},
+			submitHandler: function(form) {
+				let formData = new FormData(form);
+
+				$.ajax({
+					url: '<?php echo base_url('Candidate/addReview'); ?>',
+					data: formData,
+					dataType: 'json',
+					method: 'post',
+					processData: false,
+					contentType: false,
+					error: function(error){
+						$.notify("Internal server error", "error");
+					},
+					success: function(r){
+						if(r.status == 200){
+							$.notify(r.message, "success");
+							updateUI();
+						}
+
+						if(r.status == 500){
+							$.notify(r.message, "error");
+						}
+
+					}
+				});
+			}
+
+		});
+	});
+
+</script>

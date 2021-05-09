@@ -4621,7 +4621,7 @@ header.header-nav.menu_style_home_six .sign_up_btn .btn{
     border:2px solid #82b440
 }
 .my_resume_eduarea.style2 .content:after{
-    background-color:#eaeaea;
+    /*background-color:#eaeaea;*/
     content:"";
     height:100px;
     left:18px;
@@ -4631,7 +4631,7 @@ header.header-nav.menu_style_home_six .sign_up_btn .btn{
     z-index:-1
 }
 .my_resume_eduarea.style2 .content:after{
-    background-color:#eaeaea;
+    /*background-color:#eaeaea;*/
     content:"";
     height:100px;
     left:18px;

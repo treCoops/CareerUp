@@ -95,5 +95,19 @@ class CandidateDocumentModel extends CI_Model
 		}
 	}
 
+	function getDocuments($id){
+		$this->db->select('document_name, document_type');
+		$this->db->from('tbl_candidate_document');
+		$this->db->where('user_id', $id);
+
+		$result = $this->db->get()->result();
+
+		if($result != null){
+			return $result;
+		}else{
+			return null;
+		}
+	}
+
 
 }

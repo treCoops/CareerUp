@@ -55,4 +55,23 @@ class ReviewModel extends CI_Model
 
 	}
 
+	function getCandidateReview($user_id, $profile_id){
+
+		$response = array();
+
+		$reviews = $this->getAllReviews($user_id, $profile_id);
+
+		$count = 0;
+		$total = 0 ;
+
+		foreach ($reviews as $row){
+			$total = $total + intval($row->review_rating);
+			$count++;
+		}
+		$response['review_rating'] = round($total/$count,1,PHP_ROUND_HALF_UP);
+
+		return $response;
+
+	}
+
 }
