@@ -43,6 +43,11 @@ $User_Session = $this->session->userdata('User_Session');
 				<li>
 					<a href="<?php echo base_url('Jobs') ?>"><span class="title">Jobs</span></a>
 				</li>
+				<?php if($User_Session != null){ ?>
+					<li>
+						<a href="<?php echo base_url('Partnerships') ?>"><span class="title">Partnerships</span></a>
+					</li>
+				<?php } ?>
 			</ul>
 
 			<ul class="header_user_notif pull-right dn-smd">
@@ -190,7 +195,12 @@ $User_Session = $this->session->userdata('User_Session');
 			<li>
 				<a href="<?php echo base_url('Jobs') ?>"><span class="title">Jobs</span></a>
 			</li>
-			<li><a class="text-thm" href="<?php echo base_url('Login'); ?>">Login/Register</a></li>
+			<?php if ($User_Session == null) { ?>
+				<li><a class="title" href="<?php echo base_url('Login'); ?>">Login</a></li>
+			<?php }else { ?>
+				<li><a href="<?php echo base_url('Partnerships') ?>"><span class="title">Partnerships</span></a></li>
+				<li><a href="<?php echo base_url('Login/logout') ?>"><span class="title">Logout</span></a></li>
+			<?php } ?>
 		</ul>
 	</nav>
 </div>

@@ -92,85 +92,85 @@
 </section>
 
 <!-- Features Job List Design -->
-<section class="popular-job">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="ulockd-main-title">
-					<h3 class="mt0">Featured Jobs</h3>
-					<a class="text-thm float-right" href="#">Browse All Jobs <i class="flaticon-right-arrow pl15"></i></a>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-12 col-lg-12">
-				<div class="fj_post">
-					<div class="details">
-						<h5 class="job_chedule text-thm mt0">Full Time</h5>
-						<div class="thumb fn-smd">
-							<img class="img-fluid" src="<?php echo base_url() ?>assets/images/partners/1.jpg" alt="1.jpg">
-						</div>
-						<h4>JEB Product Sales Specialist, Russia & CIS</h4>
-						<p>Posted 23 August by <a class="text-thm" href="#">Wiggle CRC</a></p>
-						<ul class="featurej_post">
-							<li class="list-inline-item"><span class="flaticon-location-pin"></span> <a href="#">Bothell, WA, USA</a></li>
-							<li class="list-inline-item"><span class="flaticon-price pl20"></span> <a href="#">$13.00 - $18.00 per hour</a></li>
-						</ul>
-					</div>
-					<a class="btn btn-md btn-transparent float-right fn-smd" href="#">Browse Job</a>
-				</div>
-			</div>
-			<div class="col-sm-12 col-lg-12">
-				<div class="fj_post">
-					<div class="details">
-						<h5 class="job_chedule text-thm mt0">Part Time</h5>
-						<div class="thumb fn-smd">
-							<img class="img-fluid" src="<?php echo base_url() ?>assets/images/partners/2.jpg" alt="2.jpg">
-						</div>
-						<h4>General Ledger Accountant</h4>
-						<p>Posted 23 August by <a class="text-thm" href="#">Robert Half Finance & Accounting</a></p>
-						<ul class="featurej_post">
-							<li class="list-inline-item"><span class="flaticon-location-pin"></span> <a href="#">RG40, Wokingham</a></li>
-							<li class="list-inline-item"><span class="flaticon-price pl20"></span> <a href="#">$13.00 - $18.00 per hour</a></li>
-						</ul>
-					</div>
-					<a class="btn btn-md btn-transparent float-right fn-smd" href="#">Browse Job</a>
-				</div>
-			</div>
-			<div class="col-sm-12 col-lg-12">
-				<div class="fj_post">
-					<div class="details">
-						<h5 class="job_chedule text-thm mt0">Full Time</h5>
-						<div class="thumb fn-smd">
-							<img class="img-fluid" src="<?php echo base_url() ?>assets/images/partners/3.jpg" alt="3.jpg">
-						</div>
-						<h4>Junior Digital Graphic Designer</h4>
-						<p>Posted 23 August by <a class="text-thm" href="#">Parkside Recruitment - Uxbridge Finance</a></p>
-						<ul class="featurej_post">
-							<li class="list-inline-item"><span class="flaticon-location-pin"></span> <a href="#">New Denham, UB8 1JG</a></li>
-							<li class="list-inline-item"><span class="flaticon-price pl20"></span> <a href="#">$13.00 - $18.00 per hour</a></li>
-						</ul>
-					</div>
-					<a class="btn btn-md btn-transparent float-right fn-smd" href="#">Browse Job</a>
-				</div>
-			</div>
-			<div class="col-sm-12 col-lg-12">
-				<div class="fj_post">
-					<div class="details">
-						<h5 class="job_chedule text-thm mt0">Full Time</h5>
-						<div class="thumb fn-smd">
-							<img class="img-fluid" src="<?php echo base_url() ?>assets/images/partners/4.jpg" alt="4.jpg">
-						</div>
-						<h4>UX/UI Designer</h4>
-						<p>Yesterday <a class="text-thm" href="#">NonStop Recruitment Ltd</a></p>
-						<ul class="featurej_post">
-							<li class="list-inline-item"><span class="flaticon-location-pin"></span> <a href="#">Bothell, WA, USA</a></li>
-							<li class="list-inline-item"><span class="flaticon-price pl20"></span> <a href="#">$13.00 - $18.00 per hour</a></li>
-						</ul>
-					</div>
-					<a class="btn btn-md btn-transparent float-right fn-smd" href="#">Browse Job</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+<!--<section class="popular-job">-->
+<!--	<div class="container">-->
+<!--		<div class="row">-->
+<!--			<div class="col-lg-12">-->
+<!--				<div class="ulockd-main-title">-->
+<!--					<h3 class="mt0">Featured Jobs</h3>-->
+<!--					<a class="text-thm float-right" href="#">Browse All Jobs <i class="flaticon-right-arrow pl15"></i></a>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--		<div class="row">-->
+<!--			<div class="col-sm-12 col-lg-12">-->
+<!--				<div class="fj_post">-->
+<!--					<div class="details">-->
+<!--						<h5 class="job_chedule text-thm mt0">Full Time</h5>-->
+<!--						<div class="thumb fn-smd">-->
+<!--							<img class="img-fluid" src="--><?php //echo base_url() ?><!--assets/images/partners/1.jpg" alt="1.jpg">-->
+<!--						</div>-->
+<!--						<h4>JEB Product Sales Specialist, Russia & CIS</h4>-->
+<!--						<p>Posted 23 August by <a class="text-thm" href="#">Wiggle CRC</a></p>-->
+<!--						<ul class="featurej_post">-->
+<!--							<li class="list-inline-item"><span class="flaticon-location-pin"></span> <a href="#">Bothell, WA, USA</a></li>-->
+<!--							<li class="list-inline-item"><span class="flaticon-price pl20"></span> <a href="#">$13.00 - $18.00 per hour</a></li>-->
+<!--						</ul>-->
+<!--					</div>-->
+<!--					<a class="btn btn-md btn-transparent float-right fn-smd" href="#">Browse Job</a>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<div class="col-sm-12 col-lg-12">-->
+<!--				<div class="fj_post">-->
+<!--					<div class="details">-->
+<!--						<h5 class="job_chedule text-thm mt0">Part Time</h5>-->
+<!--						<div class="thumb fn-smd">-->
+<!--							<img class="img-fluid" src="--><?php //echo base_url() ?><!--assets/images/partners/2.jpg" alt="2.jpg">-->
+<!--						</div>-->
+<!--						<h4>General Ledger Accountant</h4>-->
+<!--						<p>Posted 23 August by <a class="text-thm" href="#">Robert Half Finance & Accounting</a></p>-->
+<!--						<ul class="featurej_post">-->
+<!--							<li class="list-inline-item"><span class="flaticon-location-pin"></span> <a href="#">RG40, Wokingham</a></li>-->
+<!--							<li class="list-inline-item"><span class="flaticon-price pl20"></span> <a href="#">$13.00 - $18.00 per hour</a></li>-->
+<!--						</ul>-->
+<!--					</div>-->
+<!--					<a class="btn btn-md btn-transparent float-right fn-smd" href="#">Browse Job</a>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<div class="col-sm-12 col-lg-12">-->
+<!--				<div class="fj_post">-->
+<!--					<div class="details">-->
+<!--						<h5 class="job_chedule text-thm mt0">Full Time</h5>-->
+<!--						<div class="thumb fn-smd">-->
+<!--							<img class="img-fluid" src="--><?php //echo base_url() ?><!--assets/images/partners/3.jpg" alt="3.jpg">-->
+<!--						</div>-->
+<!--						<h4>Junior Digital Graphic Designer</h4>-->
+<!--						<p>Posted 23 August by <a class="text-thm" href="#">Parkside Recruitment - Uxbridge Finance</a></p>-->
+<!--						<ul class="featurej_post">-->
+<!--							<li class="list-inline-item"><span class="flaticon-location-pin"></span> <a href="#">New Denham, UB8 1JG</a></li>-->
+<!--							<li class="list-inline-item"><span class="flaticon-price pl20"></span> <a href="#">$13.00 - $18.00 per hour</a></li>-->
+<!--						</ul>-->
+<!--					</div>-->
+<!--					<a class="btn btn-md btn-transparent float-right fn-smd" href="#">Browse Job</a>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<div class="col-sm-12 col-lg-12">-->
+<!--				<div class="fj_post">-->
+<!--					<div class="details">-->
+<!--						<h5 class="job_chedule text-thm mt0">Full Time</h5>-->
+<!--						<div class="thumb fn-smd">-->
+<!--							<img class="img-fluid" src="--><?php //echo base_url() ?><!--assets/images/partners/4.jpg" alt="4.jpg">-->
+<!--						</div>-->
+<!--						<h4>UX/UI Designer</h4>-->
+<!--						<p>Yesterday <a class="text-thm" href="#">NonStop Recruitment Ltd</a></p>-->
+<!--						<ul class="featurej_post">-->
+<!--							<li class="list-inline-item"><span class="flaticon-location-pin"></span> <a href="#">Bothell, WA, USA</a></li>-->
+<!--							<li class="list-inline-item"><span class="flaticon-price pl20"></span> <a href="#">$13.00 - $18.00 per hour</a></li>-->
+<!--						</ul>-->
+<!--					</div>-->
+<!--					<a class="btn btn-md btn-transparent float-right fn-smd" href="#">Browse Job</a>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--</section>-->

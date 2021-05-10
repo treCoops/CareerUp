@@ -1,3 +1,8 @@
+<?php
+$User_Session = $this->session->userdata('User_Session');
+?>
+
+
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -61,6 +66,11 @@
 					<li>
 		                <a href="<?php echo base_url('Contact'); ?>"><span class="title">Contact</span></a>
 		            </li>
+					<?php if($User_Session != null){ ?>
+						<li>
+							<a href="<?php echo base_url('Partnerships') ?>"><span class="title">Partnerships</span></a>
+						</li>
+					<?php } ?>
 		        </ul>
 <!--		        <ul class="sign_up_btn pull-right dn-smd mt10">-->
 <!--					<li><a href="#" class="btn btn-md" data-toggle="modal" data-target="#exampleModalCenter">Log<span class="dn-md">in</span>/Reg<span class="dn-md">ister</span></a></li>-->
@@ -94,6 +104,11 @@
 				<li>
 					<a href="<?php echo base_url('Contact'); ?>"><span class="title">Contact</span></a>
 				</li>
+				<?php if($User_Session != null){ ?>
+					<li>
+						<a href="<?php echo base_url('Partnerships') ?>"><span class="title">Partnerships</span></a>
+					</li>
+				<?php } ?>
 			</ul>
 		</nav>
 	</div>
@@ -139,8 +154,13 @@
 					<div class="candidate_widget">
 						<h4>For Candidates</h4>
 						<ul class="list-unstyled">
-							<li><a href="<?php echo base_url('Jobs') ?>">Dashboard</a></li>
+							<li><a href="<?php echo base_url('BCDashboard') ?>">Dashboard</a></li>
 							<li><a href="<?php echo base_url('Jobs') ?>">Search For Job</a></li>
+
+							<li>
+								<a href="<?php echo base_url('Partnerships') ?>"><span class="title">Partnerships</span></a>
+							</li>
+
 						</ul>
 					</div>
 				</div>
@@ -149,7 +169,8 @@
 						<h4>For Employers</h4>
 						<ul class="list-unstyled">
 							<li><a href="<?php echo base_url('BEDashboard') ?>">Dashboard</a></li>
-							<li><a href="#">Post New Job</a></li>
+							<li><a href="<?php echo base_url('BEPost') ?>">Post New Job</a></li>
+							<li><a href="<?php echo base_url('Partnerships') ?>"><span class="title">Partnerships</span></a></li>
 						</ul>
 					</div>
 				</div>

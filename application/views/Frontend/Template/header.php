@@ -27,8 +27,11 @@
 <link href="<?php echo base_url() ?>assets/images/favicon.ico" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
 <link href="<?php echo base_url() ?>assets/images/favicon.ico" sizes="128x128" rel="shortcut icon" />
 
+<link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/confirm-js-alert/jquery-confirm.min.css">
+
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery-migrate-3.0.0.min.js"></script>
+
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

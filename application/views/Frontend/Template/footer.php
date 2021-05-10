@@ -33,8 +33,12 @@
 				<div class="candidate_widget">
 					<h4>For Candidates</h4>
 					<ul class="list-unstyled">
-						<li><a href="<?php echo base_url('Jobs') ?>">Dashboard</a></li>
+						<li><a href="<?php echo base_url('BCDashboard') ?>">Dashboard</a></li>
 						<li><a href="<?php echo base_url('Jobs') ?>">Search For Job</a></li>
+
+						<li>
+							<a href="<?php echo base_url('Partnerships') ?>"><span class="title">Partnerships</span></a>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -43,7 +47,8 @@
 					<h4>For Employers</h4>
 					<ul class="list-unstyled">
 						<li><a href="<?php echo base_url('BEDashboard') ?>">Dashboard</a></li>
-						<li><a href="#">Post New Job</a></li>
+						<li><a href="<?php echo base_url('BEPost') ?>">Post New Job</a></li>
+						<li><a href="<?php echo base_url('Partnerships') ?>"><span class="title">Partnerships</span></a></li>
 					</ul>
 				</div>
 			</div>
