@@ -149,6 +149,9 @@ class BCProfile extends CI_Controller
 
 				$response['status'] = 200;
 				$response['message'] = 'Profile has created successfully.!';
+
+				$this->updateSession($data['candidate_profile_image_url']);
+
 			}else{
 				$response['status'] = 500;
 				$response['message'] = 'Something went wrong, Please try again later.!';
@@ -192,6 +195,8 @@ class BCProfile extends CI_Controller
 				$response['status'] = 201;
 				$response['message'] = 'Profile has updated successfully.!';
 
+				$this->updateSession($data['candidate_profile_image_url']);
+
 			}else{
 				$response['status'] = 500;
 				$response['message'] = 'Something went wrong, Please try again later.!';
@@ -199,6 +204,26 @@ class BCProfile extends CI_Controller
 		}
 
 		echo json_encode($response);
+	}
+
+	function updateSession($url){
+
+		$User_Session = $this->session->userdata('User_Session');
+
+		$Updated_User = array(
+			'ID' => $User_Session['ID'],
+			'Username' => $User_Session['Username'],
+			'Email' => $User_Session['Email'],
+			'Active_Status' => $User_Session['Active_Status'],
+			'Blocked_Status' => $User_Session['Blocked_Status'],
+			'Account_Type' => $User_Session['Account_Type'],
+			'User_Job' => $User_Session['User_Job'],
+			'Profile_Image' => $url,
+		);
+
+		$this->session->unset_userdata('User_Session');
+
+		$this->session->set_userdata('User_Session', $Updated_User);
 	}
 
 	function genRandomString(){

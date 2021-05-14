@@ -38,34 +38,62 @@ class JobPostModel extends CI_Model
 		}
 	}
 
+	function updateJobPost($id, $data){
+		$this->db->where('job_post_id', $id);
+		$result = $this->db->update('tbl_job_post', $data);
+
+		if($result){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	function deletePost($id){
+		$this->db->where('job_post_id', $id);
+		$this->db->delete('tbl_job_post');
+
+		return $this->db->affected_rows();
+	}
+
 	function getAllPostsForTable($param){
 		$filter = $param['search'];
 
 		$this->db->select('*');
 		$this->db->from('tbl_job_post');
-		$this->db->where("(`tbl_job_post.partner_id` LIKE '%$filter%'");
-		$this->db->or_where("`tbl_job_post.partner_name` LIKE '%$filter%'");
-		$this->db->or_where("`tbl_job_post.partner_description` LIKE '%$filter%')");
+		$this->db->where('tbl_job_post.job_post_profile_id', $param['id']);
+
+		$this->db->where("(`tbl_job_post.job_post_id` LIKE '%$filter%'");
+		$this->db->or_where("`tbl_job_post.job_post_title` LIKE '%$filter%'");
+		$this->db->or_where("`tbl_job_post.job_post_deadline` LIKE '%$filter%')");
 		$this->db->limit($param['length'],$param['start']);
 		$query = $this->db->get();
 		$result = $query->result();
 
 		$returnData['data'] =  $result;
-		$returnData['recordsTotal'] = $this->getRowCountGetAllPostsForTable();
+		$returnData['recordsTotal'] = $this->getRowCountGetAllPostsForTable($param['id']);
 		$returnData['draw'] = $param['draw'];
 
 		if($filter == null)
-			$returnData['recordsFiltered'] = $this->getRowCountGetAllPostsForTable();
+			$returnData['recordsFiltered'] = $this->getRowCountGetAllPostsForTable($param['id']);
 		else
 			$returnData['recordsFiltered'] = $query->num_rows();
 
 		return $returnData;
 	}
 
-	function getRowCountGetAllPostsForTable(){
+	function selectedPostDetails($id){
+		$this->db->select('*');
+		$this->db->from('tbl_job_post');
+		$this->db->where('tbl_job_post.job_post_id', $id);
+		return $this->db->get()->result();
+	}
+
+	function getRowCountGetAllPostsForTable($id){
 
 		$this->db->select('*');
-		$this->db->from('tbl_partner');
+		$this->db->from('tbl_job_post');
+		$this->db->where('tbl_job_post.job_post_profile_id', $id);
 		$query = $this->db->get();
 
 		return $query->num_rows();

@@ -21,7 +21,11 @@ $User_Session = $this->session->userdata('User_Session');
 	<?php }else { ?>
 		<div class="user_profile">
 			<div class="media">
-				<img src="<?php base_url() ?>assets/images/Users/<?php echo $User_Session['Profile_Image'] ?>" class="align-self-start mr-3 rounded-circle" alt="8.jpg">
+				<?php if($User_Session['Profile_Image'] != null){ ?>
+				<img src="<?php base_url() ?>assets/images/profile/<?php echo $User_Session['Profile_Image'] ?>" class="align-self-start mr-3 rounded-circle" alt="8.jpg">
+				<?php }else{ ?>
+				<img class="align-self-start mr-3 rounded-circle" id="avatar1" alt="8.jpg"> <span class="pl15 pr15">
+				<?php } ?>
 				<div class="media-body">
 					<h5 class="mt-0">Hi, <?php echo $User_Session['Username'] ?></h5>
 					<h6><?php echo $User_Session['Email'] ?></h6>
@@ -32,12 +36,6 @@ $User_Session = $this->session->userdata('User_Session');
 		<?php if($User_Session['User_Job'] == "Candidate"){ ?>
 				<div class="dashbord_nav_list">
 					<ul>
-						<?php if($nav == 'dashboard_c'){ ?>
-							<li class="active"><a href="<?php echo base_url('BCDashboard'); ?>"><span class="flaticon-dashboard"></span> Dashboard</a></li>
-						<?php } else { ?>
-							<li ><a href="<?php echo base_url('BCDashboard'); ?>"><span class="flaticon-dashboard"></span> Dashboard</a></li>
-						<?php } ?>
-
 						<?php if($nav == 'profile_c'){ ?>
 							<li class="active"><a href="<?php echo base_url('BCProfile'); ?>"><span class="flaticon-profile"></span> Profile</a></li>
 						<?php } else { ?>
@@ -90,11 +88,6 @@ $User_Session = $this->session->userdata('User_Session');
 		<?php }else { ?>
 				<div class="dashbord_nav_list">
 					<ul>
-						<?php if($nav == 'dashboard'){ ?>
-							<li class="active"><a href="<?php echo base_url('BEDashboard'); ?>"><span class="flaticon-dashboard"></span> Dashboard</a></li>
-						<?php } else { ?>
-							<li ><a href="<?php echo base_url('BEDashboard'); ?>"><span class="flaticon-dashboard"></span> Dashboard</a></li>
-						<?php } ?>
 
 						<?php if($nav == 'profile'){ ?>
 							<li class="active"><a href="<?php echo base_url('BEProfile'); ?>"><span class="flaticon-profile"></span> Company Profile</a></li>

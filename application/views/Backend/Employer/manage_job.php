@@ -7,6 +7,7 @@
  * Date: 2021-04-27
  * Time: 14:04
  */
+
 ?>
 
 <div class="col-sm-12 col-lg-8 col-xl-9">
@@ -14,105 +15,100 @@
 		<div class="col-lg-12">
 			<h4 class="mb30">Manage Jobs</h4>
 		</div>
-		<div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
-			<div class="icon_boxs">
-				<div class="icon"><span class="flaticon-work"></span></div>
-				<div class="details"><h4>2 Job Posted</h4></div>
-			</div>
-		</div>
-		<div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
-			<div class="icon_boxs">
-				<div class="icon style2"><span class="flaticon-resume"></span></div>
-				<div class="details"><h4>3 Applications</h4></div>
-			</div>
-		</div>
-		<div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
-			<div class="icon_boxs">
-				<div class="icon style3"><span class="flaticon-work"></span></div>
-				<div class="details"><h4>1 Active Jobs</h4></div>
-			</div>
-		</div>
+
 		<div class="col-lg-12">
 			<div class="cnddte_fvrt_job candidate_job_reivew style2">
 				<div class="table-responsive job_review_table">
+					<input type="hidden" id="txtProfileID" value="<?php echo $profile_ID ?>">
 					<table id="tblJobs" class="table">
-						<thead class="thead-light">
-						<tr>
-							<th scope="col">Job Title</th>
-							<th scope="col">Applications</th>
-							<th scope="col">Status</th>
-							<th scope="col"></th>
-						</tr>
-						</thead>
-						<tbody>
-						<tr>
-							<th scope="row">
-								<h4>General Ledger Accountant</h4>
-								<p><span class="flaticon-location-pin"></span> RG40, Wokingham</p>
-								<ul>
-									<li class="list-inline-item"><a href="#"><span class="flaticon-event"> Created: </span></a></li>
-									<li class="list-inline-item"><a class="color-black22" href="#">Dec 03, 2017</a></li>
-									<li class="list-inline-item"><a href="#"><span class="flaticon-event"> Expiry: </span></a></li>
-									<li class="list-inline-item"><a class="color-black22" href="#">Oct 22, 2018</a></li>
-								</ul>
-							</th>
-							<td><span class="color-black22">17</span> Application(s)</td>
-							<td class="text-thm2">Inactive</td>
-							<td>
-								<ul class="view_edit_delete_list">
-									<li class="list-inline-item"><a href="#" data-toggle="tooltip" data-placement="bottom" title="View"><span class="flaticon-eye"></span></a></li>
-									<li class="list-inline-item"><a href="#" data-toggle="tooltip" data-placement="bottom" title="Edit"><span class="flaticon-edit"></span></a></li>
-									<li class="list-inline-item"><a href="#" data-toggle="tooltip" data-placement="bottom" title="Delete"><span class="flaticon-rubbish-bin"></span></a></li>
-								</ul>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row">
-								<h4>Financed Bank</h4>
-								<p><span class="flaticon-location-pin"></span> London, United Kingdom</p>
-								<ul>
-									<li class="list-inline-item"><a href="#"><span class="flaticon-event"> Created: </span></a></li>
-									<li class="list-inline-item"><a class="color-black22" href="#">Dec 03, 2017</a></li>
-									<li class="list-inline-item"><a href="#"><span class="flaticon-event"> Expiry: </span></a></li>
-									<li class="list-inline-item"><a class="color-black22" href="#">Oct 22, 2018</a></li>
-								</ul>
-							</th>
-							<td><span class="color-black22">14</span> Application(s)</td>
-							<td class="color-red">Active</td>
-							<td>
-								<ul class="view_edit_delete_list">
-									<li class="list-inline-item"><a href="#" data-toggle="tooltip" data-placement="bottom" title="View"><span class="flaticon-eye"></span></a></li>
-									<li class="list-inline-item"><a href="#" data-toggle="tooltip" data-placement="bottom" title="Edit"><span class="flaticon-edit"></span></a></li>
-									<li class="list-inline-item"><a href="#" data-toggle="tooltip" data-placement="bottom" title="Delete"><span class="flaticon-rubbish-bin"></span></a></li>
-								</ul>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row">
-								<h4>UX/UI Designer</h4>
-								<p><span class="flaticon-location-pin"></span> RG40, Wokingham</p>
-								<ul>
-									<li class="list-inline-item"><a href="#"><span class="flaticon-event"> Created: </span></a></li>
-									<li class="list-inline-item"><a class="color-black22" href="#">Dec 03, 2017</a></li>
-									<li class="list-inline-item"><a href="#"><span class="flaticon-event"> Expiry: </span></a></li>
-									<li class="list-inline-item"><a class="color-black22" href="#">Oct 22, 2018</a></li>
-								</ul>
-							</th>
-							<td><span class="color-black22">05</span> Application(s)</td>
-							<td class="color-red">Active</td>
-							<td>
-								<ul class="view_edit_delete_list">
-									<li class="list-inline-item"><a href="#" data-toggle="tooltip" data-placement="bottom" title="View"><span class="flaticon-eye"></span></a></li>
-									<li class="list-inline-item"><a href="#" data-toggle="tooltip" data-placement="bottom" title="Edit"><span class="flaticon-edit"></span></a></li>
-									<li class="list-inline-item"><a href="#" data-toggle="tooltip" data-placement="bottom" title="Delete"><span class="flaticon-rubbish-bin"></span></a></li>
-								</ul>
-							</td>
-						</tr>
-						</tbody>
 					</table>
 				</div>
 			</div>
 		</div>
+
+		<div class="sign_up_modal modal fade" id="modalUpdateJob" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					</div>
+					<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+						<div class="login_form">
+							<form id="formJobPost" method="post">
+								<div class="heading">
+									<h3 class="text-center">Edit Skill Details</h3>
+								</div>
+
+								<div class="form-group">
+									<label for="txtJobTitle">Job Title</label>
+									<input type="text" class="form-control" name="txtJobTitle" id="txtJobTitle" placeholder="Ex: Fullstack Developer">
+								</div>
+
+								<div class="form-group">
+									<label for="txtJobDescription">Job Description</label>
+									<textarea class="form-control" id="txtJobDescription" name="txtJobDescription" rows="9"></textarea>
+								</div>
+
+
+								<div class="form-group">
+									<label for="txtJobDeadlineDate">Application Deadline Date</label>
+									<input type="text" class="form-control" id="txtJobDeadlineDate" name="txtJobDeadlineDate">
+								</div>
+
+								<div class="form-group">
+									<label for="cmbJobKnowledgeLevel">Knowledge Level</label><br>
+									<select id="cmbJobKnowledgeLevel" name="cmbJobKnowledgeLevel" class="selectpicker form-control">
+										<option value="Internship">Internship</option>
+										<option value="Basic">Basic</option>
+										<option value="Standard">Standard</option>
+										<option value="Advance">Advance</option>
+										<option value="Expert">Expert</option>
+									</select>
+								</div>
+
+								<div class="form-group">
+									<label for="cmbJobExperienceLevel">Experience Years</label><br>
+									<select class="selectpicker form-control" id="cmbJobExperienceLevel" name="cmbJobExperienceLevel">
+										<option value="Below 1 Year">Below 1 Year</option>
+										<option value="1 to 2 Years">1 to 2 Years</option>
+										<option value="2 to 3 Years">2 to 3 Years</option>
+										<option value="3 to 4 Years">3 to 4 Years</option>
+										<option value="4 to 5 Years">4 to 5 Years</option>
+										<option value="More Than 5 Years">More Than 5 Years</option>
+									</select>
+								</div>
+
+								<div class="form-group">
+									<label for="cmbGender">Gender</label><br>
+									<select class="selectpicker form-control" id="cmbGender" name="cmbGender">
+										<option value="Male Only">Male Only</option>
+										<option value="Female Only">Female Only</option>
+										<option value="Male & Female">Male & Female</option>
+									</select>
+								</div>
+
+								<div class="form-group">
+									<label for="cmbJobQualificationLevel">Qualification</label><br>
+									<select class="selectpicker form-control" id="cmbJobQualificationLevel" name="cmbJobQualificationLevel">
+										<option value="A-Level">A-Level</option>
+										<option value="Certificate of Higher Education">Certificate of Higher Education</option>
+										<option value="Diploma of Higher Education & Foundation Degree">Diploma of Higher Education & Foundation Degree</option>
+										<option value="Bachelor's Degree">Bachelor's Degree</option>
+										<option value="Masters Degree">Masters Degree</option>
+									</select>
+								</div>
+
+								<br>
+								<input type="hidden" id="txtJobID" name="txtJobID">
+								<button class="btn btn-lg btn-thm" type="submit">Update</button>
+
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 </div>
 
@@ -120,7 +116,168 @@
 
 	let dTable;
 
+	function edit(id){
+		$.ajax({
+			url: "<?php echo base_url(''); ?>BEManageJobs/getSelectedPostDetails",
+			data: {
+				ID: id
+			},
+			method: "post",
+			dataType: "json",
+			error: function (error) {
+				console.log(error);
+				$.notify("Internal server error", "error");
+
+			},
+			success: function (r) {
+
+				$('#txtJobTitle').val(r.data[0].job_post_title);
+				$('#txtJobDescription').val(r.data[0].job_post_description);
+				$('#txtJobDeadlineDate').val(r.data[0].job_post_deadline);
+				$('#txtJobID').val(r.data[0].job_post_id);
+
+
+				$('#cmbJobKnowledgeLevel').val(r.data[0].job_post_knowledge_level);
+				$('#cmbJobKnowledgeLevel').trigger('change');
+
+				$('#cmbJobExperienceLevel').val(r.data[0].job_post_experience_level);
+				$('#cmbJobExperienceLevel').trigger('change');
+
+				$('#cmbGender').val(r.data[0].job_post_gender);
+				$('#cmbGender').trigger('change');
+
+				$('#cmbJobQualificationLevel').val(r.data[0].job_post_qualification_level);
+				$('#cmbJobQualificationLevel').trigger('change');
+
+				$('#modalUpdateJob').modal('show');
+
+			}
+		});
+
+
+	}
+
+	function del(id){
+		$.confirm({
+			icon: 'fa fa-trash',
+			title: 'Delete post',
+			content: 'Do you want to delete this job post?',
+			type: 'red',
+			typeAnimated: true,
+			buttons: {
+				confirm: {
+					text: 'Delete',
+					btnClass: 'btn-red',
+					action: function(){
+						$.ajax({
+							url: "<?php echo base_url(''); ?>/BEManageJobs/deletePost",
+							data: {ID : id},
+							method: "post",
+							dataType: "json",
+							error: function(error){
+								console.log(error);
+								$.notify("Internal server error", "error");
+
+							},
+							success: function(r){
+								if(r.result){
+									dTable.ajax.reload();
+									dTable.draw();
+									$.alert({
+										icon: 'fa fa-check',
+										title: 'Success',
+										content: 'Post have been deleted',
+										type: 'green',
+										btnClass: 'btn-green'
+									});
+
+								}else{
+									$.alert({
+										icon: 'fa fa-times',
+										title: 'Error',
+										content: 'Operation failed',
+										type: 'red',
+										btnClass: 'btn-red'
+									});
+								}
+							}
+						});
+
+
+					}
+				},
+				close: function () {
+
+				}
+			}
+		});
+	}
+
 	$(document).ready(function() {
+
+		flatpickr('#txtJobDeadlineDate', {
+			minDate: new Date()
+		});
+
+		$("#formJobPost").validate({
+			ignore: [],
+			rules: {
+				txtJobTitle: {
+					required: true
+				},
+				txtJobDescription: {
+					required: true
+				},
+				txtJobDeadlineDate: {
+					required: true
+				}
+			},
+			messages: {
+				txtJobTitle: {
+					required: "Select at least one category!"
+				},
+				txtJobDescription: {
+					required: "Company name required!"
+				},
+				txtJobDeadlineDate: {
+					required: "Company email required!"
+				}
+			},
+			submitHandler: function (form) {
+				let formData = new FormData(form);
+
+				$.ajax({
+					url: '<?php echo base_url('BEManageJobs/editJobPost'); ?>',
+					data: formData,
+					dataType: 'json',
+					method: 'post',
+					processData: false,
+					enctype: 'multipart/form-data',
+					contentType: false,
+					cache: false,
+					error: function (error) {
+						console.log(error);
+						$.notify("Internal server error", "error");
+					},
+					success: function (r) {
+
+						dTable.ajax.reload();
+						dTable.draw();
+						$('#modalUpdateJob').modal('hide');
+
+						if (r.status == 200) {
+							$.notify(r.message, "success");
+						}
+
+						if (r.status == 500) {
+							$.notify(r.message, "error");
+						}
+
+					}
+				});
+			}
+
+		});
 
 		dTable = $('#tblJobs').DataTable({
 			"processing": true,
@@ -133,43 +290,32 @@
 			"bDestroy": true,
 			"dataSrc": "tableData",
 			"columns": [
-				{"data": "partner_id", "name": "Partner ID", "title": "Partner ID"},
-				{"data": "partner_name", "name": "Partner Name", "title": "Partner Name"},
-				{"data": "partner_description", "name": "Partner Description", "title": "Partner Description"},
-				{"data": "partner_image", "name": "Partner Image", "title": "Partner Image",
-					mRender: function(data) {
-						return '<div class="d-flex">' +
-								'<div class="usr-img-frame mr-2 rounded-circle">'+
-								'<img alt="avatar" class="img-fluid" src="<?php echo base_url(); ?>assets/img/Partner/' + data + '">'+
-								'</div>'+
-								'</div>'
-					}
-				},
-				{"data": "partner_status", "name": "Partner Active Status", "title": "Partner Active Status",
-					mRender: function(data) {
-						if(data === '1'){
-							return '<span class=" shadow-none badge outline-badge-primary">Activated</span>'
-						}
-						if(data === '0'){
-							return '<span class=" shadow-none badge outline-badge-danger">Deactivated</span>'
-						}
-					}
-				},
-				{"data": "partner_id", "name": "Action", "title": "Action",
+				{"data": "job_post_id", "name": "Post ID", "title": "Post ID"},
+				{"data": "job_post_title", "name": "Job Title", "title": "Job Title"},
+				{"data": "job_post_description", "name": "Job Description", "title": "Job Description"},
+				{"data": "job_post_deadline", "name": "Deadline", "title": "Deadline"},
+
+				{"data": "job_post_id", "name": "Action", "title": "Action",
 					mRender: function (id) {
-						return '<td class="text-center"><ul class="table-controls">\n' +
-								'<li class="list-inline-item" data-toggle="tooltip" data-placement="top" title="Edit"><button onclick="edit(\''+id+'\')" class="btn btn-outline-info" ><svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 p-1 br-6 mb-1"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></button></li>\n' +
-								'<li class="list-inline-item" data-toggle="tooltip" data-placement="top" title="Delete"><button onclick="del(\''+id+'\')" class="btn btn-outline-danger"><svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash p-1 br-6 mb-1"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button></li>\n' +
-								'</ul></td>'
+						return '<td>'+
+								'<ul class="view_edit_delete_list">'+
+								'<li class="list-inline-item"><a onclick="edit(\''+id+'\');" data-toggle="tooltip" data-placement="bottom" title="Edit"><span class="flaticon-edit"></span></a></li>'+
+								'<li class="list-inline-item"><a onclick="del(\''+id+'\');" data-toggle="tooltip" data-placement="bottom" title="Delete"><span class="flaticon-rubbish-bin"></span></a></li>'+
+								'</ul>'+
+								'</td>'
 					}
 				}
 			],
 			"language": {
 				"emptyTable": "No subjects to show..."
 			},
-			"ajax": {
-				"url": '<?php echo base_url(''); ?>/BEManageJobs/getAllJobPostsForTable',
-				"dataType": "json",
+			ajax: {
+				url: '<?php echo base_url(''); ?>/BEManageJobs/getAllJobPostsForTable',
+				dataType: "json",
+				data: {
+					ID: $('#txtProfileID').val()
+				},
+				method: "post"
 			},
 			"oLanguage": {
 				"oPaginate": { "sPrevious": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>', "sNext": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>' },

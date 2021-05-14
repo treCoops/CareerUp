@@ -121,6 +121,33 @@ class ProfileModel extends CI_Model
 		}
 	}
 
+	function getCandidateProfileImage($id){
+		$this->db->select('candidate_profile_image_url');
+		$this->db->from('tbl_candidate_profile');
+		$this->db->where('tbl_candidate_profile.user_id', $id);
+
+		$result = $this->db->get()->result();
+
+		if($result != null){
+			return $result[0]->candidate_profile_image_url;
+		}else{
+			return null;
+		}
+	}
+
+	function getEmployerProfileImage($id){
+		$this->db->select('company_profile_image_url');
+		$this->db->from('tbl_company_profile');
+		$this->db->where('tbl_company_profile.user_id', $id);
+
+		$result = $this->db->get()->result();
+
+		if($result != null){
+			return $result[0]->company_profile_image_url;
+		}else{
+			return null;
+		}
+	}
 
 
 	function getCategories($id){

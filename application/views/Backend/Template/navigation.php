@@ -55,9 +55,11 @@ $User_Session = $this->session->userdata('User_Session');
 				</li>
 				<li class="user_setting">
 					<div class="dropdown">
-
-<!--						<a class="btn dropdown-toggle" href="#" data-toggle="dropdown"><img class="rounded-circle" src="--><?php //base_url() ?><!--assets/images/Users/--><?php //echo $User_Session['Profile_Image'] ?><!--" alt="8.jpg"> <span class="pl15 pr15">--><?php //echo $User_Session['Username'] ?><!--</span></a>-->
+						<?php if($User_Session['Profile_Image'] != null){ ?>
+						<a class="btn dropdown-toggle" href="#" data-toggle="dropdown"><img class="rounded-circle" src="<?php base_url() ?>assets/images/profile/<?php echo $User_Session['Profile_Image'] ?>" alt="8.jpg"> <span class="pl15 pr15"><?php echo $User_Session['Username'] ?></span></a>
+						<?php }else{ ?>
 						<a class="btn dropdown-toggle" href="#" data-toggle="dropdown"><img class="rounded-circle" id="avatar" alt="8.jpg"> <span class="pl15 pr15"><?php echo $User_Session['Username'] ?></span></a>
+						<?php } ?>
 						<div class="dropdown-menu">
 							<div class="user_set_header">
 								<p>Hi, <?php echo $User_Session['Username'] ?> <br><span class="address"><?php echo $User_Session['Email'] ?></span></p>
@@ -65,12 +67,6 @@ $User_Session = $this->session->userdata('User_Session');
 
 							<?php if($User_Session['User_Job'] == "Candidate"){ ?>
 								<div class="user_setting_content">
-									<?php if($nav == 'dashboard_c'){ ?>
-										<a class="dropdown-item active" href="<?php echo base_url('BCDashboard'); ?>"><span class="flaticon-dashboard"></span> Dashboard</a>
-									<?php } else { ?>
-										<a class="dropdown-item" href="<?php echo base_url('BCDashboard'); ?>"><span class="flaticon-dashboard"></span> Dashboard</a>
-									<?php } ?>
-
 									<?php if($nav == 'profile_c'){ ?>
 										<a class="dropdown-item active" href="<?php echo base_url('BCProfile'); ?>"><span class="flaticon-profile"></span> Profile</a>
 									<?php } else { ?>
@@ -113,12 +109,6 @@ $User_Session = $this->session->userdata('User_Session');
 							<?php }else { ?>
 
 								<div class="user_setting_content">
-
-									<?php if($nav == 'dashboard'){ ?>
-										<a class="dropdown-item active" href="<?php echo base_url('BEDashboard'); ?>"><span class="flaticon-dashboard"></span> Dashboard</a>
-									<?php } else { ?>
-										<a class="dropdown-item" href="<?php echo base_url('BEDashboard'); ?>"><span class="flaticon-dashboard"></span> Dashboard</a>
-									<?php } ?>
 
 									<?php if($nav == 'profile'){ ?>
 										<a class="dropdown-item active" href="<?php echo base_url('BEProfile'); ?>"><span class="flaticon-profile"></span> Company Profile</a>

@@ -20,6 +20,7 @@ class Login extends CI_Controller
 		$this->load->model('JobModel');
 		$this->load->model('SectorModel');
 		$this->load->model('UserModel');
+		$this->load->model('ProfileModel');
 	}
 
 	public function index()
@@ -102,6 +103,22 @@ class Login extends CI_Controller
 
 					if($this->isDeactive($user[0]->user_active)) {
 
+						$imgUrl = '';
+
+						if($user[0]->user_type == 'Candidate'){
+							$url = $this->ProfileModel->getCandidateProfileImage($user[0]->user_id);
+							if($url != null){
+								$imgUrl = $url;
+							}
+						}else{
+
+							$url = $this->ProfileModel->getEmployerProfileImage($user[0]->user_id);
+							if($url != null){
+								$imgUrl = $url;
+							}
+						}
+
+
 						$Login_User = array(
 							'ID' => $user[0]->user_id,
 							'Username' => $user[0]->user_name,
@@ -110,7 +127,7 @@ class Login extends CI_Controller
 							'Blocked_Status' => $user[0]->user_blocked,
 							'Account_Type' => $user[0]->user_job,
 							'User_Job' => $user[0]->user_type,
-							'Profile_Image' => $user[0]->img_url,
+							'Profile_Image' => $imgUrl,
 						);
 
 						$this->session->set_userdata('User_Session', $Login_User);
