@@ -20,9 +20,6 @@ class Job extends CI_Controller
 		if ($User_Session == null) {
 			redirect(base_url('Login/notLoggedIn'));
 		}
-
-		$this->load->model('ProfileModel');
-		$this->load->model('ReviewModel');
 		$this->load->model('UserModel');
 	}
 

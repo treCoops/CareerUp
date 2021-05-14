@@ -23,6 +23,7 @@ class JobPostModel extends CI_Model
 
 	function createJobApplyRequest($data){
 		$result = $this->db->insert('tbl_job_apply_request', $data);
+		$this->db->insert('tbl_job_apply_company', $data);
 
 		if($result){
 			return true;

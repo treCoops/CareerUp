@@ -101,12 +101,6 @@
 											<a class="dropdown-item" href="<?php echo base_url('BCCVManager'); ?>"><span class="flaticon-analysis"></span> CV Manager</a>
 										<?php } ?>
 
-										<?php if($nav == 'job_alert_c'){ ?>
-											<a class="dropdown-item active" href="<?php echo base_url('BCJobAlerts'); ?>"><span class="flaticon-alarm"></span> Job Alerts</a>
-										<?php } else { ?>
-											<a class="dropdown-item" href="<?php echo base_url('BCJobAlerts'); ?>"><span class="flaticon-alarm"></span> Job Alerts</a>
-										<?php } ?>
-
 										<?php if($nav == 'change_password_c'){ ?>
 											<a class="dropdown-item active" href="<?php echo base_url('BCChangePassword'); ?>"><span class="flaticon-locked"></span> Change Password</a>
 										<?php } else { ?>
@@ -138,9 +132,9 @@
 										<?php } ?>
 
 										<?php if($nav == 'resumes'){ ?>
-											<a class="dropdown-item active" href="<?php echo base_url('BEResumes'); ?>"><span class="flaticon-analysis"></span> Shortlisted Resumes</a>
+											<a class="dropdown-item active" href="<?php echo base_url('BEResumes'); ?>"><span class="flaticon-analysis"></span> Job Request</a>
 										<?php } else { ?>
-											<a class="dropdown-item" href="<?php echo base_url('BEResumes'); ?>"><span class="flaticon-analysis"></span> Shortlisted Resumes</a>
+											<a class="dropdown-item" href="<?php echo base_url('BEResumes'); ?>"><span class="flaticon-analysis"></span> Job Request</a>
 										<?php } ?>
 
 										<?php if($nav == 'partnerships'){ ?>

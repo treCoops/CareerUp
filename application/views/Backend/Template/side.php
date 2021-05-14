@@ -60,11 +60,6 @@ $User_Session = $this->session->userdata('User_Session');
 							<li ><a href="<?php echo base_url('BCCVManager'); ?>"><span class="flaticon-analysis"></span> CV Manager</a></li>
 						<?php } ?>
 
-						<?php if($nav == 'job_alert_c'){ ?>
-							<li class="active"><a href="<?php echo base_url('BCJobAlerts'); ?>"><span class="flaticon-alarm"></span> Job Alerts</a></li>
-						<?php } else { ?>
-							<li ><a href="<?php echo base_url('BCJobAlerts'); ?>"><span class="flaticon-alarm"></span> Job Alerts</a></li>
-						<?php } ?>
 
 						<?php if($nav == 'change_password_c'){ ?>
 							<li class="active"><a href="<?php echo base_url('BCChangePassword'); ?>"><span class="flaticon-locked"></span> Change Password</a></li>
@@ -107,9 +102,9 @@ $User_Session = $this->session->userdata('User_Session');
 						<?php } ?>
 
 						<?php if($nav == 'resumes'){ ?>
-							<li class="active"><a href="<?php echo base_url('BEResumes'); ?>"><span class="flaticon-analysis"></span> Shortlisted Resumes</a></li>
+							<li class="active"><a href="<?php echo base_url('BEResumes'); ?>"><span class="flaticon-analysis"></span> Job Request</a></li>
 						<?php } else { ?>
-							<li><a href="<?php echo base_url('BEResumes'); ?>"><span class="flaticon-analysis"></span> Shortlisted Resumes</a></li>
+							<li><a href="<?php echo base_url('BEResumes'); ?>"><span class="flaticon-analysis"></span> Job Request</a></li>
 						<?php } ?>
 
 						<?php if($nav == 'partnerships'){ ?>
