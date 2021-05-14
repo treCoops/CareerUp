@@ -73,7 +73,6 @@ $User_Session = $this->session->userdata('User_Session');
 						<?php } ?>
 
 						<li><a href="<?php echo base_url('Login/logout'); ?>"><span class="flaticon-logout"></span> Logout</a></li>
-						<li><a href="#"><span class="flaticon-rubbish-bin"></span> Delete Profile</a></li>
 					</ul>
 				</div>
 
@@ -126,7 +125,7 @@ $User_Session = $this->session->userdata('User_Session');
 						<?php } ?>
 
 						<li><a href="<?php echo base_url('Login/logout'); ?>"><span class="flaticon-logout"></span> Logout</a></li>
-						<li><a href="#"><span class="flaticon-rubbish-bin"></span> Delete Profile</a></li>
+
 					</ul>
 				</div>
 		<?php } ?>

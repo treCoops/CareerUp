@@ -99,5 +99,98 @@ class JobPostModel extends CI_Model
 		return $query->num_rows();
 	}
 
+	function getAllJobs(){
+
+		$this->db->select('*');
+		$this->db->from('tbl_job_post');
+		$this->db->join('tbl_company_profile', 'tbl_company_profile.company_profile_id = tbl_job_post.job_post_profile_id');
+
+		$result = $this->db->get()->result();
+
+		if($result != null){
+			return $result;
+		}else{
+			return null;
+		}
+
+	}
+
+	function getAllJobsByCities($cityName){
+		$this->db->select('*');
+		$this->db->from('tbl_job_post');
+		$this->db->join('tbl_company_profile', 'tbl_company_profile.company_profile_id = tbl_job_post.job_post_profile_id');
+		$this->db->where('tbl_company_profile.company_city', $cityName);
+
+		$result = $this->db->get()->result();
+
+		if($result != null){
+			return $result;
+		}else{
+			return null;
+		}
+	}
+
+	function getAllJobsByExperience($ex){
+		$this->db->select('*');
+		$this->db->from('tbl_job_post');
+		$this->db->join('tbl_company_profile', 'tbl_company_profile.company_profile_id = tbl_job_post.job_post_profile_id');
+		$this->db->where('tbl_job_post.job_post_experience_level', $ex);
+
+		$result = $this->db->get()->result();
+
+		if($result != null){
+			return $result;
+		}else{
+			return null;
+		}
+	}
+
+
+	function getAllJobsByKnowledge($kw){
+		$this->db->select('*');
+		$this->db->from('tbl_job_post');
+		$this->db->join('tbl_company_profile', 'tbl_company_profile.company_profile_id = tbl_job_post.job_post_profile_id');
+		$this->db->where('tbl_job_post.job_post_knowledge_level', $kw);
+
+		$result = $this->db->get()->result();
+
+		if($result != null){
+			return $result;
+		}else{
+			return null;
+		}
+	}
+
+	function getAllJobsByGenderWise($kw){
+		$this->db->select('*');
+		$this->db->from('tbl_job_post');
+		$this->db->join('tbl_company_profile', 'tbl_company_profile.company_profile_id = tbl_job_post.job_post_profile_id');
+		$this->db->where('tbl_job_post.job_post_gender', $kw);
+
+		$result = $this->db->get()->result();
+
+		if($result != null){
+			return $result;
+		}else{
+			return null;
+		}
+	}
+
+	function getAllJobsByKeyword($value){
+		$this->db->select('*');
+		$this->db->from('tbl_job_post');
+		$this->db->join('tbl_company_profile', 'tbl_company_profile.company_profile_id = tbl_job_post.job_post_profile_id');
+		$this->db->where("(`tbl_company_profile.company_name` LIKE '%$value%'");
+		$this->db->or_where("`tbl_job_post.job_post_title` LIKE '%$value%'");
+		$this->db->or_where("`tbl_company_profile.company_city` LIKE '%$value%')");
+
+		$result = $this->db->get()->result();
+
+		if($result != null){
+			return $result;
+		}else{
+			return null;
+		}
+	}
 
 }

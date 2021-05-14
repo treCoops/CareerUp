@@ -110,6 +110,7 @@ class ProfileModel extends CI_Model
 				$new['candidate_address'] = $result[0]->candidate_address;
 				$new['candidate_profile_image_url'] = $result[0]->candidate_profile_image_url;
 				$new['candidate_rating'] = $result[0]->candidate_rating;
+				$new['candidate_gender'] = $result[0]->candidate_gender;
 
 				return $new;
 

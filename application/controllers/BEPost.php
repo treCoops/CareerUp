@@ -77,4 +77,108 @@ class BEPost extends CI_Controller
 
 		echo json_encode($response);
 	}
+
+
+	function getAllJobs(){
+		$response = array();
+
+		$result = $this->JobPostModel->getAllJobs();
+
+		if($result){
+			$response['status'] = 200;
+			$response['data'] = $result;
+			$response['message'] = 'Status updated!';
+		}else{
+			$response['status'] = 500;
+			$response['message'] = 'Operation failed!';
+		}
+
+		echo json_encode($response);
+	}
+
+	function getAllJobsByCities(){
+		$response = array();
+
+		$result = $this->JobPostModel->getAllJobsByCities($this->input->post('cityName'));
+
+		if($result){
+			$response['status'] = 200;
+			$response['data'] = $result;
+			$response['message'] = 'Status updated!';
+		}else{
+			$response['status'] = 500;
+			$response['message'] = 'Operation failed!';
+		}
+
+		echo json_encode($response);
+	}
+
+	function getAllJobsByExperienceWise(){
+		$response = array();
+
+		$result = $this->JobPostModel->getAllJobsByExperience($this->input->post('ex'));
+
+		if($result){
+			$response['status'] = 200;
+			$response['data'] = $result;
+			$response['message'] = 'Status updated!';
+		}else{
+			$response['status'] = 500;
+			$response['message'] = 'Operation failed!';
+		}
+
+		echo json_encode($response);
+	}
+
+	function getAllJobsByKnowledge(){
+		$response = array();
+
+		$result = $this->JobPostModel->getAllJobsByKnowledge($this->input->post('kw'));
+
+		if($result){
+			$response['status'] = 200;
+			$response['data'] = $result;
+			$response['message'] = 'Status updated!';
+		}else{
+			$response['status'] = 500;
+			$response['message'] = 'Operation failed!';
+		}
+
+		echo json_encode($response);
+	}
+
+	function getAllJobsByGenderWise(){
+		$response = array();
+
+		$result = $this->JobPostModel->getAllJobsByGenderWise($this->input->post('gender'));
+
+		if($result){
+			$response['status'] = 200;
+			$response['data'] = $result;
+			$response['message'] = 'Status updated!';
+		}else{
+			$response['status'] = 500;
+			$response['message'] = 'Operation failed!';
+		}
+
+		echo json_encode($response);
+	}
+
+	function getAllJobsByKeyword(){
+		$response = array();
+
+		$result = $this->JobPostModel->getAllJobsByKeyword($this->input->post('value'));
+
+		if($result){
+			$response['status'] = 200;
+			$response['data'] = $result;
+			$response['message'] = 'Status updated!';
+		}else{
+			$response['status'] = 500;
+			$response['message'] = 'Operation failed!';
+		}
+
+		echo json_encode($response);
+	}
+
 }

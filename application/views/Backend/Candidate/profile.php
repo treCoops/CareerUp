@@ -84,6 +84,16 @@
 						<input type="text" class="form-control datepicker" readonly id="txtCandidateAge" name="txtCandidateAge">
 					</div>
 				</div>
+
+				<div class="col-md-6 col-lg-6">
+					<div class="my_profile_select_box form-group">
+						<label for="cmbCandidateGender">Gender</label><br>
+						<select class="selectpicker" id="cmbCandidateGender" name="cmbCandidateGender">
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+						</select>
+					</div>
+				</div>
 				<div class="col-md-6 col-lg-6">
 					<div class="my_profile_select_box form-group">
 						<label for="cmbCandidateEducationLevel">Education Levels</label><br>
@@ -284,6 +294,9 @@
 
 					$('#cmbCandidateExperienceLevel').val(r.data.candidate_experience);
 					$('#cmbCandidateExperienceLevel').trigger('change');
+
+					$('#cmbCandidateGender').val(r.data.candidate_gender);
+					$('#cmbCandidateGender').trigger('change');
 
 					$('#cmbCandidateEducationLevel').val(r.data.candidate_education_level);
 					$('#cmbCandidateEducationLevel').trigger('change');

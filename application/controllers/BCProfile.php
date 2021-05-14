@@ -76,7 +76,7 @@ class BCProfile extends CI_Controller
 			$error = $this->upload->display_errors();
 			$data['candidate_profile_image_url'] = null;
 
-			$result = $this->ProfileModel->getProfile($User_Session['ID']);
+			$result = $this->ProfileModel->getCandidateProfile($User_Session['ID']);
 			if($result){
 				$currentImage = $result['candidate_profile_image_url'];
 
@@ -90,7 +90,7 @@ class BCProfile extends CI_Controller
 		}else{
 			$img = $this->upload->data();
 
-			$result = $this->ProfileModel->getProfile($User_Session['ID']);
+			$result = $this->ProfileModel->getCandidateProfile($User_Session['ID']);
 
 			if($result){
 				$currentImage = $result['candidate_profile_image_url'];
@@ -125,6 +125,7 @@ class BCProfile extends CI_Controller
 		$data['candidate_location_latitude'] = $this->input->post('txtLocationLatitude');
 		$data['candidate_location_longitude'] = $this->input->post('txtLocationLongitude');
 		$data['candidate_location_zoom'] = $this->input->post('txtLocationZoom');
+		$data['candidate_gender'] = $this->input->post('cmbCandidateGender');
 
 		$categories = $this->input->post('cmbCandidateCategory');
 		$languages = $this->input->post('cmbCandidateLanguages');
