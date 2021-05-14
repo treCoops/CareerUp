@@ -71,27 +71,6 @@
 
 			<div class="col-md-12 col-lg-9 col-xl-9">
 				<div id="jobDiv" class="row">
-<!--					<div class="col-sm-12 col-lg-6">-->
-<!---->
-<!--					</div>-->
-<!---->
-<!--					<div class="col-lg-12 mt30">-->
-<!--						<div class="fj_post style2">-->
-<!--							<div class="details">-->
-<!--								<h5 class="job_chedule text-thm">Full Time</h5>-->
-<!--								<div class="thumb fn-smd">-->
-<!--									<img class="img-fluid" src="--><?php //echo base_url() ?><!--assets/images/partners/1.jpg" alt="1.jpg">-->
-<!--								</div>-->
-<!--								<h4>JEB Product Sales Specialist, Russia & CIS</h4>-->
-<!--								<p>Posted 23 August by <a class="text-thm" href="#">Wiggle CRC</a></p>-->
-<!--								<ul class="featurej_post">-->
-<!--									<li class="list-inline-item"><span class="flaticon-location-pin"></span> <a href="#">Bothell, WA, USA</a></li>-->
-<!--									<li class="list-inline-item"><span class="flaticon-price pl20"></span> <a href="#">$13.00 - $18.00 per hour</a></li>-->
-<!--								</ul>-->
-<!--							</div>-->
-<!--							<a class="favorit" href="#"><span class="flaticon-favorites"></span></a>-->
-<!--						</div>-->
-<!--					</div>-->
 				</div>
 			</div>
 		</div>
@@ -118,6 +97,7 @@
 						'<li class="list-inline-item"><span class="flaticon-location-pin"></span> <a href="#">'+data[a].company_city+', '+data[a].company_country+'</a></li>'+
 						'</ul>'+
 						'</div>'+
+						'<a href="/CareerUp/Job?job_id='+data[a].job_post_id+'&user_id='+data[a].user_id+'" class="favorit"><span class="flaticon-eye"></span></a>'+
 						'</div>'+
 						'</div>'
 

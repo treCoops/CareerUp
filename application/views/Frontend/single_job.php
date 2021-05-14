@@ -7,6 +7,8 @@
  * Date: 2021-04-27
  * Time: 15:44
  */
+
+	$User_Session = $this->session->userdata('User_Session');
 ?>
 
 <!-- Inner Page Breadcrumb -->
@@ -17,7 +19,7 @@
 				<h4 class="breadcrumb_title float-left" id="txtMain"></h4>
 				<ol class="breadcrumb float-right">
 					<li class="breadcrumb-item"><a href="<?php echo base_url('Home') ?>">Home</a></li>
-					<li class="breadcrumb-item active" aria-current="page">View Employer</li>
+					<li class="breadcrumb-item active" aria-current="page">View Job</li>
 				</ol>
 			</div>
 		</div>
@@ -46,7 +48,9 @@
 			</div>
 			<div class="col-lg-3 col-xl-3">
 				<div class="candidate_personal_overview style2">
-					<a href="#reviewDiv" class="btn btn-block btn-gray"><span class="flaticon-consulting-message pr10"></span> Add a Review</a>
+					<?php if($User_Session['User_Job'] == "Candidate"){ ?>
+						<a onclick="applyJob();" class="btn btn-block btn-gray"><span class="flaticon-mail pr10"></span> Apply for this job</a>
+					<?php } ?>
 				</div>
 			</div>
 		</div>
@@ -99,29 +103,61 @@
 							<p id="txtAbout" class="mb30"></p>
 						</div>
 					</div>
-<!--					<div class="col-lg-12">-->
-<!--						<div class="my_resume_eduarea">-->
-<!--							<h4 class="title mb30">Open Position</h4>-->
-<!--						</div>-->
-<!--					</div>-->
-<!---->
-<!--					<div class="col-lg-12">-->
-<!--						<div class="fj_post style2 one">-->
-<!--							<div class="details">-->
-<!--								<h5 class="job_chedule text-thm2">Part Time</h5>-->
-<!--								<div class="thumb fn-smd">-->
-<!--									<img class="img-fluid" src="--><?php //echo base_url() ?><!--assets/images/partners/2.jpg" alt="2.jpg">-->
-<!--								</div>-->
-<!--								<h4>General Ledger Accountant</h4>-->
-<!--								<p>Posted 23 August by <a class="text-thm2" href="#">Robert Half Finance & Accounting</a></p>-->
-<!--								<ul class="featurej_post">-->
-<!--									<li class="list-inline-item"><span class="flaticon-location-pin"></span> <a href="#">RG40, Wokingham</a></li>-->
-<!--									<li class="list-inline-item"><span class="flaticon-price pl20"></span> <a href="#">$13.00 - $18.00 per hour</a></li>-->
-<!--								</ul>-->
-<!--							</div>-->
-<!--							<a class="favorit" href="#"><span class="flaticon-favorites"></span></a>-->
-<!--						</div>-->
-<!--					</div>-->
+
+					<div class="col-lg-12">
+						<div class="row personer_information_company mt0">
+							<div class="col-lg-12">
+								<h4 class="fz20 mb30">Job Information</h4>
+							</div>
+
+							<div class="col-sm-4 col-lg-4">
+								<div class="icon text-thm"><span class="flaticon-job"></span></div>
+								<div class="details">
+									<p>Job Title</p>
+									<p id="txtJobTitle"></p>
+								</div>
+							</div>
+							<div class="col-sm-4 col-lg-4">
+								<div class="icon text-thm"><span class="flaticon-timeline"></span></div>
+								<div class="details">
+									<p>Application Deadline</p>
+									<p id="txtDeadLine"></p>
+								</div>
+							</div>
+							<div class="col-sm-4 col-lg-4">
+								<div class="icon text-thm"><span class="flaticon-line-chart"></span></div>
+								<div class="details">
+									<p>Knowledge Level</p>
+									<p id="txtKnowledge"></p>
+								</div>
+							</div>
+							<div class="col-sm-4 col-lg-4">
+								<div class="icon text-thm"><span class="flaticon-career"></span></div>
+								<div class="details">
+									<p>Experience Level</p>
+									<p id="txtExperience"></p>
+								</div>
+							</div>
+							<div class="col-sm-4 col-lg-4">
+								<div class="icon text-thm"><span class="flaticon-graduation-hat"></span></div>
+								<div class="details">
+									<p>Qualification Level</p>
+									<p id="txtQualification"></p>
+								</div>
+							</div>
+							<div class="col-sm-4 col-lg-4">
+								<div class="icon text-thm"><span class="flaticon-gender"></span></div>
+								<div class="details">
+									<p>Gender</p>
+									<p id="txtGender"></p>
+								</div>
+							</div>
+						</div>
+						<div class="candidate_about_info style2">
+							<h4 class="fz20 mb30">About Job</h4>
+							<p id="txtAboutJob" class="mb30"></p>
+						</div>
+					</div>
 
 					<div id="userReviewDiv" class="col-lg-12">
 						<div class="candidate_review_posted style2">
@@ -131,46 +167,14 @@
 							</div>
 						</div>
 					</div>
-					<div id="reviewDiv" class="col-lg-12">
-						<h4 class="title">Leave Your Review</h4>
-						<div class="candidate_leave_review text-center">
-							<div class="detials">
-								<form id="review-form" class="ulockd-mrgn630">
-									<h4 id="txtReviewTopic"></h4>
-									<div class="star-rating">
-										<input type="radio" name="ratings[1]" id="Overall_5" value="5" class="radio">
-										<label for="Overall_5"></label>
-										<input type="radio" name="ratings[1]" id="Overall_4" value="4" class="radio">
-										<label for="Overall_4"></label>
-										<input type="radio" name="ratings[1]" id="Overall_3" value="3" class="radio">
-										<label for="Overall_3"></label>
-										<input type="radio" name="ratings[1]" id="Overall_2" value="2" class="radio">
-										<label for="Overall_2"></label>
-										<input type="radio" name="ratings[1]" id="Overall_1" value="1" class="radio">
-										<label for="Overall_1"></label>
-									</div>
-									<div class="form-group text-left">
-										<label class="title" for="txtReviewTitle">Review Title</label>
-										<input class="form-control" type="text" name="txtReviewTitle" id="txtReviewTitle">
-									</div>
-									<div class="form-group text-left">
-										<input type="hidden" name="txtUserId" id="txtUserId" value="<?php echo $user_id; ?>">
-										<input type="hidden" name="txtProfileId" id="txtProfileId">
-										<label class="control-label title" for="txtReviewContent">Review Content</label>
-										<textarea class="form-control" rows="5" name="txtReviewContent" id="txtReviewContent"></textarea>
-										<br/>
-										<button type="submit" class="btn btn-lg btn-thm">Submit Review <span class="flaticon-right-arrow"></span></button>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 			<div class="col-xl-4">
 				<div class="map_sidebar_widget mb30">
 					<h4 class="fz20 mb30">Job Location</h4>
 					<div class="h300" id="gMap"></div>
+					<input type="hidden" name="txtUserId" id="txtUserId" value="<?php echo $user_id; ?>">
+					<input type="hidden" name="txtJobId" id="txtJobId" value="<?php echo $job_id; ?>">
 				</div>
 				<div class="candidate_social_widget">
 					<ul>
@@ -191,7 +195,31 @@
 
 <script>
 
-	function updateUI(id){
+	function applyJob(){
+		$.ajax({
+			url: "<?php echo base_url(''); ?>/BEPost/applyJob",
+			data: {
+				company_id: $('#txtUserId').val(),
+				job_id: $('#txtJobId').val()
+			},
+			method: "post",
+			dataType: "json",
+			error: function(error){
+				$.notify("Internal server error", "error");
+			},
+			success: function(r){
+
+				if(r.status === 500){
+					$.notify(r.message, "error");
+				}
+				if(r.status === 200){
+					$.notify(r.message, "success");
+				}
+			}
+		});
+	}
+
+	function updateUI(id, job_id){
 		$.ajax({
 			url: "<?php echo base_url(''); ?>/Employer/getProfile",
 			data: {
@@ -207,12 +235,9 @@
 			success: function(r){
 
 				if(r.status === 500){
-					console.log(error);
 					$.notify("Internal server error", "error");
 				}
 				if(r.status === 200){
-
-					console.log(r.data);
 
 					$('#txtCompanyName').text(" "+r.data.company_name);
 
@@ -318,65 +343,40 @@
 				}
 			}
 		});
+
+		$.ajax({
+			url: "<?php echo base_url(''); ?>/BEPost/getJobDetails",
+			data: {
+				job_id: job_id,
+			},
+			method: "post",
+			dataType: "json",
+			error: function(error){
+				$.notify("Internal server error", "error");
+			},
+			success: function(r){
+
+				if(r.status === 500){
+
+				}
+				if(r.status === 200){
+					console.log(r.data);
+					$('#txtJobTitle').text(r.data[0].job_post_title);
+					$('#txtDeadLine').text(r.data[0].job_post_deadline);
+					$('#txtKnowledge').text(r.data[0].job_post_knowledge_level);
+					$('#txtExperience').text(r.data[0].job_post_experience_level);
+					$('#txtQualification').text(r.data[0].job_post_qualification_level);
+					$('#txtGender').text(r.data[0].job_post_gender);
+					$('#txtAboutJob').text(r.data[0].job_post_description);
+				}
+			}
+		});
 	}
 
 
 
 	$(document).ready(function() {
-		updateUI($('#txtProfileId').val());
-
-		$("#review-form").validate({
-			ignore: [],
-			rules: {
-				Overall_1: {
-					required: true
-				},
-				txtReviewTitle: {
-					required: true,
-				},
-				txtReviewContent: {
-					required: true,
-				}
-			},
-			messages: {
-				Overall_1: {
-					required: "Rating required"
-				},
-				txtReviewTitle: {
-					required: 'Review topic required!',
-				},
-				txtReviewContent: {
-					required: 'Review content required!',
-				}
-			},
-			submitHandler: function(form) {
-				let formData = new FormData(form);
-
-				$.ajax({
-					url: '<?php echo base_url('Employer/addReview'); ?>',
-					data: formData,
-					dataType: 'json',
-					method: 'post',
-					processData: false,
-					contentType: false,
-					error: function(error){
-						$.notify("Internal server error", "error");
-					},
-					success: function(r){
-						if(r.status == 200){
-							$.notify(r.message, "success");
-							updateUI();
-						}
-
-						if(r.status == 500){
-							$.notify(r.message, "error");
-						}
-
-					}
-				});
-			}
-
-		});
+		updateUI($('#txtProfileId').val(), $('#txtJobId').val());
 	});
 
 </script>

@@ -87,7 +87,7 @@ class BEPost extends CI_Controller
 		if($result){
 			$response['status'] = 200;
 			$response['data'] = $result;
-			$response['message'] = 'Status updated!';
+			$response['message'] = 'Data have!';
 		}else{
 			$response['status'] = 500;
 			$response['message'] = 'Operation failed!';
@@ -104,7 +104,7 @@ class BEPost extends CI_Controller
 		if($result){
 			$response['status'] = 200;
 			$response['data'] = $result;
-			$response['message'] = 'Status updated!';
+			$response['message'] = 'Data have!';
 		}else{
 			$response['status'] = 500;
 			$response['message'] = 'Operation failed!';
@@ -121,7 +121,7 @@ class BEPost extends CI_Controller
 		if($result){
 			$response['status'] = 200;
 			$response['data'] = $result;
-			$response['message'] = 'Status updated!';
+			$response['message'] = 'Data have!';
 		}else{
 			$response['status'] = 500;
 			$response['message'] = 'Operation failed!';
@@ -138,7 +138,7 @@ class BEPost extends CI_Controller
 		if($result){
 			$response['status'] = 200;
 			$response['data'] = $result;
-			$response['message'] = 'Status updated!';
+			$response['message'] = 'Data have!';
 		}else{
 			$response['status'] = 500;
 			$response['message'] = 'Operation failed!';
@@ -155,7 +155,7 @@ class BEPost extends CI_Controller
 		if($result){
 			$response['status'] = 200;
 			$response['data'] = $result;
-			$response['message'] = 'Status updated!';
+			$response['message'] = 'Data have!';
 		}else{
 			$response['status'] = 500;
 			$response['message'] = 'Operation failed!';
@@ -172,13 +172,72 @@ class BEPost extends CI_Controller
 		if($result){
 			$response['status'] = 200;
 			$response['data'] = $result;
-			$response['message'] = 'Status updated!';
+			$response['message'] = 'Data have!';
 		}else{
 			$response['status'] = 500;
 			$response['message'] = 'Operation failed!';
 		}
 
 		echo json_encode($response);
+	}
+
+	function getJobDetails(){
+
+		$response = array();
+
+		$result = $this->JobPostModel->getJobByID($this->input->post('job_id'));
+
+		if($result){
+			$response['status'] = 200;
+			$response['data'] = $result;
+			$response['message'] = 'Data have!';
+		}else{
+			$response['status'] = 500;
+			$response['message'] = 'Operation failed!';
+		}
+
+		echo json_encode($response);
+
+	}
+
+	function applyJob(){
+
+		$response = array();
+		$data = array();
+
+		$User_Session = $this->session->userdata('User_Session');
+
+		$candidate = $this->ProfileModel->getCandidateProfile($User_Session['ID']);
+		$company = $this->ProfileModel->getProfileID($this->input->post('company_id'));
+
+		$data['company_user_id'] = $this->input->post('company_id');
+		$data['company_profile_id'] = $company[0]->company_profile_id;
+		$data['job_id'] = $this->input->post('job_id');
+		$data['candidate_user_id'] = $candidate['user_id'];
+		$data['candidate_profile_id'] = $candidate['candidate_profile_id'];
+		$data['candidate_name'] = $candidate['candidate_full_name'];
+		$data['candidate_email'] = $candidate['candidate_email'];
+		$data['candidate_contact_no'] = $candidate['candidate_phone_no'];
+		$data['candidate_rating'] = $candidate['candidate_rating'];
+
+		if($this->JobPostModel->isAlreadyApplied($this->input->post('company_id'), $this->input->post('job_id'), $candidate['user_id'])){
+			$result = $this->JobPostModel->createJobApplyRequest($data);
+			if($result){
+				$response['status'] = 200;
+				$response['message'] = 'You request has been sent!';
+			}else{
+				$response['status'] = 200;
+				$response['message'] = 'You request has not been sent!';
+			}
+
+		}else{
+			$response['status'] = 500;
+			$response['message'] = 'Your request already sent!';
+		}
+
+		echo json_encode($response);
+
+
 	}
 
 }

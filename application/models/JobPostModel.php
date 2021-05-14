@@ -21,6 +21,16 @@ class JobPostModel extends CI_Model
 		}
 	}
 
+	function createJobApplyRequest($data){
+		$result = $this->db->insert('tbl_job_apply_request', $data);
+
+		if($result){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 	function isJobPostExist($data){
 		$this->db->select('*');
 		$this->db->from('tbl_job_post');
@@ -28,6 +38,22 @@ class JobPostModel extends CI_Model
 		$this->db->where('job_post_title', $data['job_post_title']);
 		$this->db->where('job_post_deadline', $data['job_post_deadline']);
 		$this->db->where('job_post_visibility', 1);
+
+		$result = $this->db->get()->result();
+
+		if($result == null){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	function isAlreadyApplied($company, $job_id, $user_id){
+		$this->db->select('*');
+		$this->db->from('tbl_job_apply_request');
+		$this->db->where('company_user_id', $company);
+		$this->db->where('candidate_user_id', $user_id);
+		$this->db->where('job_id', $job_id);
 
 		$result = $this->db->get()->result();
 
@@ -183,6 +209,22 @@ class JobPostModel extends CI_Model
 		$this->db->where("(`tbl_company_profile.company_name` LIKE '%$value%'");
 		$this->db->or_where("`tbl_job_post.job_post_title` LIKE '%$value%'");
 		$this->db->or_where("`tbl_company_profile.company_city` LIKE '%$value%')");
+
+		$result = $this->db->get()->result();
+
+		if($result != null){
+			return $result;
+		}else{
+			return null;
+		}
+	}
+
+
+	function getJobByID($id){
+		$this->db->select('*');
+		$this->db->from('tbl_job_post');
+		$this->db->join('tbl_company_profile', 'tbl_company_profile.company_profile_id = tbl_job_post.job_post_profile_id');
+		$this->db->where('tbl_job_post.job_post_id', $id);
 
 		$result = $this->db->get()->result();
 
