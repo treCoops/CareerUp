@@ -25,7 +25,7 @@
 			<div class="col-lg-12">
 				<div class="home-job-search-box mt20 mb20">
 					<form class="form-inline">
-						<div class="search_option_one">
+						<!-- <div class="search_option_one">
 							<div class="form-group">
 								<label for="exampleInputName"><span class="flaticon-search"></span></label>
 								<input type="text" class="form-control h70" id="exampleInputName" placeholder="Job Title or Keywords">
@@ -36,13 +36,12 @@
 								<label for="exampleInputEmail"><span class="flaticon-location-pin"></span></label>
 								<input type="text" class="form-control h70" id="exampleInputEmail" placeholder="Location">
 							</div>
-						</div>
-						<div class="search_option_button">
-							<button type="submit" class="btn btn-thm btn-secondary h70">Search</button>
-						</div>
+						</div> -->
+						<!-- <div class="search_option_button">
+							<a href="" class="btn btn-thm btn-secondary h70">Search for jobs</a>
+						</div> -->
 					</form>
 				</div>
-				<p><span class="color-black22">Trending Keywords:</span> DesignCer,  Developer,  Web,  IOS,  PHP,  Senior,  Engineer</p>
 			</div>
 		</div>
 	</div>

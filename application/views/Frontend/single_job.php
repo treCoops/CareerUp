@@ -330,7 +330,7 @@
 									'</ul>'+
 									'</h4>'+
 									'<ul class="meta">'+
-									'<li class="list-inline-item"><a class="text-thm2" href="#">'+r.data[a].reviewer_name+'</a></li>'+
+									'<li class="list-inline-item"><a class="text-thm2" href="/CareerUp/Candidate?id='+r.data[a].reviewer_id+'">'+r.data[a].reviewer_name+'</a></li>'+
 									'<li class="list-inline-item"><a href="#"><span class="flaticon-event"></span> '+moment(r.data[a].created_date).fromNow()+'</a></li>'+
 									'</ul>'+
 									'<p>'+r.data[a].review_content+'</p>'+

@@ -166,6 +166,11 @@
 						<h4>Education Level</h4>
 						<p id="txtCandidateEducation"></p>
 					</div>
+					<div class="icon text-thm"><span class="flaticon-gender"></span></div>
+					<div class="details">
+						<h4>Gender</h4>
+						<p id="txtCandidateGender"></p>
+					</div>
 				</div>
 				<div class="candidate_social_widget bgc-fa">
 					<ul>
@@ -472,11 +477,13 @@
 					$('#txtProfileId').val(r.data.candidate_profile_id);
 					$('#txtCandidateEducation').text(r.data.candidate_education_level);
 					$('#txtFormHeading').text('What dou you think about '+r.data.candidate_full_name);
+					$('#txtCandidateGender').text(r.data.candidate_gender);
 
 					$("#txtFaceBook").prop("href", r.data.company_facebook)
 					$("#txtInstagram").prop("href", r.data.company_instagram)
 					$("#txtLinkedIn").prop("href", r.data.company_linkedin)
 					$("#txtTwitter").prop("href", r.data.company_twitter)
+					
 
 				}
 			}
