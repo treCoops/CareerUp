@@ -31,8 +31,8 @@
 			<div class="col-lg-6">
 				<div class="about_content">
 					<h3>About Career up</h3>
-					<p class="color-black22 mt30">Every single one of our jobs has some kind of flexibility option - such as telecommuting a part-time schedule or a flexible or flextime schedule.</p>
-					<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum 'Content here, content here', making it look like readable English. <br><br>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will.
+					<p class="color-black22 mt30">CarrerUp is ajob market platform. It is designed for both employers who loogin for well-talented employees and candidates who looking for good suitable job.</p>
+					<p>We provide to employer to post their partnership requirements to others who want to invest.<br><br> Our system has reviewing feature for boath employer & candidate. </p>
 
 				</div>
 			</div>
@@ -61,7 +61,7 @@
 					<div class="icon"><div class="list_tag float-right"><p>1</p></div><span class="flaticon-unlocked"></span></div>
 					<div class="details">
 						<h4>Create An Account</h4>
-						<p>Post a job to tell us about your project. We'll quickly match you with the right freelancers.</p>
+						<!-- <p>Create an account.</p> -->
 					</div>
 				</div>
 			</div>
@@ -70,7 +70,7 @@
 					<div class="icon middle"><div class="list_tag float-right"><p>2</p></div><span class="flaticon-job"></span></div>
 					<div class="details">
 						<h4>Search Jobs</h4>
-						<p>Browse profiles, reviews, and proposals then interview top candidates.</p>
+						<p>Browse profiles, reviews, and partnerships then apply for job or interview top candidates.</p>
 					</div>
 				</div>
 			</div>
@@ -78,8 +78,8 @@
 				<div class="icon_box_hiw">
 					<div class="icon"><div class="list_tag float-right"><p>3</p></div><span class="flaticon-trophy"></span></div>
 					<div class="details">
-						<h4>Save & Apply</h4>
-						<p>Use the Upwork platform to chat, share files, and collaborate from your desktop or on the go.</p>
+						<h4>Apply</h4>
+						<!-- <p>Use the Upwork platform to chat, share files, and collaborate from your desktop or on the go.</p> -->
 					</div>
 				</div>
 			</div>
@@ -87,57 +87,3 @@
 	</div>
 </section>
 
-<!-- Our Partners -->
-<!--<section class="our-partner">-->
-<!--	<div class="container">-->
-<!--		<div class="row">-->
-<!--			<div class="col-xs-6 col-sm-4 col-lg-2">-->
-<!--				<div class="our_partners text-center">-->
-<!--					<img class="img-fluid" src="images/partners/5.jpg" alt="5.jpg">-->
-<!--				</div>-->
-<!--			</div>-->
-<!--			<div class="col-xs-6 col-sm-4 col-lg-3">-->
-<!--				<div class="our_partners text-center">-->
-<!--					<img class="img-fluid" src="images/partners/6.jpg" alt="6.jpg">-->
-<!--				</div>-->
-<!--			</div>-->
-<!--			<div class="col-xs-6 col-sm-4 col-lg-2">-->
-<!--				<div class="our_partners text-center">-->
-<!--					<img class="img-fluid" src="images/partners/7.jpg" alt="7.jpg">-->
-<!--				</div>-->
-<!--			</div>-->
-<!--			<div class="col-xs-6 col-sm-4 col-lg-3">-->
-<!--				<div class="our_partners text-center">-->
-<!--					<img class="img-fluid" src="images/partners/8.jpg" alt="8.jpg">-->
-<!--				</div>-->
-<!--			</div>-->
-<!--			<div class="col-xs-6 col-sm-4 col-lg-2">-->
-<!--				<div class="our_partners text-center">-->
-<!--					<img class="img-fluid" src="images/partners/9.jpg" alt="9.jpg">-->
-<!--				</div>-->
-<!--			</div>-->
-<!--		</div>-->
-<!--	</div>-->
-<!--</section>-->
-
-<script>
-	(function(window, $) {
-		var $mapster = $('#map-canvas').mapster(Mapster.MAP_OPTIONS);
-		// if (navigator.geolocation) {
-		//   navigator.geolocation.getCurrentPosition(function(position) {
-		//     $mapster.mapster('addMarker', {
-		//       lat: position.coords.latitude,
-		//       lng: position.coords.longitude
-		//     });
-		//   });
-		// }
-
-		$mapster.mapster('getCurrentPosition', function(position) {
-			$mapster.mapster('addMarker', {
-				lat: position.coords.latitude,
-				lng: position.coords.longitude
-			});
-		});
-
-	}(window, jQuery));
-</script>

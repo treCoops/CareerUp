@@ -35,9 +35,6 @@
 					<a href="<?php echo base_url('Home'); ?>"><span class="title">Home</span></a>
 				</li>
 				<li>
-					<a href="<?php echo base_url('HowItWork') ?>"><span class="title">How It Works!</span></a>
-				</li>
-				<li>
 					<a href="<?php echo base_url('About') ?>"><span class="title">About</span></a>
 				</li>
 				<li>
@@ -167,62 +164,6 @@
 	</div>
 </header>
 
-<!--<div id="page" class="stylehome1 h0">-->
-<!--	<div class="mobile-menu">-->
-<!--		<ul class="header_user_notif pull-right">-->
-<!--			<li class="user_notif">-->
-<!--			</li>-->
-<!--			<li class="user_setting">-->
-<!--				<div class="dropdown">-->
-<!--					<a class="btn dropdown-toggle" href="#" data-toggle="dropdown"><img class="rounded-circle" src="--><?php //base_url() ?><!--assets/images/Users/--><?php //echo $User_Session['Profile_Image'] ?><!--" alt="8.jpg" title="--><?php //echo $User_Session['Username'] ?><!--"></a>-->
-<!--					<div class="dropdown-menu">-->
-<!--						<div class="user_set_header">-->
-<!--							<p>Hi, --><?php //echo $User_Session['Username'] ?><!-- <br><span class="address">--><?php //echo $User_Session['Email'] ?><!--</span></p>-->
-<!--						</div>-->
-<!--						<div class="user_setting_content">-->
-<!--							<a class="dropdown-item active" href="page-candidates-dashboard.html"><span class="flaticon-dashboard"></span> Dashboard</a>-->
-<!--							<a class="dropdown-item" href="page-candidates-profile.html"><span class="flaticon-profile"></span> Profile</a>-->
-<!--							<a class="dropdown-item" href="page-candidates-my-resume.html"><span class="flaticon-resume"></span> Resume</a>-->
-<!--							<a class="dropdown-item" href="page-candidates-applied-jobs.html"><span class="flaticon-paper-plane"></span> Applied Jobs</a>-->
-<!--							<a class="dropdown-item" href="page-candidates-cv-manager.html"><span class="flaticon-analysis"></span> CV Manager</a>-->
-<!--							<a class="dropdown-item" href="page-candidates-favourite-jobs.html"><span class="flaticon-favorites"></span> Favourite Jobs</a>-->
-<!--							<a class="dropdown-item" href="page-candidates-message.html"><span class="flaticon-chat"></span> Messages</a>-->
-<!--							<a class="dropdown-item" href="page-candidates-review.html"><span class="flaticon-rating"></span> Reviews</a>-->
-<!--							<a class="dropdown-item" href="page-candidates-job-alert.html"><span class="flaticon-alarm"></span> Job Alerts</a>-->
-<!--							<a class="dropdown-item" href="page-candidates-change-password.html"><span class="flaticon-locked"></span> Change Password</a>-->
-<!--							<a class="dropdown-item" href="loging_register.html"><span class="flaticon-logout"></span> Logout</a>-->
-<!--							<a class="dropdown-item" href="#"><span class="flaticon-rubbish-bin"></span> Delete Profile</a>-->
-<!--						</div>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--			</li>-->
-<!--		</ul>-->
-<!--		<div class="header stylehome1 dashbord_mobile_logo">-->
-<!--			<img class="nav_logo_img img-fluid float-left mt25" src="--><?php //base_url() ?><!--assets/images/header-logo.png" alt="header-logo.png">-->
-<!--			<a class="bg-thm" href="#menu"><span></span></a>-->
-<!--		</div>-->
-<!--	</div>-->
-<!--	<nav id="menu" class="stylehome1">-->
-<!--		<ul>-->
-<!--			<li><span>Home</span>-->
-<!--				<ul>-->
-<!--					<li><a href="index.html">Home One</a></li>-->
-<!--					<li><a href="index.html">Home Two</a></li>-->
-<!--					<li><a href="index3.html">Home Three</a></li>-->
-<!--					<li><a href="index4.html">Home Four</a></li>-->
-<!--					<li><a href="index5.html">Home Five</a></li>-->
-<!--					<li><a href="index6.html">Home Six</a></li>-->
-<!--				</ul>-->
-<!--			</li>-->
-<!---->
-<!--			<li><a href="#">Post a Job</a></li>-->
-<!--			<li><a class="text-thm" href="loging_register.html">Login/Register</a></li>-->
-<!--		</ul>-->
-<!--	</nav>-->
-<!--</div>-->
-
-<!-- Main Header Nav For Mobile -->
-
 <div id="page" class="stylehome1 h0">
 	<div class="mobile-menu">
 		<div class="header stylehome1">
@@ -235,9 +176,7 @@
 			<li>
 				<a href="<?php echo base_url('Home'); ?>"><span class="title">Home</span></a>
 			</li>
-			<li>
-				<a href="<?php echo base_url('HowItWork') ?>"><span class="title">How It Works!</span></a>
-			</li>
+	
 			<li>
 				<a href="<?php echo base_url('About') ?>"><span class="title">About</span></a>
 			</li>

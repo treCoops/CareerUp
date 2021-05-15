@@ -32,9 +32,6 @@ $User_Session = $this->session->userdata('User_Session');
 					<a href="<?php echo base_url('Home'); ?>"><span class="title">Home</span></a>
 				</li>
 				<li>
-					<a href="<?php echo base_url('HowItWork') ?>"><span class="title">How It Works!</span></a>
-				</li>
-				<li>
 					<a href="<?php echo base_url('About') ?>"><span class="title">About</span></a>
 				</li>
 				<li>
@@ -167,9 +164,6 @@ $User_Session = $this->session->userdata('User_Session');
 		<ul>
 			<li>
 				<a href="<?php echo base_url('Home'); ?>"><span class="title">Home</span></a>
-			</li>
-			<li>
-				<a href="<?php echo base_url('HowItWork') ?>"><span class="title">How It Works!</span></a>
 			</li>
 			<li>
 				<a href="<?php echo base_url('About') ?>"><span class="title">About</span></a>

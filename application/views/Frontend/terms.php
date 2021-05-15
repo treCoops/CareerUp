@@ -31,7 +31,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<h4 class="fz20 mt0">Website Terms and Conditions</h4>
-				<p>01. Introduction Welcome to our website. If you continue to browse and use this website, you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern [business name]’s relationship with you in relation to this website. If you disagree with any and conditions of use, which together with our privacy policy govern [business name]’s relationship with you in relation to this website. If you disagree with any and conditions of use, which together with our privacy policy govern [business name]’s relationship with you in relation to this website. If you disagree with any website.</p>
+				<p>01. Introduction Welcome to our website. If you continue to browse and use this website, you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern [business name]’s relationship with you in relation to this website.</p>
 			</div>
 			<div class="col-lg-12">
 				<h4 class="fz20">Information on this Site</h4>
@@ -40,7 +40,6 @@
 			<div class="col-lg-12">
 				<h4 class="fz20">Your Use of this Site</h4>
 				<p>You may only use the Website for lawful purposes when seeking employment or help with your career, when purchasing training courses or when recruiting staff. You must not under any circumstances seek to undermine the security of the Website or any information submitted to or available through it. In particular, but You must not under any circumstances seek to undermine the security of the Website or any information submitted to or available through it. In particular, but spamming or flooding, take any action or use any device, routine or software to crash, delay, damage or otherwise interfere with the operation of the Website or attempt to decipher, disassemble or modify any of the software, coding or information comprised in the Website.</p>
-				<p class="mt40 mb0">attempt to decipher, disassemble or modify any of the software, coding or information comprised in the Website.attempt to decipher, disassemble or modify any of the software, coding or information comprised in the Website.ful or in breach of any applicable legislation, regulations, guidelines or codes of practice or the copyright, trade mark or other intellectual property rights of any person in any jurisdiction. You are also responsible for ensuring that all information, data and files are free of viruses or other routines or engines that may person in any jurisdiction. You are also responsible for ensuring that all information, data and files are free of viruses or other routines or engines that may Website at our sole discretion, at any time and for any reason without being required to give any explanation.</p>
 			</div>
 		</div>
 	</div>
