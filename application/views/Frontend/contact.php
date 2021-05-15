@@ -29,7 +29,7 @@
 	<div class="container-fluid p0">
 		<div class="row">
 			<div class="col-lg-12">
-				<div class="h800 w100" id="map-canvas"></div>
+				<div class="h800 w100" id="gMap"></div>
 			</div>
 		</div>
 	</div>
@@ -38,10 +38,10 @@
 			<div class="col-lg-5 contact_details">
 				<h4>Contact Careerup</h4>
 				<ul class="address_list">
-					<li><a href="#"><span class="flaticon-marker"></span> Careerup Inc. 555 Madison Avenue, Suite F-2 Manhattan, New York 10282</a></li>
+					<li><a href="#"><span class="flaticon-marker"></span> Careerup Inc. 270/15, Tripoli Market Road, Maradana, Sri Lanka</a></li>
 					<li><a href="#"><span class="flaticon-open-envelope-with-letter"></span> Email: info@careerup.com</a></li>
-					<li><a href="#"><span class="flaticon-call"></span> Call: 0934 343 343</a></li>
-					<li><a href="#"><span class="flaticon-fax"></span> Fax: 0934 343 343</a></li>
+					<li><a href="#"><span class="flaticon-call"></span> Call: 0314 343 343</a></li>
+					<li><a href="#"><span class="flaticon-fax"></span> Fax: 0314 343 343</a></li>
 				</ul>
 				<ul class="social_list">
 					<li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -85,30 +85,33 @@
 	</div>
 </section>
 
-<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyABqK-5ngi3F1hrEsk7-mCcBPsjHM5_Gj0"></script>
-<script type="text/javascript" src="<?php echo base_url() ?>assets/js/googlemaps2.js"></script>
+<!-- <script type="text/javascript" src="<?php echo base_url() ?>assets/js/map-picker.js"></script> -->
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyB8BbO_t_LXJLuBuHLnRMvXBJH8_S7q2IM&callback=initMap" async></script>
 <script>
 
-	$(document).ready(function() {
-		(function(window, $) {
-			var $mapster = $('#map-canvas').mapster(Mapster.MAP_OPTIONS);
-			// if (navigator.geolocation) {
-			//   navigator.geolocation.getCurrentPosition(function(position) {
-			//     $mapster.mapster('addMarker', {
-			//       lat: position.coords.latitude,
-			//       lng: position.coords.longitude
-			//     });
-			//   });
-			// }
+let map;
+let markers = [];
 
-			$mapster.mapster('getCurrentPosition', function(position) {
-				$mapster.mapster('addMarker', {
-					lat: position.coords.latitude,
-					lng: position.coords.longitude
-				});
-			});
+function initMap() {
+	map = new google.maps.Map(document.getElementById("gMap"), {
+		zoom: 15,
+		center: {
+			lat: 6.9271,
+			lng: 79.8612
+		},
+	});
 
-		}(window, jQuery));
-	})
+	let marker = {lat: 6.9271, lng: 79.8612};
+	addMarker(marker);
+
+}
+
+function addMarker(location) {
+	let marker = new google.maps.Marker({
+		position: location,
+		map: map
+	});
+	markers.push(marker);
+}
 
 </script>
